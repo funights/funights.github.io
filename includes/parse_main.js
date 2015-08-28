@@ -22,13 +22,16 @@ $(document).on(
 		});   
 	    
 	    getAllPlaces(function(res){
+	    	// Calculate the distance for all places from the user
 	    	for (i = 0; i < res.length; i++) { 
 	    		var place = res[i];
 	    		var dis = calcDistance(place.get("address_geo").latitude, place.get("address_geo").longitude);
 	    		place.dis = dis;
 	    		console.log(place.get("name") + " " + dis);
 			}
+			// sotring the places by distance
 			res.sort(function(a,b){return a.dis - b.dis});
+			// take the first 3 places
 			var closePlaces = res.slice(0, 3);
 			var template = $("#placesList").html();
 			var compiled = _.template(template);
@@ -40,7 +43,7 @@ $(document).on(
 	
 });
 
-function onChangeFilter(){
+function onChangeFilter(){ // when changing MusicGenere or PlaceType filter run again the query
 	$("#target").html("Loading...");
 	getAllPlaces(function(res){
 		var template = $("#placesList").html();
