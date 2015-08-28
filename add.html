@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	 	<title>FuNights</title>
+		<meta charset="UTF-8">
+		<script src="includes/jquery.min.js"></script>
+		<script src="includes/dragAndDrop.js"></script>
+		<script src="includes/script.js"></script>
+		<link rel="stylesheet" href="includes/style.css">
+	</head>
+	<body>	 
+		<div id="wrapper"> 
+			<header> 
+				<a id="logo" href="#"> </a>
+ 			</header>		
+		 	<nav class="navColor">
+		 		<div id="menu">
+			 		<ul>	
+						<li><a class="aNav" href="#">קרובים קרובים</a></li>
+						<li><a class="aNav" href="stylelist.html">Specials</a></li>
+						<li><a class="aNav" href="#">העמוד שלי</a></li>
+						<li><a class="aNav" href="form.html">הוספת מקום</a></li>
+						<li><a class="aNav" href="abouts.html">קצת עלינו..</a></li>
+			 		</ul>
+			 		<span></span>
+		 		</div>
+			</nav>
+			<main>
+				<h1 id="newsInStyle">הוסף מקום</h1>
+				<section class="formAdd">
+						<form action="updateUserDetails2.php" method="post">
+							<p><label class="category">שם המקום:	</label><input id="i1" type="text"   name="placeName"	value="" required></p>
+							<p><label class="category">סגנון בילוי:	</label><input id="i2" type="text"   name="placeType"	value="" required></p>
+							<p><label class="category">סגנון מוזיקה: </label><input id="i3" type="text"   name="musicType"	value="" required></p>
+							<p><label class="category">יישוב:		</label><input id="i6" type="text"   name="city"		value="" required></p>
+							<p><label class="category">רחוב:		</label><input id="i7" type="text"   name="street"		value="" ></p>
+							<p><label class="category"> מספר:	</label><input id="i8" type="number" name="houseNum"	value=""></p>
+							<p><input type="submit" name="btn" class="btn-send-style" value="עדכן"></label></p>
+						</form>
+				</section>
+				
+				<DIV id="status">Drag the files from a folder to a selected area ...</DIV>
+ 				<DIV id="drop">Drop files here.</DIV>
+  				<DIV id="list"></DIV>
+				
+			 </main>
+			 <div class="clear"></div>
+			   <footer>
+				 	<nav>
+				 		<a class="aFooter" href="abouts.html">אודות</a>
+				 		<a class="aFooter" href="stylelist.html">StyleLists</a>
+				 		<a class="aFooter" href="#">חדשות השבוע</a>
+				 		<a class="aFooter" href="#">HOTTEST of the week </a>
+				 	</nav>
+			 </footer>
+		 </div>
+	</body>
+</html>

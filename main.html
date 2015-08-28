@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	 	<title>FuNights</title>
+		<meta charset="UTF-8">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script src="//www.parsecdn.com/js/parse-1.5.0.js"></script>
+		<script src="http://underscorejs.org/underscore.js"></script>
+		<!-- <script src="FuNights/includes/dragAndDrop.js"></script> -->
+		<script src="includes/main.js"></script>
+		<link rel="stylesheet" href="includes/style.css">
+		<link rel="stylesheet" href="includes/funights.css">
+	</head>
+	<body>	 
+		
+		<script type="text/html" id='filterList'>
+			<select id="filterType" onchange="onChangeFilter()">
+				
+				<option value="0">סנן לפי סוג</option>
+				<% _.each(items,function(item,key,list){ 
+		            // create more variables
+		        %>
+		        <option value="<%= item.id %>"><%= item.get("name") %></option>
+				
+		        <% }); %>
+			</select>
+
+          </script>
+		
+		<script type="text/html" id='filterMusicList'>
+			<select id="filterType" onchange="onChangeFilter()">
+				
+				<option value="0">סנן לפי מוסיקה</option>
+				<% _.each(items,function(item,key,list){ 
+		            // create more variables
+		        %>
+		        <option value="<%= item.id %>"><%= item.get("genere") %></option>
+				
+		        <% }); %>
+			</select>
+
+          </script>
+		
+		<script type="text/html" id='placesList'>
+			<% _.each(items,function(item,key,list){ 
+	            // create more variables
+	        %>
+			<div class="place">
+				<h1><%= item.get("name") %></h1>
+			</div>
+			
+	        <% }); %>
+			
+          </script>
+
+		<div id="wrapper"> 
+			<header> 
+				<a id="logo" href="#"> </a>
+ 			</header>		
+		 	<nav class="navColor">
+		 		<div id="menu">
+			 		<ul>	
+						<li><a class="aNav" href="#">קרובים קרובים</a></li>
+						<li><a class="aNav" href="stylelist.html">Specials</a></li>
+						<li><a class="aNav" href="#">העמוד שלי</a></li>
+						<li><a class="aNav" href="form.html">הוספת מקום</a></li>
+						<li><a class="aNav" href="abouts.html">קצת עלינו..</a></li>
+			 		</ul>
+			 		<span></span>
+		 		</div>
+			</nav>
+			 <main>
+			 	<h1>קרובים קרובים</h1>
+			 	
+			 	<div id="filterTarget"></div>
+			 	<div id="filterMusicTarget"></div>
+			 	
+				<div id="target"></div>
+				
+			 </main>
+			 
+			 <div class="clear"></div>
+			   <footer>
+				 	<nav>
+				 		<a class="aFooter" href="abouts.html">אודות</a>
+				 		<a class="aFooter" href="stylelist.html">StyleLists</a>
+				 		<a class="aFooter" href="#">חדשות השבוע</a>
+				 		<a class="aFooter" href="#">HOTTEST of the week </a>
+				 	</nav>
+			 </footer>
+		 </div>
+		 
+ 		<script src="includes/parse_main.js"></script>
+
+	</body>
+</html>
