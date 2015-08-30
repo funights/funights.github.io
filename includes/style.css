@@ -104,7 +104,7 @@ h1{
 
 h3{
 	direction: rtl;
-	font-size: 10px;
+	font-size: 20px;
 	font-family: 'trashim_clmbold','arial';
 }
 
@@ -380,15 +380,17 @@ textarea{
 	font-family: 'trashim_clmbold','arial';
 }
 
-.indexPlacesPic1, .indexPlacesPic2{
-	display:block;
+.PlacesPic{
+	display:inline;
+	position:absolute;
 	float:right;
-	margin-top:50px;
+	margin-top:200px;
 	margin-right:39px;
-	height: 291px;
-	width:325px;
+	height: 260px;
+	width:294px;
 }
 
+/*
 .indexPlacesPic3, .indexPlacesPic4, .indexPlacesPic5{
 	display:block;
 	float:right;
@@ -397,6 +399,7 @@ textarea{
 	height: 182px;
 	width:216px;
 }
+*/
 
 #placesList{
 	float:left;
