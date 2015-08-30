@@ -102,11 +102,10 @@ h1{
 	font-size: 35px;
 }
 
-
-/*
 h3{
 	direction: rtl;
-	font-size: 20px;
+	font-size: 10px;
+	font-family: 'trashim_clmbold','arial';
 }
 
 footer
@@ -116,6 +115,8 @@ footer
 	text-align: center;
 	background-image: url("../images/hot.png");
 }
+
+/*
 
 section{
 	width:190px;
@@ -326,7 +327,7 @@ textarea{
 
 .myButton {
 	float:left;
-	margin-top:20px;
+	margin-top:10px;
 	margin-left:10px;
 	-moz-box-shadow:inset 0px 1px 0px 0px #fff6af;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #fff6af;
@@ -395,6 +396,12 @@ textarea{
 	margin-top:25px;
 	height: 182px;
 	width:216px;
+}
+
+#placesList{
+	float:left;
+	position: absolute;
+	top:200px;
 }
 
 .covers a img:hover {
