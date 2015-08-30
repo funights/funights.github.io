@@ -286,6 +286,7 @@ textarea{
 	display:inline;
 	float:right;
 	margin-right:20px;
+	color: white;
 }
 
 .btn-edit{
@@ -624,4 +625,11 @@ h2 span.spacer      { padding: 0 2px; background: none; }
 
 .placeImage{
     /** some attributes */
+}
+
+.fil{
+    float: right;
+    size: 30px;
+    padding: 5px;
+    margin: 10px;
 }

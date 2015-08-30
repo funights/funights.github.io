@@ -1,3 +1,25 @@
+function getPlacesSuccess(res){
+	// Calculate the distance for all places from the user
+	for (i = 0; i < res.length; i++) { 
+		var place = res[i];
+		var dis = calcDistance(place.get("address_geo").latitude, place.get("address_geo").longitude);
+		place.dis = dis;
+        if (place.get("placePic")){
+            place.imageUrl = place.get("placePic").url()
+        } else {
+            place.imageUrl = ""
+        }
+		console.log(place.get("name") + " " + dis);
+	}
+	// sotring the places by distance
+	res.sort(function(a,b){return a.dis - b.dis});
+	// take the first 3 places
+	var closePlaces = res.slice(0, 5);
+	var template = $("#placesList").html();
+	var compiled = _.template(template);
+	
+	$("#target").html(compiled({items:closePlaces}));
+}
 $(document).on(
 	'parseload',  //  <---- HERE'S OUR CUSTOM EVENT BEING LISTENED FOR
 	function(){
@@ -21,28 +43,7 @@ $(document).on(
 			alert(error.message);
 		});   
 	    
-	    getAllPlaces(function(res){
-	    	// Calculate the distance for all places from the user
-	    	for (i = 0; i < res.length; i++) { 
-	    		var place = res[i];
-	    		var dis = calcDistance(place.get("address_geo").latitude, place.get("address_geo").longitude);
-	    		place.dis = dis;
-                if (place.get("placePic")){
-                    place.imageUrl = place.get("placePic").url()
-                } else {
-                    place.imageUrl = ""
-                }
-	    		console.log(place.get("name") + " " + dis);
-			}
-			// sotring the places by distance
-			res.sort(function(a,b){return a.dis - b.dis});
-			// take the first 3 places
-			var closePlaces = res.slice(0, 3);
-			var template = $("#placesList").html();
-			var compiled = _.template(template);
-			
-			$("#target").html(compiled({items:closePlaces}));
-		}, function(error){
+	    getAllPlaces(getPlacesSuccess, function(error){
 			alert(error.message);
 		});
 	
@@ -50,12 +51,7 @@ $(document).on(
 
 function onChangeFilter(){ // when changing MusicGenere or PlaceType filter run again the query
 	$("#target").html("Loading...");
-	getAllPlaces(function(res){
-		var template = $("#placesList").html();
-		var compiled = _.template(template);
-		
-		$("#target").html(compiled({items:res}));
-	}, function(error){
+	getAllPlaces(getPlacesSuccess, function(error){
 		alert(error);
 	});
 }

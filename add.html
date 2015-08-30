@@ -3,40 +3,83 @@
 	<head>
 	 	<title>FuNights</title>
 		<meta charset="UTF-8">
-		<script src="includes/jquery.min.js"></script>
-		<script src="includes/dragAndDrop.js"></script>
-		<script src="includes/script.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+		<script src="//www.parsecdn.com/js/parse-1.5.0.js"></script>
+		<script src="http://underscorejs.org/underscore.js"></script>
+		<script src="includes/main.js"></script>
+		<script src="includes/add.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?signed_in=true&libraries=places&callback=initAutocomplete" async defer></script>
+
 		<link rel="stylesheet" href="includes/style.css">
+		<link rel="stylesheet" href="includes/navBar.css">
+		<link rel="stylesheet" href="includes/funights.css">
 	</head>
 	<body>	 
+		
+		<script type="text/html" id='placeTypeList'>
+			<select class="fil" id="placeSelect" required>
+				<div class="filter"></div>
+				
+					<option value="">סנן לפי סוג</option>
+					<% _.each(items,function(item,key,list){ 
+			            // create more variables
+			        %>
+			        </div>
+			      <option value="<%= item.id %>"><%= item.get("name") %></option>
+				
+		        <% }); %>
+			</select>
+
+          </script>
+		
+		<script type="text/html" id='musicGenereList'>
+			<select class="fil" id="musicSelect" required>
+				
+				<option value="">סנן לפי מוסיקה</option>
+				<% _.each(items,function(item,key,list){ 
+		            // create more variables
+		        %>
+		        <option value="<%= item.id %>"><%= item.get("genere") %></option>
+				
+		        <% }); %>
+			</select>
+
+          </script>
+		
 		<div id="wrapper"> 
 			<header> 
 				<a id="logo" href="#"> </a>
  			</header>		
-		 	<nav class="navColor">
-		 		<div id="menu">
-			 		<ul>	
-						<li><a class="aNav" href="#">קרובים קרובים</a></li>
-						<li><a class="aNav" href="stylelist.html">Specials</a></li>
-						<li><a class="aNav" href="#">העמוד שלי</a></li>
-						<li><a class="aNav" href="form.html">הוספת מקום</a></li>
-						<li><a class="aNav" href="abouts.html">קצת עלינו..</a></li>
-			 		</ul>
+		 	<nav id="cssmenu">
+					<ul>
+					   <li class='active'><a href='main.html'><span>קרובים קרובים</span></a></li>
+					   <li><a href='add.html'><span>הוסף מקום</span></a></li>
+					   <li><a href='#'><span>Specials</span></a></li>
+					    <li><a href='#'><span>העמוד שלי</span></a></li>
+					   <li class='last'><span></span><a href='#'><span>קצת עלינו</span></a></li>
+					</ul>
 			 		<span></span>
-		 		</div>
-			</nav>
+		 		</nav>
 			<main>
 				<h1 id="newsInStyle">הוסף מקום</h1>
 				<section class="formAdd">
-						<form action="updateUserDetails2.php" method="post">
-							<p><label class="category">שם המקום:	</label><input id="i1" type="text"   name="placeName"	value="" required></p>
-							<p><label class="category">סגנון בילוי:	</label><input id="i2" type="text"   name="placeType"	value="" required></p>
-							<p><label class="category">סגנון מוזיקה: </label><input id="i3" type="text"   name="musicType"	value="" required></p>
-							<p><label class="category">יישוב:		</label><input id="i6" type="text"   name="city"		value="" required></p>
-							<p><label class="category">רחוב:		</label><input id="i7" type="text"   name="street"		value="" ></p>
-							<p><label class="category"> מספר:	</label><input id="i8" type="number" name="houseNum"	value=""></p>
-							<p><input type="submit" name="btn" class="btn-send-style" value="עדכן"></label></p>
-						</form>
+					<form id="add-place" method="post">
+						<p><label class="category">שם המקום:	</label><input id="placeName" type="text"   name="placeName"	value="" required></p><br>
+						<p><label class="category">סגנון בילוי:	</label><div id="placeType"></div></p><br>
+						<p><label class="category">סגנון מוזיקה: </label><div id="musicGenere"></div></p><br>
+						<p><label class="category">כתובת:		</label><input id="autocomplete" placeholder="בחר כתובת " onFocus="geolocate()" type="text" required></input></p><br>
+						<p><label class="category">תיאור:		</label><input id="description" type="text"   name="description"		value="" required></p><br>
+						<p><label class="category">תמונה:		</label><input id="profilePhotoFileUpload" type="file"   name="image"		value="" required></p><br>
+						
+						<p><input type="submit" name="btn" class="btn-send-style" value="עדכן"></label></p>
+					</form>
+					
+					<!-- <form id="fileupload" name="fileupload" enctype="multipart/form-data" method="post">
+					  <fieldset>
+					    <input type="file" name="fileselect" id="fileselect"></input>
+					    <input id="uploadbutton" type="button" value="Upload to Parse"/>
+					  </fieldset>
+					</form> -->
 				</section>
 				
 				<DIV id="status">Drag the files from a folder to a selected area ...</DIV>
@@ -44,15 +87,5 @@
   				<DIV id="list"></DIV>
 				
 			 </main>
-			 <div class="clear"></div>
-			   <footer>
-				 	<nav>
-				 		<a class="aFooter" href="abouts.html">אודות</a>
-				 		<a class="aFooter" href="stylelist.html">StyleLists</a>
-				 		<a class="aFooter" href="#">חדשות השבוע</a>
-				 		<a class="aFooter" href="#">HOTTEST of the week </a>
-				 	</nav>
-			 </footer>
-		 </div>
 	</body>
 </html>
