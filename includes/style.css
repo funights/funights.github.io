@@ -93,12 +93,20 @@ header{
 main{
  width:1000px;
  height:2000px;
+}
 
+
+.filter{
+	height:30px;
+	width:60px;
+	position: absolute;
+	float:right;
+	padding-right:20px;
+	margin-top:10px;	
 }
 
 h1{
 	direction: rtl;
-	margin-top: 20px;
 	font-size: 35px;
 }
 
@@ -245,15 +253,16 @@ textarea{
 	overflow: auto;
 }
 
-.filter{
+.filterBox{
 	float:left;
 	display:block;
+	margin-top: -40px;
 	margin-left:30px;
 	margin-bottom:30px;
 	border-style: solid;
 	border-color: #FAFBF6;
 	border-width: 2px;
-	height: 70px;
+	height: 50px;
 	width: 931px;
 }
 
@@ -380,11 +389,10 @@ textarea{
 	font-family: 'trashim_clmbold','arial';
 }
 
-.PlacesPic{
-	display:inline;
-	position:absolute;
+
+.place{
 	float:right;
-	margin-top:200px;
+	margin-top:130px;
 	margin-right:39px;
 	height: 260px;
 	width:294px;

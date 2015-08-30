@@ -15,13 +15,15 @@
 	<body>	 
 		
 		<script type="text/html" id='filterList'>
-			<select onchange="onChangeFilter()">
+			<select id="filterType" onchange="onChangeFilter()">
+				<div class="filter"></div>
 				
-				<option value="0">סנן לפי סוג</option>
-				<% _.each(items,function(item,key,list){ 
-		            // create more variables
-		        %>
-		        <option value="<%= item.id %>"><%= item.get("name") %></option>
+					<option value="0">סנן לפי סוג</option>
+					<% _.each(items,function(item,key,list){ 
+			            // create more variables
+			        %>
+			        </div>
+			      <option value="<%= item.id %>"><%= item.get("name") %></option>
 				
 		        <% }); %>
 			</select>
@@ -29,7 +31,7 @@
           </script>
 		
 		<script type="text/html" id='filterMusicList'>
-			<select onchange="onChangeFilter()">
+			<select id="filterType" onchange="onChangeFilter()">
 				
 				<option value="0">סנן לפי מוסיקה</option>
 				<% _.each(items,function(item,key,list){ 
@@ -47,19 +49,24 @@
         -->
 
 		<script type="text/html" id='placesList'>
+			
+			
 			<% _.each(items,function(item,key,list){ 
 	            // create more variables
 	        %>
-			<div class="place">
-                <!-- Here you have the class of a place. item is a class that represant the row in the database from parse.com
-                    That means that each column from the table Place will be here in `item.get("name")` or item.get("description")
-
-                 -->
-				<h3><%= item.get("name") %></h3>
-                <img class="placePic" src="<%= item.imageUrl %>"/>
-			</div>
-			
-	        <% }); %>
+	
+				<div class="place">
+	                <!-- Here you have the class of a place. item is a class that represant the row in the database from parse.com
+	                    That means that each column from the table Place will be here in `item.get("name")` or item.get("description")
+	
+	                 -->
+	                 
+					<h3><%= item.get("name") %></h3>
+	                <img class="placePic" src="<%= item.imageUrl %>"/>
+				</div>
+			 
+		        <% }); %>
+	       
 			
           </script>
 
@@ -78,7 +85,7 @@
 			 		<span></span>
 		 		</nav>
 			 <main>
-			 	<div class="filter">
+			 	<div class="filterBox">
 				 	<div id="filterTarget"></div>
 				 	<div id="filterMusicTarget"></div>	
 					<div id="target"></div>
