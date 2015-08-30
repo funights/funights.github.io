@@ -14,7 +14,7 @@
 	<body>	 
 		
 		<script type="text/html" id='filterList'>
-			<select id="filterType" onchange="onChangeFilter()">
+			<select onchange="onChangeFilter()">
 				
 				<option value="0">סנן לפי סוג</option>
 				<% _.each(items,function(item,key,list){ 
@@ -28,7 +28,7 @@
           </script>
 		
 		<script type="text/html" id='filterMusicList'>
-			<select id="filterType" onchange="onChangeFilter()">
+			<select onchange="onChangeFilter()">
 				
 				<option value="0">סנן לפי מוסיקה</option>
 				<% _.each(items,function(item,key,list){ 
@@ -47,6 +47,7 @@
 	        %>
 			<div class="place">
 				<h1><%= item.get("name") %></h1>
+                <img src="<%= item.imageUrl %>"/>
 			</div>
 			
 	        <% }); %>

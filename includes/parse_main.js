@@ -27,6 +27,11 @@ $(document).on(
 	    		var place = res[i];
 	    		var dis = calcDistance(place.get("address_geo").latitude, place.get("address_geo").longitude);
 	    		place.dis = dis;
+                if (place.get("placePic")){
+                    place.imageUrl = place.get("placePic").url()
+                } else {
+                    place.imageUrl = ""
+                }
 	    		console.log(place.get("name") + " " + dis);
 			}
 			// sotring the places by distance
