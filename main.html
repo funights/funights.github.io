@@ -9,12 +9,13 @@
 		<!-- <script src="FuNights/includes/dragAndDrop.js"></script> -->
 		<script src="includes/main.js"></script>
 		<link rel="stylesheet" href="includes/style.css">
+		<link rel="stylesheet" href="includes/navBar.css">
 		<link rel="stylesheet" href="includes/funights.css">
 	</head>
 	<body>	 
 		
 		<script type="text/html" id='filterList'>
-			<select id="filterType" onchange="onChangeFilter()">
+			<select onchange="onChangeFilter()">
 				
 				<option value="0">סנן לפי סוג</option>
 				<% _.each(items,function(item,key,list){ 
@@ -28,7 +29,7 @@
           </script>
 		
 		<script type="text/html" id='filterMusicList'>
-			<select id="filterType" onchange="onChangeFilter()">
+			<select onchange="onChangeFilter()">
 				
 				<option value="0">סנן לפי מוסיקה</option>
 				<% _.each(items,function(item,key,list){ 
@@ -40,14 +41,22 @@
 			</select>
 
           </script>
-		
+
+        <!-- This is the place list that you need to work on
+             Every change on places should be here
+        -->
+
 		<script type="text/html" id='placesList'>
 			<% _.each(items,function(item,key,list){ 
 	            // create more variables
 	        %>
 			<div class="place">
-				<h1><%= item.get("name") %></h1>
-				<img src="<%= item.imageUrl %>"/>
+                <!-- Here you have the class of a place. item is a class that represant the row in the database from parse.com
+                    That means that each column from the table Place will be here in `item.get("name")` or item.get("description")
+
+                 -->
+				<h3><%= item.get("name") %></h3>
+                <img class="placeImage" src="<%= item.imageUrl %>"/>
 			</div>
 			
 	        <% }); %>
@@ -58,33 +67,42 @@
 			<header> 
 				<a id="logo" href="#"> </a>
  			</header>		
-		 	<nav class="navColor">
-		 		<div id="menu">
-			 		<ul>	
-						<li><a class="aNav" href="#">קרובים קרובים</a></li>
-						<li><a class="aNav" href="stylelist.html">Specials</a></li>
-						<li><a class="aNav" href="#">העמוד שלי</a></li>
-						<li><a class="aNav" href="form.html">הוספת מקום</a></li>
-						<li><a class="aNav" href="abouts.html">קצת עלינו..</a></li>
-			 		</ul>
+		 		<nav id="cssmenu">
+					<ul>
+					   <li class='active'><a href='#'><span>קרובים קרובים</span></a></li>
+					   <li><a href='add.php'><span>הוסף מקום</span></a></li>
+					   <li><a href='#'><span>Specials</span></a></li>
+					    <li><a href='#'><span>העמוד שלי</span></a></li>
+					   <li class='last'><span></span><a href='#'><span>קצת עלינו</span></a></li>
+					</ul>
 			 		<span></span>
-		 		</div>
-			</nav>
+		 		</nav>
 			 <main>
-			 	<h1>קרובים קרובים</h1>
-			 	
-			 	<div id="filterTarget"></div>
-			 	<div id="filterMusicTarget"></div>
-			 	
-				<div id="target"></div>
+			 	<div class="filter">
+				 	<div id="filterTarget"></div>
+				 	<div id="filterMusicTarget"></div>	
+					<div id="target"></div>
+					<a href="#" class="myButton">שנה מיקום</a>
+				</div>
 				
+				<h1 class="pageName">קרובים קרובים</h1>
+				<div class= "covers">
+
+     		   </div>
+
 			 </main>
-		 
+			 
 			 <div class="clear"></div>
 			   <footer>
+				 	<nav>
+				 		<a class="aFooter" href="abouts.html">אודות</a>
+				 		<a class="aFooter" href="stylelist.html">StyleLists</a>
+				 		<a class="aFooter" href="#">חדשות השבוע</a>
+				 		<a class="aFooter" href="#">HOTTEST of the week </a>
+				 	</nav>
 			 </footer>
 		 </div>
-	 
+		 
  		<script src="includes/parse_main.js"></script>
 
 	</body>
