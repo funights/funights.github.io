@@ -14,7 +14,7 @@
 	<body>	 
 		
 		<script type="text/html" id='filterList'>
-			<select onchange="onChangeFilter()">
+			<select id="filterType" onchange="onChangeFilter()">
 				
 				<option value="0">סנן לפי סוג</option>
 				<% _.each(items,function(item,key,list){ 
@@ -28,7 +28,7 @@
           </script>
 		
 		<script type="text/html" id='filterMusicList'>
-			<select onchange="onChangeFilter()">
+			<select id="filterType" onchange="onChangeFilter()">
 				
 				<option value="0">סנן לפי מוסיקה</option>
 				<% _.each(items,function(item,key,list){ 
@@ -47,7 +47,7 @@
 	        %>
 			<div class="place">
 				<h1><%= item.get("name") %></h1>
-                <img src="<%= item.imageUrl %>"/>
+				<img src="<%= item.imageUrl %>"/>
 			</div>
 			
 	        <% }); %>
@@ -79,18 +79,12 @@
 				<div id="target"></div>
 				
 			 </main>
-			 
+		 
 			 <div class="clear"></div>
 			   <footer>
-				 	<nav>
-				 		<a class="aFooter" href="abouts.html">אודות</a>
-				 		<a class="aFooter" href="stylelist.html">StyleLists</a>
-				 		<a class="aFooter" href="#">חדשות השבוע</a>
-				 		<a class="aFooter" href="#">HOTTEST of the week </a>
-				 	</nav>
 			 </footer>
 		 </div>
-		 
+	 
  		<script src="includes/parse_main.js"></script>
 
 	</body>
