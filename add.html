@@ -9,7 +9,6 @@
 		<script src="includes/main.js"></script>
 		<script src="includes/add.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?signed_in=true&libraries=places&callback=initAutocomplete" async defer></script>
-
 		<link rel="stylesheet" href="includes/style.css">
 		<link rel="stylesheet" href="includes/navBar.css">
 		<link rel="stylesheet" href="includes/funights.css">
@@ -40,7 +39,6 @@
 		            // create more variables
 		        %>
 		        <option value="<%= item.id %>"><%= item.get("genere") %></option>
-				
 		        <% }); %>
 			</select>
 
@@ -52,26 +50,26 @@
  			</header>		
 		 	<nav id="cssmenu">
 					<ul>
-					   <li class='active'><a href='main.html'><span>קרובים קרובים</span></a></li>
-					   <li><a href='add.html'><span>הוסף מקום</span></a></li>
+					   <li><a href='main.html'><span>קרובים קרובים</span></a></li>
+					   <li class='active'><a href='add.html'><span>הוסף מקום</span></a></li>
 					   <li><a href='#'><span>Specials</span></a></li>
-					    <li><a href='#'><span>העמוד שלי</span></a></li>
+					   <li><a href='#'><span>העמוד שלי</span></a></li>
 					   <li class='last'><span></span><a href='#'><span>קצת עלינו</span></a></li>
 					</ul>
 			 		<span></span>
 		 		</nav>
 			<main>
-				<h1 id="newsInStyle">הוסף מקום</h1>
-				<section class="formAdd">
+				<h1 class="pageName">הוסף מקום</h1>
+				<section class="placeForm">
 					<form id="add-place" method="post">
-						<p><label class="category">שם המקום:	</label><input id="placeName" type="text"   name="placeName"	value="" required></p><br>
-						<p><label class="category">סגנון בילוי:	</label><div id="placeType"></div></p><br>
-						<p><label class="category">סגנון מוזיקה: </label><div id="musicGenere"></div></p><br>
-						<p><label class="category">כתובת:		</label><input id="autocomplete" placeholder="בחר כתובת " onFocus="geolocate()" type="text" required></input></p><br>
-						<p><label class="category">תיאור:		</label><input id="description" type="text"   name="description"		value="" required></p><br>
-						<p><label class="category">תמונה:		</label><input id="profilePhotoFileUpload" type="file"   name="image"		value="" required></p><br>
-						
-						<p><input type="submit" name="btn" class="btn-send-style" value="עדכן"></label></p>
+						<p><label class="categoryP">שם המקום:	</label><input id="placeName" type="text"   name="placeName"	value="" required></p><br>
+						<p><label class="categoryP">סגנון בילוי:	</label><div id="placeType"></div></p><br>
+						<p><label class="categoryP">סגנון מוזיקה:</label><div id="musicGenere" class="formFilter"></div></p><br>
+						<p><label class="categoryP">כתובת:	</label><input id="autocomplete" class="formFilter" placeholder="בחר כתובת " onFocus="geolocate()" type="text" required></input></p>
+						<p><label class="categoryP">תיאור:	</label><textarea id="i3" name="description" rows="5" cols="20"></textarea></p>
+						<!--<p><label class="categoryP">תמונה:	</label><input id="profilePhotoFileUpload" type="file"   name="image"		value="" required></p><br></br>-->
+						<p><label class="photoUp" "categoryP">תמונה:</label><input id="upload" type="file" name="image" required=""></div>
+						<p><input type="submit" name="btn" class="btn-send-style" value="+הוסף"></label></p>
 					</form>
 					
 					<!-- <form id="fileupload" name="fileupload" enctype="multipart/form-data" method="post">
@@ -81,11 +79,13 @@
 					  </fieldset>
 					</form> -->
 				</section>
-				
-				<DIV id="status">Drag the files from a folder to a selected area ...</DIV>
+		<!--		
+				<DIV id="status"></DIV>
  				<DIV id="drop">Drop files here.</DIV>
   				<DIV id="list"></DIV>
-				
-			 </main>
+  			-->
+  				
+  			</main>
+		</div>
 	</body>
 </html>
