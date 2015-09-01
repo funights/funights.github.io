@@ -89,6 +89,9 @@ var savedPosition;
 
 Number.prototype.toRad = function() { return this * (Math.PI / 180); };
 function calcDistance(lat2, lon2){
+    if (!savedPosition){
+        return 0;
+    }
 	var lat1 = savedPosition.coords.latitude;
 	var lon1 = savedPosition.coords.longitude;
 	var R = 6371; // km
@@ -109,8 +112,29 @@ function savePosition(position){
 	savedPosition = position;
 }
 
-if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(savePosition);
-} else { 
-	// TODO: 
+function showError(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+            alert("User denied the request for Geolocation.");
+            break;
+        case error.POSITION_UNAVAILABLE:
+            alert("Location information is unavailable.");
+            break;
+        case error.TIMEOUT:
+            alert("The request to get user location timed out.");
+            break;
+        case error.UNKNOWN_ERROR:
+            alert("An unknown error occurred.");
+            break;
+    }
 }
+
+function getLocation(){
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(savePosition, showError);
+    } else {
+        // TODO:
+    }
+}
+
+getLocation();
