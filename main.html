@@ -48,8 +48,7 @@
         -->
 
 		<script type="text/html" id='placesList'>
-			
-			
+				
 			<% _.each(items,function(item,key,list){ 
 	            // create more variables
 	        %>
@@ -60,8 +59,9 @@
 	
 	                 -->
 	                 
-					<h3><%= item.get("name") %></h3>
-	                <img class="placePic" src="<%= item.imageUrl %>"/>
+<!--please send also an index>--><h3><%= item.get("name") %> <%=item.get("i") %></h3>
+	                <img src="<%= item.imageUrl %>"/>
+	                
 				</div>
 			 
 		        <% }); %>
@@ -91,21 +91,14 @@
 				</div>
 				
 				<h1 class="pageName">קרובים קרובים</h1>
-				<div id="target"></div>
+				<aside class="indexAside">
+					<h3>המבוקש</h3>
+				</aside>
+				<div id="target"></div><!--I want the CSS different for the first two and the rest,
+										 I don't know how to take the i of the pic coming in to use it on CSS>-->
 
 
 			 </main>
-			 
-			 <div class="clear"></div>
-			   <footer>
-				 	<nav>
-				 		<a class="aFooter" href="abouts.html">אודות</a>
-				 		<a class="aFooter" href="stylelist.html">StyleLists</a>
-				 		<a class="aFooter" href="#">חדשות השבוע</a>
-				 		<a class="aFooter" href="#">HOTTEST of the week </a>
-				 	</nav>
-			 </footer>
-		 </div>
 		 
  		<script src="includes/parse_main.js"></script>
 
