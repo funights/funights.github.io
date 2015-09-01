@@ -1,30 +1,3 @@
-window.onload = function() {
-    var fileInput = document.getElementById('upload');
-    var holder = document.getElementById('fileDisplayArea');
-
-    fileInput.addEventListener('change', function(e) {
-      // Put the rest of the demo code here.
-	  e.preventDefault();
-	
-	  var file = upload.files[0],
-      reader = new FileReader();
-	  reader.onload = function (event) {
-	    var img = new Image();
-	    img.src = event.target.result;
-	    // note: no onload required since we've got the dataurl...I think! :)
-	    if (img.width > 560) { // holder width
-	      img.width = 560;
-	    }
-	    holder.innerHTML = '';
-	    holder.appendChild(img);
-	  };
-	  reader.readAsDataURL(file);
-	
-	  return false;
-    });
-}
-
-
 var yafaKey = "obmZctGH4sM63Kcg5nSuudbe45Cy7ad7RCD1mTxP";
 
 $(function() {
@@ -76,6 +49,26 @@ function getAllMusicGeneres(onSuccess, onFail){
 	});
 }
 
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+
+function getPlace(id, onSuccess, onFail){
+	var Place = Parse.Object.extend("Place");
+	var query = new Parse.Query(Place);
+	query.get(id, {
+	  success: function(results) {
+	  	onSuccess(results);
+	  },
+	  error: function(error) {
+	  	onFail(error);
+	  }
+	});
+}
 
 function getAllPlacesTypes(onSuccess, onFail){
 	var PlaceType = Parse.Object.extend("PlaceType");

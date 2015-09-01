@@ -1,6 +1,31 @@
 var autocomplete;
 var address;
 var fileUrl;
+window.onload = function() {
+    var fileInput = document.getElementById('upload');
+    var holder = document.getElementById('fileDisplayArea');
+
+    fileInput.addEventListener('change', function(e) {
+      // Put the rest of the demo code here.
+	  e.preventDefault();
+	
+	  var file = upload.files[0],
+      reader = new FileReader();
+	  reader.onload = function (event) {
+	    var img = new Image();
+	    img.src = event.target.result;
+	    // note: no onload required since we've got the dataurl...I think! :)
+	    if (img.width > 560) { // holder width
+	      img.width = 560;
+	    }
+	    holder.innerHTML = '';
+	    holder.appendChild(img);
+	  };
+	  reader.readAsDataURL(file);
+	
+	  return false;
+    });
+}
 function initAutocomplete() {
   // Create the autocomplete object, restricting the search to geographical
   // location types.
@@ -115,7 +140,7 @@ $(document).on(
 			var musicGenere = $("#musicGenere option:selected").val();
 
 
-			var fileUploadControl = $("#profilePhotoFileUpload")[0];
+			var fileUploadControl = $("#upload")[0];
 			if (!fileUploadControl.files || fileUploadControl.files == 0){
 				alert("Please upload a file");
 				return;
@@ -144,6 +169,7 @@ $(document).on(
 		        newPlace.save(data, {
 		                //if successful
 		                success: function(parseObj) {
+		                		window.location.assign("placePage.html?id=" + parseObj.id);
 		                    }
 		                ,
 		                error: function(parseObj, error) {

@@ -13,7 +13,7 @@ function getPlacesSuccess(res){
 	}
 	// sotring the places by distance
 	res.sort(function(a,b){return a.dis - b.dis});
-	// take the first 3 places
+	// take the first 5 places
 	var closePlaces = res.slice(0, 5);
 	var template = $("#placesList").html();
 	var compiled = _.template(template);
