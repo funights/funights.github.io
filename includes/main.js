@@ -1,3 +1,13 @@
+window.onload = function() {
+    var fileInput = document.getElementById('upload');
+    var fileDisplayArea = document.getElementById('fileDisplayArea');
+
+    fileInput.addEventListener('change', function(e) {
+      // Put the rest of the demo code here.
+      alert( "okk" );
+    });
+}
+
 
 var yafaKey = "obmZctGH4sM63Kcg5nSuudbe45Cy7ad7RCD1mTxP";
 
@@ -118,7 +128,7 @@ function showError(error) {
             alert("User denied the request for Geolocation.");
             break;
         case error.POSITION_UNAVAILABLE:
-            alert("Location information is unavailable.");
+           // alert("Location information is unavailable.");
             break;
         case error.TIMEOUT:
             alert("The request to get user location timed out.");

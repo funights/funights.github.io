@@ -119,15 +119,18 @@ h3{
 #target{
 	width:670px;
 	float:right;
+	margin-top:38px;
 }
 
-footer
-{
-	margin-top: 20px;		
-	width:1000px;
-	text-align: center;
-	background-image: url("../images/hot.png");
-}
+
+select {
+    -webkit-appearance: none;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    outline: none;
+}	
+
 
 /*
 
@@ -387,14 +390,23 @@ input{
 }
 
 
-.place{
+#target > div {
 	float:right;
-	margin-top:50px;
-	margin-right:39px;
+	margin: 2%;
 	height: 260px;
-	width:294px;
+	width:46%;
+	overflow: hidden;
 }
 
+#target > div:nth-child(3),
+#target > div:nth-child(4),
+#target > div:nth-child(5) {
+	width: 29%;
+} 
+
+#target img {
+	width: 100%;
+}
 	/*
 	.indexPlacesPic3, .indexPlacesPic4, .indexPlacesPic5{
 		display:block;
@@ -536,12 +548,36 @@ input{
 	margin-right: 30px;
 }
 
+.placeForm select{
+	background: #FFFFFF;
+	color: #000000;
+
+}
 .placeForm input{
 	padding: 5px;
 	background: #FFFFFF; 
 	-webkit-border-radius: 5px;
 	border-radius: 5px; 
 	margin-right:100px;
+
+}
+
+.placeForm input,
+.placeForm select,
+.placeForm textarea{
+	width: 175px;
+    box-sizing: border-box;
+    margin-right:0;
+}
+
+.placeForm textarea{
+	height:100px;
+	width:158px;
+	padding: 5px;
+	margin-top:5px;
+	background: #FFFFFF; 
+	-webkit-border-radius: 5px;
+	border-radius: 5px; 
 }
 
 .placeForm p{
@@ -550,29 +586,13 @@ input{
 
 .formFilter{
 	display: block;
-	position: absolute;
 	float:right;
-	margin-right:100px;
 	margin-top:-5px;
 }
 
-textarea{
-	height:100px;
-	width:158px;
-	padding: 5px;
-	margin-top:5px;
-	background: #FFFFFF; 
-	-webkit-border-radius: 5px;
-	border-radius: 5px; 
-	margin-right:100px;
-}
-
 .categoryP{
-	position: absolute;
 	float: right;
 	width: 100px;
-	margin-left: 50px;
-	margin-top:100px:
 }
 
 #autocomplete{

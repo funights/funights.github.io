@@ -19,7 +19,7 @@
 			<select class="fil" id="placeSelect" required>
 				<div class="filter"></div>
 				
-					<option value="">סנן לפי סוג</option>
+					<option value="">▼ סנן לפי סוג</option>
 					<% _.each(items,function(item,key,list){ 
 			            // create more variables
 			        %>
@@ -34,7 +34,7 @@
 		<script type="text/html" id='musicGenereList'>
 			<select class="fil" id="musicSelect" required>
 				
-				<option value="">סנן לפי מוסיקה</option>
+				<option value="">▼ סנן לפי מוסיקה</option>
 				<% _.each(items,function(item,key,list){ 
 		            // create more variables
 		        %>
@@ -68,7 +68,7 @@
 						<p><label class="categoryP">כתובת:	</label><input id="autocomplete" class="formFilter" placeholder="בחר כתובת " onFocus="geolocate()" type="text" required></input></p><br>
 						<p><label class="categoryP">תיאור:	</label><textarea id="i3" name="description" rows="5" cols="20"></textarea></p>
 						<!--<p><label class="categoryP">תמונה:	</label><input id="profilePhotoFileUpload" type="file"   name="image"		value="" required></p><br></br>-->
-						<p><label class="photoUp" "categoryP">תמונה:</label><input id="upload" type="file" name="image" required=""></div>
+						<p><label class="photoUp" "categoryP">תמונה:</label><input id="upload" type="file" name="image" required=""><div id="fileDisplayArea"></div></div>
 						<p><input type="submit" name="btn" class="addBtn" value="+הוסף"></label></p>
 					</form>
 					
