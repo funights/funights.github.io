@@ -62,14 +62,17 @@
 				<h1 class="pageName">הוסף מקום</h1>
 				<section class="placeForm">
 					<form id="add-place" method="post">
-						<p><label class="categoryP">שם המקום:	</label><input id="placeName" type="text"   name="placeName"	value="" required></p>
-						<p><label class="categoryP">סגנון בילוי:	</label><div   id="placeType" class="formFilter">                          	</div></p><br>
-						<p><label class="categoryP">סגנון מוזיקה:</label><div id="musicGenere" class="formFilter"></div></p><br>
-						<p><label class="categoryP">כתובת:	</label><input id="autocomplete" class="formFilter" placeholder="בחר כתובת " onFocus="geolocate()" type="text" required></input></p><br>
-						<p><label class="categoryP">תיאור:	</label><textarea id="i3" name="description" rows="5" cols="20"></textarea></p>
-						<!--<p><label class="categoryP">תמונה:	</label><input id="profilePhotoFileUpload" type="file"   name="image"		value="" required></p><br></br>-->
-						<p><label class="photoUp" "categoryP">תמונה:</label><input id="upload" type="file" name="image" required=""><div id="fileDisplayArea"></div></div>
-						<p><input type="submit" name="btn" class="addBtn" value="+הוסף"></label></p>
+						<div class= "rightSideForm">
+							<div><label class="categoryP">שם המקום:	</label><input id="placeName" type="text"   name="placeName"	value="" required></div>
+							<div><label class="categoryP">סגנון בילוי:	</label><div   id="placeType" class="formFilter"></div></div><br>
+							<div><label class="categoryP">סגנון מוזיקה:</label><div id="musicGenere" class="formFilter"></div></div><br>
+							<div><label class="categoryP">כתובת:	</label><input id="autocomplete" class="formFilter" placeholder="בחר כתובת " onFocus="geolocate()" type="text" required></input></div><br>
+						</div>
+						<div class= "leftSideForm">
+							<div><label class="categoryP">תיאור:	</label><textarea id="i3" name="description" rows="5" cols="20"></textarea></div>
+							<div><label class="categoryP">תמונה:</label><input id="upload" type="file" name="image" required=""><div id="fileDisplayArea"></div></div>
+							<div><label class="categoryP">&nbsp;</label><input type="submit" name="btn" class="addBtn" value="+הוסף"></div>
+						</div>
 					</form>
 					
 					<!-- <form id="fileupload" name="fileupload" enctype="multipart/form-data" method="post">
