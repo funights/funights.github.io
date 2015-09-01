@@ -392,17 +392,19 @@ input{
 
 #target > div {
 	float:right;
-	margin: 2%;
+	margin: 24px;
 	height: 260px;
-	width:46%;
+	width:310px;
 	overflow: hidden;
+	margin-left: 0;
 }
 
 #target > div:nth-child(3),
 #target > div:nth-child(4),
 #target > div:nth-child(5) {
-	width: 29%;
+	width: 198px;
 } 
+
 
 #target img {
 	width: 100%;
