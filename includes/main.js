@@ -156,4 +156,22 @@ function getLocation(){
     }
 }
 
+// Here we run a very simple test of the Graph API after login is
+// successful.  See statusChangeCallback() for when this call is made.
+function testAPI() {
+	FB.api('/me', function(response) {
+	  Parse.User.current().save({
+	    displayName: response.name
+	  },
+	  {
+	    success: function(gameTurnAgain) {
+		    window.location.assign("main.html");
+	        // update ui
+	    },
+	    error: function(gameTurnAgain, error) {
+	        // update ui
+	        }
+	      });
+  });
+}
 getLocation();
