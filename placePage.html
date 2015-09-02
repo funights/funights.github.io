@@ -23,16 +23,13 @@
 				
 	
 			<div class="placeprivate">
-                
-                 
+                    
 				<h1 class="placeTitle"><%= item.get("name") %> </h1>
-                <img src="<%= item.imageUrl %>"/>
-                
+                <img src="<%= item.imageUrl %>"/>  
+                <%= item.get("name") %>
                 
 			</div>
-		 
-	       
-			
+		
           </script>
 
 		<div id="wrapper"> 
@@ -52,7 +49,19 @@
 			 <main>
 			 	
 				
-				<div id="placeTarget"></div>
+				<div id="placeTarget">
+					<h1 id="placePageName"></h1>
+					<h3 id="placePageType"></h3>
+					<p id="description"></p>
+					<div id="placePagePic"></div>
+					<div id="tags"></div>
+					<select class="fil" id="chooseTag">
+						<option> בחר תגית ▼</option>
+					</select>
+					<input onclick="checkIn()">
+					<div><label class="categoryP">תמונה:</label><input id="upload" type="file" name="image" required><div id="fileDisplayArea"></div></div>
+					<div><label class="categoryP">&nbsp;</label><input onclick="addPlacePic()" type="submit" name="btn" class="addBtn" value="+הוסף"></div>
+				</div>
 			
 
 			 </main>
