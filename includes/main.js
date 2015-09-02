@@ -32,6 +32,8 @@ $(function() {
   }(document, 'script', 'facebook-jssdk'));      
 
 
+	$("location").on("click", getLocation);
+
 	
 });
 
@@ -162,10 +164,13 @@ function getLocation(){
 function testAPI() {
 	FB.api('/me', function(response) {
 	  Parse.User.current().save({
-	    displayName: response.name
+	    displayName: response.name,
+	    facebookId: response.id
+	    
 	  },
 	  {
 	    success: function(gameTurnAgain) {
+	    	setCookie('userid', Parse.User.current().id, 100);
 		    window.location.assign("main.html");
 	        // update ui
 	    },

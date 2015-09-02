@@ -13,12 +13,6 @@
 	</head>
 	<body>	 
 		
-			<!-- MICHAL AND LITAL, here you have the place page template. you can design it how ever you want.
-                	to use the values of from the table you need to do
-                	<%= item.get(COLUMN_NAME) %>
-                	for example:
-                	<%= item.get("name") %> 
-                	-->
 		<script type="text/html" id='myPageId'>
 				
 	
@@ -26,6 +20,7 @@
                 
                  
 				<h1 class="myName"><%= item.get("displayName") %> </h1>
+				<img src='http://graph.facebook.com/<%= item.get("facebookId")=>/picture?type=normal'/>
                 
                 
 			</div>
