@@ -13,6 +13,27 @@
 	</head>
 	<body>	 
 		
+			<!-- MICHAL AND LITAL, here you have the place page template. you can design it how ever you want.
+                	to use the values of from the table you need to do
+                	<%= item.get(COLUMN_NAME) %>
+                	for example:
+                	<%= item.get("name") %> 
+                	-->
+		<script type="text/html" id='myPageId'>
+				
+	
+			<div class="placeprivate">
+                
+                 
+				<h1 class="myName"><%= item.get("displayName") %> </h1>
+                
+                
+			</div>
+		 
+	       
+			
+          </script>
+
 		<div id="wrapper"> 
 			<header> 
 				<a id="logo" href="main.html"> </a>
@@ -22,7 +43,7 @@
 					   <li><a href='main.html'><span>קרובים קרובים</span></a></li>
 					   <li><a href='add.html'><span>הוסף מקום</span></a></li>
 					   <li><a href='#'><span>Specials</span></a></li>
-					   <li><a href='myPage.html'><span>העמוד שלי</span></a></li>
+					   <li><a href='#'><span>העמוד שלי</span></a></li>
 					   <li class="last"><span></span><a href='#'><span>קצת עלינו</span></a></li>
 					</ul>
 			 		<span></span>
@@ -30,12 +51,12 @@
 			 <main>
 			 	
 				
-				privacy
+				<div id="myPageTarget"></div>
 			
 
 			 </main>
 		 
- 		<script src="includes/parse_main.js"></script>
+		 	<script src="includes/mypage.js"></script>
 
 	</body>
 </html>
