@@ -57,6 +57,10 @@
 $(document).on(
     'fbload',  //  <---- HERE'S OUR CUSTOM EVENT BEING LISTENED FOR
     function(){
+    	var currentUser = Parse.User.current();
+    	if (currentUser){
+    		window.location.assign("main.html");
+    	}
 	    $("#fblogin").on("click", function(){
 	    	Parse.FacebookUtils.logIn(null, {
 		        success: function(user) {
