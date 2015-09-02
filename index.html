@@ -57,13 +57,26 @@
 $(document).on(
     'fbload',  //  <---- HERE'S OUR CUSTOM EVENT BEING LISTENED FOR
     function(){
-        //some code that requires the FB object
-        FB.getLoginStatus(function(response) {
-	    statusChangeCallback(response);
-	  });
+	    $("#fblogin").on("click", function(){
+	    	Parse.FacebookUtils.logIn(null, {
+		        success: function(user) {
+		            if (!user.existed()) {
+		                alert("User signed up and logged in through Facebook!");
+		            } else {
+		                alert("User logged in through Facebook!");
+		            }
+		        },
+		        error: function(user, error) {
+		            alert("User cancelled the Facebook login or did not fully authorize.");
+		        }
+		    });
+	        //some code that requires the FB object
+	        // FB.getLoginStatus(function(response) {
+		    // statusChangeCallback(response);
+		  // });
 
-    }
-);
+    });
+});
   
 
 </script>
@@ -73,6 +86,8 @@ $(document).on(
   the JavaScript SDK to present a graphical Login button that triggers
   the FB.login() function when clicked.
 -->
+
+<button id="fblogin">facebook</button>
 
 <fb:login-button scope="public_profile,email" onlogin="login();">
 </fb:login-button>

@@ -156,21 +156,6 @@ function getLocation(){
     }
 }
 
-function login(){
-	Parse.FacebookUtils.logIn(null, {
-	  success: function(user) {
-	    if (!user.existed()) {
-	      alert("User signed up and logged in through Facebook!");
-	      testAPI();
-	    } else {
-	      alert("User logged in through Facebook!");
-	    }
-	  },
-	  error: function(user, error) {
-	    alert("User cancelled the Facebook login or did not fully authorize.");
-	  }
-	});
-}
 
 // Here we run a very simple test of the Graph API after login is
 // successful.  See statusChangeCallback() for when this call is made.
