@@ -26,6 +26,7 @@ window.onload = function() {
 	  return false;
     });
 }
+
 function initAutocomplete() {
   // Create the autocomplete object, restricting the search to geographical
   // location types.
@@ -139,7 +140,6 @@ $(document).on(
 			var placeType = $("#placeType option:selected").val();
 			var musicGenere = $("#musicGenere option:selected").val();
 
-
 			var fileUploadControl = $("#upload")[0];
 			if (!fileUploadControl.files || fileUploadControl.files == 0){
 				alert("Please upload a file");
@@ -162,7 +162,7 @@ $(document).on(
 		            type: placeType,
 		            musicGenere: musicGenere,
 		            address: $("#autocomplete").val(),
-		           	description: $("#description").val(),
+		           	description: $("#placeDescription").val(),
 		           	address_geo: geoPoint,
 		           	placePic: parseFile
 		        };

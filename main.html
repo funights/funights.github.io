@@ -53,18 +53,12 @@
 	            // create more variables
 	        %>
 	
-				<div class="place">
-	                <!-- Here you have the class of a place. item is a class that represant the row in the database from parse.com
-	                    That means that each column from the table Place will be here in `item.get("name")` or item.get("description")
-	
-	                 -->
-	                 
-<!--please send also an index>--><h3><%= item.get("name") %> <%=item.get("i") %></h3>
-	                <a href='placePage.html?id=<%= item.id%>'><img src="<%= item.imageUrl %>"/></a>'
-	                
-				</div>
-			 
-		        <% }); %>
+			<div class="place">
+				<h3><%= item.get("name") %> <%=item.get("i") %></h3>
+                <a href='placePage.html?id=<%= item.id%>'><img src="<%= item.imageUrl %>"/></a>
+			</div>
+		 
+	        <% }); %>
 	       
 			
           </script>
@@ -94,8 +88,7 @@
 				<aside class="indexAside">
 					<h3>המבוקש</h3>
 				</aside>
-				<div id="target"></div><!--I want the CSS different for the first two and the rest,
-										 I don't know how to take the i of the pic coming in to use it on CSS>-->
+				<div id="target"></div>
 			 </main>
 		 
  		<script src="includes/parse_main.js"></script>

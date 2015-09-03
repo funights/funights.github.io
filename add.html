@@ -11,7 +11,7 @@
 		<script src="https://maps.googleapis.com/maps/api/js?signed_in=true&libraries=places&callback=initAutocomplete" async defer></script>
 		<link rel="stylesheet" href="includes/style.css">
 		<link rel="stylesheet" href="includes/navBar.css">
-		<link rel="stylesheet" href="includes/funights.css">
+		
 	</head>
 	<body>	 
 		
@@ -69,7 +69,7 @@
 							<div><label class="categoryP">כתובת:	</label><input id="autocomplete" class="formFilter" placeholder="בחר כתובת " onFocus="geolocate()" type="text" required></input></div><br>
 						</div>
 						<div class= "leftSideForm">
-							<div><label class="categoryP">תיאור:	</label><textarea id="i3" name="description" rows="5" cols="20" required></textarea></div>
+							<div><label class="categoryP">תיאור:	</label><textarea id="placeDescription" name="description" rows="5" cols="20" required></textarea></div>
 							<div><label class="categoryP">תמונה:</label><input id="upload" type="file" name="image" required><div id="fileDisplayArea"></div></div>
 							<div><label class="categoryP">&nbsp;</label><input type="submit" name="btn" class="addBtn" value="+הוסף"></div>
 						</div>
@@ -82,12 +82,7 @@
 					  </fieldset>
 					</form> -->
 				</section>
-		<!--		
-				<DIV id="status"></DIV>
- 				<DIV id="drop">Drop files here.</DIV>
-  				<DIV id="list"></DIV>
-  			-->
-  				
+		
   			</main>
 		</div>
 	</body>

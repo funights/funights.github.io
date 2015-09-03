@@ -21,6 +21,16 @@ function init(){
 	var query = new Parse.Query(Place);
 	query.get(place.id, {
 	  success: function(place) {
+		fillPlaceContent(place);
+	  },
+	  error: function(object, error) {
+	    // The object was not retrieved successfully.
+	    // error is a Parse.Error with an error code and message.
+	  }
+	});
+}
+
+function fillPlaceContent(){
   		$("#placePageName").html(place.get("name"));
 	   	$("#description").html(place.get("description"));
 	   	var imageDiv = $("#placePagePic");
@@ -29,12 +39,6 @@ function init(){
 	   	imageDiv.append(image);
 	   	getTags(place);
 	   	setType(place.get("type"));
-	  },
-	  error: function(object, error) {
-	    // The object was not retrieved successfully.
-	    // error is a Parse.Error with an error code and message.
-	  }
-	});
 }
 
 function setType(typeId){
