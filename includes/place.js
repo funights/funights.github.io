@@ -1,18 +1,59 @@
 var place;
+var user;
 
 $(document).on(
 	'parseload',  //  <---- HERE'S OUR CUSTOM EVENT BEING LISTENED FOR
 	function(res){
+		var query = new Parse.Query(Parse.User);
+		var userId = getCookie("userid");
+		query.get(userId, {
+			success: function(cUser){
+				user = cUser;
+			}
+		});
+		
         getPlace(getParameterByName("id"), function(res){
         	// take the first 5 places
 			var template = $("#placePageId").html();
 			var compiled = _.template(template);
 			place = res;
+			getComments();
 			init();
+
 			//$("#placeTarget").html(compiled({item:res}));
 	        }, function(error){
 	        	//error
 	        });
+	        
+	    //some code that requires the parse object
+		$('#add-comment').submit(function(e) {
+	        //on form submit
+	        e.preventDefault();
+	        var Comment = Parse.Object.extend('Comment');
+	        var newComment = new Comment();
+			  // The file has been saved to Parse.
+			  
+			  //match the key values from the form, to your parse class, then save it
+			  var data = {
+	            comment: $("#commentInput").val(),
+	            user: user,
+	            place: place
+	        };
+	        newComment.save(data, {
+	                //if successful
+	                success: function(parseObj) {
+	                		alert("success");
+	                		$("#commentInput").val("");
+	                		getComments();
+	                    }
+	                ,
+	                error: function(parseObj, error) {
+	                    console.log(parseObj);
+	                    console.log(error);
+	                }
+	            }
+	        );
+	     });
 });
 
 function init(){
@@ -85,11 +126,11 @@ function checkIn(){
 	var CheckIn = Parse.Object.extend('CheckIn');
 	var newCheckIn = new CheckIn();
 	var data = {
-        userId: getCookie("userId"),
-        placeId: getParameterByName("id"),
+        user: user,
+        place: place,
         when: new Date(),
     };
-    if (!data.userId || !data.placeId){
+    if (!user || !place){
     	alert("missing user id or place id");
     	return;
     }
@@ -131,4 +172,30 @@ function addToSelectTags(name){
 	var selectMenu = $('#chooseTag');
 	var option = $('<option value='+ name +'>'+ name +'</option>');
 	selectMenu.append(option);
+}
+
+function getComments(){
+	var Comment = Parse.Object.extend('Comment');
+	var query = new Parse.Query(Comment);
+	query.include("user");
+	query.include("place");
+	query.equalTo("place", place);
+	query.descending("createdAt");
+	query.limit(10);
+	query.find({
+	  success: function(results) {
+	  	fillComments(results);
+	  },
+	  error: function(error) {
+	    // alert("Error: " + error.code + " " + error.message);
+	  }
+	});
+}
+
+function fillComments(res){
+	for (var i=0; i < res.length; i++) {
+	  var commentObj = res[i];
+	  var when = commentObj.createdAt.format("dd/m/yy HH:MM");
+	  $("#comments").append("<div>" + commentObj.get("user").get("displayName")  +"<span> - "+ when + "</span>"+ "</div>" + "<div>"+ commentObj.get("comment")+ "</div>");
+	};
 }

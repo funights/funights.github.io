@@ -25,7 +25,7 @@ window.onload = function() {
 	
 	  return false;
     });
-};
+}
 
 function initAutocomplete() {
   // Create the autocomplete object, restricting the search to geographical
@@ -123,8 +123,6 @@ $(document).on(
 			alert(error.message);
 		});
 		
-		var Place = Parse.Object.extend('Place');
-		
 	    //some code that requires the parse object
 		$('#add-place').submit(function(e) {
 	        //on form submit
@@ -152,6 +150,7 @@ $(document).on(
   			
 	
 	        //create new Parse object
+	        var Place = Parse.Object.extend('Place');
 	        var newPlace = new Place();
 			parseFile.save().then(function() {
 			  // The file has been saved to Parse.
