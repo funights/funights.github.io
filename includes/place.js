@@ -82,7 +82,29 @@ function getTags(place){
 }
 
 function checkIn(){
-	
+	var CheckIn = Parse.Object.extend('CheckIn');
+	var newCheckIn = new CheckIn();
+	var data = {
+        userId: getCookie("userId"),
+        placeId: getParameterByName("id"),
+        when: new Date(),
+    };
+    if (!data.userId || !data.placeId){
+    	alert("missing user id or place id");
+    	return;
+    }
+    newCheckIn.save(data, {
+            //if successful
+            success: function(parseObj) {
+            	alert("success");
+                }
+            ,
+            error: function(parseObj, error) {
+                console.log(parseObj);
+                console.log(error);
+            }
+        }
+    );
 }
 
 function addPlacePic(){

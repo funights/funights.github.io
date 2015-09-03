@@ -25,7 +25,7 @@ window.onload = function() {
 	
 	  return false;
     });
-}
+};
 
 function initAutocomplete() {
   // Create the autocomplete object, restricting the search to geographical
