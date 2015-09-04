@@ -314,17 +314,17 @@ input{
 	text-align: center;
  }
 
-.indexAside{
-	float:left;
-	display:block;
-	margin-left:30px;
-	margin-top:70px;
-	border-style: solid;
-	border-color: #FAFBF6;
-	font-family: 'trashim_clmbold',Arial;
-	border-width: 5px;
-	height: 490px;
-	width: 250px;
+.indexAside {
+    float: left;
+    display: block;
+    margin-left: 30px;
+    margin-top: 82px;
+    border-style: solid;
+    border-color: #FAFBF6;
+    font-family: 'trashim_clmbold',Arial;
+    border-width: 5px;
+    height: 475px;
+    width: 250px;
 }
 
 .indexAside h3{

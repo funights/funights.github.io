@@ -137,12 +137,17 @@ $(document).on(
 	        var geoPoint = new Parse.GeoPoint({ latitude: placeObj.geometry.location.lat(), longitude: placeObj.geometry.location.lng() });
 			var placeType = $("#placeType option:selected").val();
 			var musicGenere = $("#musicGenere option:selected").val();
+			
+			
+			
+
 
 			var fileUploadControl = $("#upload")[0];
 			if (!fileUploadControl.files || fileUploadControl.files == 0){
 				alert("Please upload a file");
 				return;
 			}
+
 			var file = fileUploadControl.files[0];
 			var name = "photo.jpg";
 
@@ -165,6 +170,7 @@ $(document).on(
 		           	address_geo: geoPoint,
 		           	placePic: parseFile
 		        };
+		        
 		        newPlace.save(data, {
 		                //if successful
 		                success: function(parseObj) {
