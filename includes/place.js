@@ -96,27 +96,29 @@ function setType(typeId){
 }
 
 function getTags(place){
+	$( "#tags" ).html("");
+	$( "#chooseTag" ).html( "<option value=''>בחר תגית</option>");
+	
 	var Tag = Parse.Object.extend("Tag");
 	var query = new Parse.Query(Tag);
 	query.find({
-	  success: function(results) {
+	  success: function(allTags) {
+	  	var addRows    = {};
 	  	if(place.get("tags")){
-		  	for (var i=0; i < place.get("tags").length ; i++){
-		 	 	for (var j=0; j<results.length; j++){
-		 	 		if (results[j].get("objectID") === place.get("tags")[i])
-		 	 			addToTagsList(results[j].get("name"));
-		 	 		else 
-		 	 			addToSelectTags(results[j].get("name"));
-	 	 		}
-		  	}
-	  	} else{
-	  		for(var i=0 ; i< results.length; i++)
-	  			addToSelectTags(results[i].get("name"));
+	  		var tags = place.get("tags");
+
+		  	for (var i=0; i < tags.length ; i++)
+		 	 	addRows[tags[i]] = tags[i];
+		  	
+		  	for (var i=0; i < allTags.length ; i++) {
+		  		var isSelected = (typeof( addRows[allTags[i].id] ) != "undefined");
+	 	 		if ( isSelected )
+	 	 			addToTagsList( allTags[i].get("name") , allTags[i].id );
+	 	 		else 
+	 	 			addToSelectTags(allTags[i].get("name"), allTags[i].id);
+ 	 		}
 	  	}
-	  },
-	  error: function(error) {
-    alert("Error: " + error.code + " " + error.message); 
-  }
+	  }
 });
 	
 }
@@ -151,25 +153,60 @@ function addPlacePic(){
 	
 }
 
-function addToTagsList(name){
+function addToTagsList(name, id){
 	var tagsDiv = $("#tags");
-	var newDiv = $('<div id='+ name +' class="tagsClass"></div>');
-	var a= $('<a onclick=removeTag(' + name + ')></a>');
-	a.html(name);
-	newDiv.append(a);
+	var newDiv  = $('<div class="tagsClass"></div>');
+	var a       = $('<a onclick="removeTag(this)" data-id="'+id+'"></a>');
+	var span    = $('<span></span>');
+	span   .html(name);
+	a      .html("-");
+	newDiv .append(a);
+	newDiv .append(span);
 	tagsDiv.append(newDiv);
 }
 
-function removeTag(name){
-	$('#'+name).remove();
-	//remove from parse list
-	place.remove('tags', name);
-	place.save();	
+function removeTag(a_obj){
+
+	removeFromParseList();
+	removeObject();
+	refreshTags();
+	
+	function removeFromParseList() {
+		var tags = place.get( "tags" );
+		var id   = a_obj.dataset["id"];
+		for( var i = 0; i < tags.length; i++ )
+			if( tags[i] == id )
+				tags.splice( i, 1 );
+		place.set( "tags", tags );
+		place.save();	
+	}
+	
+	function removeObject() {
+		a_obj.parentNode.remove();
+	}
+	
+	function refreshTags() {
+		getTags(place);
+	}
 }
 
-function addToSelectTags(name){
+function addTag( selObj ){
+	if( selObj.selectedIndex == 0 ) return;
+	
+	var selOption = selObj.options[selObj.selectedIndex];
+	var tags      = place.get( "tags" );
+	var id        = selOption.dataset["id"];
+
+	tags[ tags.length ] = id;
+	place.set( "tags", tags );
+	place.save();	
+	getTags(place);
+
+}
+
+function addToSelectTags(name, id ){
 	var selectMenu = $('#chooseTag');
-	var option = $('<option value='+ name +'>'+ name +'</option>');
+	var option = $('<option data-id="'+id+'">'+ name +'</option>');
 	selectMenu.append(option);
 }
 
