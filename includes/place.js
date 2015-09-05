@@ -103,13 +103,13 @@ function getTags(place){
 	  	if(place.get("tags")){
 		  	for (var i=0; i < place.get("tags").length ; i++){
 		 	 	for (var j=0; j<results.length; j++){
-		 	 		if (results[j].get("name") === place.get("tags")[i])
+		 	 		if (results[j].get("objectID") === place.get("tags")[i])
 		 	 			addToTagsList(results[j].get("name"));
 		 	 		else 
 		 	 			addToSelectTags(results[j].get("name"));
 	 	 		}
 		  	}
-	  	}else{
+	  	} else{
 	  		for(var i=0 ; i< results.length; i++)
 	  			addToSelectTags(results[i].get("name"));
 	  	}
