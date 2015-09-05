@@ -339,5 +339,5 @@ Date.prototype.format = function (mask, utc) {
     return dateFormat(this, mask, utc);
 };
 
-setCookie("userid", "pokcMsJgsd", 1000); //TODO: only for now
+// setCookie("userid", "pokcMsJgsd", 1000); //TODO: only for now
 getLocation();

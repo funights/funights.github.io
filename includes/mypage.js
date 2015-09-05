@@ -24,6 +24,7 @@ function getCheckins(){
 	query.include("user");
 	query.include("place");
 	query.equalTo("user", user);
+	query.descending("createdAt");
 	query.limit(5);
 	query.find({
 	  success: function(results) {
