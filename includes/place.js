@@ -45,8 +45,7 @@ $(document).on(
 	                		alert("success");
 	                		$("#commentInput").val("");
 	                		getComments();
-	                    }
-	                ,
+	                    },
 	                error: function(parseObj, error) {
 	                    console.log(parseObj);
 	                    console.log(error);
@@ -137,7 +136,7 @@ function checkIn(){
     newCheckIn.save(data, {
             //if successful
             success: function(parseObj) {
-            	alert("success");
+            	alert("תהנה! הרווחת עוד 20 נקודות");
                 }
             ,
             error: function(parseObj, error) {
