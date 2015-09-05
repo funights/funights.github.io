@@ -366,11 +366,15 @@ input{
 }
 
 .tagsClass{
-	float:right;
-	height:200px;
-	width:300px;
-	background-color:#0086B3
-	color:#FFFFFF;
+    float: right;
+    height: 12px;
+    width: 120px;
+    margin: 15px;
+    text-align: center;
+}
+
+.tagsClass a{
+	display:inline;
 }
 
 .placeForm input,

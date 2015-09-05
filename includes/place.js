@@ -10,7 +10,7 @@ window.onload = function() {
       // Put the rest of the demo code here.
 	  e.preventDefault();
 	
-	  var file = upload.files[0],
+	  var file = upload.files[0]
       reader = new FileReader();
 	  reader.onload = function (event) {
 	    var img = new Image();
@@ -66,10 +66,7 @@ function setImageForm() {
 			                    console.log(error);
 			                }
 	        } );
-		});
-		
-
-		
+		});	
 	} );
 }
 
@@ -227,11 +224,11 @@ function checkIn(){
 
 function addToTagsList(name, id){
 	var tagsDiv = $("#tags");
-	var newDiv  = $('<div class="tagsClass"></div>');
+	var newDiv  = $('<div class="tagsClass" id="'+id+'"></div>');
 	var a       = $('<a onclick="removeTag(this)" data-id="'+id+'"></a>');
 	var span    = $('<span></span>');
 	span   .html(name);
-	a      .html("-");
+	a      .html(" (-) ");
 	newDiv .append(a);
 	newDiv .append(span);
 	tagsDiv.append(newDiv);
