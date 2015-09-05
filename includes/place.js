@@ -1,6 +1,78 @@
 var place;
 var user;
 
+window.onload = function() {
+	setImageForm();
+    var fileInput = document.getElementById('upload');
+    var holder    = document.getElementById('fileDisplayArea');
+
+    fileInput.addEventListener('change', function(e) {
+      // Put the rest of the demo code here.
+	  e.preventDefault();
+	
+	  var file = upload.files[0],
+      reader = new FileReader();
+	  reader.onload = function (event) {
+	    var img = new Image();
+	    img.src = event.target.result;
+	    // note: no onload required since we've got the dataurl...I think! :)
+	    if (img.width > 560) { // holder width
+	      img.width = 560;
+	    }
+	    holder.innerHTML = '';
+	    holder.appendChild(img);
+	  };
+	  reader.readAsDataURL(file);
+	
+	  return false;
+    });
+}
+
+function setImageForm() {
+	$('#add-image').submit( function(e) {
+        //on form submit
+        e.preventDefault();
+        
+        //create new Parse object
+        var PlaceImage    = Parse.Object.extend('PlaceImage');
+        var newPlaceImage = new PlaceImage();
+        
+    	var fileUploadControl = $("#upload")[0];
+		var file              = fileUploadControl.files[0];
+		var unixTime          = (new Date().getTime());
+		var ext               = file.name.split(".");
+		var ext               = ext[ext.length-1];
+		var name              = unixTime+"."+ext;
+
+		var parseFile     = new Parse.File(name, file);
+        
+		parseFile.save().then(function() {
+		  // The file has been saved to Parse.
+		  
+		  //match the key values from the form, to your parse class, then save it
+			  var data = {
+	            place:    place,
+	           	placePic: parseFile
+	        };
+	        
+			newPlaceImage.save(data, {
+			                //if successful
+			                success: function(parseObj) {
+			                		setImages();
+			                    }
+			                ,
+			                error: function(parseObj, error) {
+			                    console.log(parseObj);
+			                    console.log(error);
+			                }
+	        } );
+		});
+		
+
+		
+	} );
+}
+
 $(document).on(
 	'parseload',  //  <---- HERE'S OUR CUSTOM EVENT BEING LISTENED FOR
 	function(res){
@@ -72,13 +144,17 @@ function init(){
 
 function fillPlaceContent(){
   		$("#placePageName").html(place.get("name"));
-	   	$("#description").html(place.get("description"));
-	   	var imageDiv = $("#placePagePic");
-	   	var url = place.get("placePic").url();
-	   	var image = $("<img src="+ url + ">");
-	   	imageDiv.append(image);
+	   	$("#description"  ).html(place.get("description"));
 	   	getTags(place);
 	   	setType(place.get("type"));
+	   	setImages();
+}
+
+function setImages() {
+   	var imageDiv = $("#placePagePic");
+   	var url = place.get("placePic").url();
+   	var image = $("<img src="+ url + ">");
+   	imageDiv.append(image);
 }
 
 function setType(typeId){
@@ -119,8 +195,7 @@ function getTags(place){
  	 		}
 	  	}
 	  }
-});
-	
+	});
 }
 
 function checkIn(){
@@ -149,9 +224,6 @@ function checkIn(){
     );
 }
 
-function addPlacePic(){
-	
-}
 
 function addToTagsList(name, id){
 	var tagsDiv = $("#tags");

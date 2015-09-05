@@ -2,8 +2,9 @@ var autocomplete;
 var address;
 var fileUrl;
 window.onload = function() {
+	initAutocomplete();
     var fileInput = document.getElementById('upload');
-    var holder = document.getElementById('fileDisplayArea');
+    var holder    = document.getElementById('fileDisplayArea');
 
     fileInput.addEventListener('change', function(e) {
       // Put the rest of the demo code here.
@@ -134,13 +135,9 @@ $(document).on(
 	        	alert("Please choose location from list");
 	        	return;
 	        }
-	        var geoPoint = new Parse.GeoPoint({ latitude: placeObj.geometry.location.lat(), longitude: placeObj.geometry.location.lng() });
-			var placeType = $("#placeType option:selected").val();
+	        var geoPoint    = new Parse.GeoPoint({ latitude: placeObj.geometry.location.lat(), longitude: placeObj.geometry.location.lng() });
+			var placeType   = $("#placeType option:selected").val();
 			var musicGenere = $("#musicGenere option:selected").val();
-			
-			
-			
-
 
 			var fileUploadControl = $("#upload")[0];
 			if (!fileUploadControl.files || fileUploadControl.files == 0){
@@ -148,8 +145,11 @@ $(document).on(
 				return;
 			}
 
-			var file = fileUploadControl.files[0];
-			var name = "photo.jpg";
+			var file     = fileUploadControl.files[0];
+			var unixTime = (new Date().getTime());
+			var ext      = file.name.split(".");
+			var ext      = ext[ext.length-1];
+			var name     = unixTime+"."+ext;
 
   			var parseFile = new Parse.File(name, file);
   			
@@ -192,4 +192,3 @@ $(document).on(
 });
 
 
-initAutocomplete();
