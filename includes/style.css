@@ -279,16 +279,7 @@ input{
 #target img {
 	width:100%;
 }
-	/*
-	.indexPlacesPic3, .indexPlacesPic4, .indexPlacesPic5{
-		display:block;
-		float:right;
-		margin-right:30px;
-		margin-top:25px;
-		height: 182px;
-		width:216px;
-	}
-	*/
+
 
 #placesList{
 	float:left;
@@ -485,7 +476,7 @@ input.addBtn {
 #placeTarget{
 	color: #FFFFFF;
 	float:right;
-	width:100%;
+	width:800px;
 }
 
 #placePageName{
@@ -531,11 +522,11 @@ input.addBtn {
 
 .checkInBTN {
     float: left;
-     margin-top: 40px;
+    margin-top: 100px;
     margin-left: 86px;
-    background-image: url('/images/checkin.jpg');
-    height: 35px;
-    width: 103px;
+    background-image: url(../images/checkin.jpg);
+    height: 30px;
+    width: 100px;
 }
 
 .clear

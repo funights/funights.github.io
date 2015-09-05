@@ -130,7 +130,7 @@ function checkIn(){
         when: new Date(),
     };
     if (!user || !place){
-    	alert("missing user id or place id");
+    	alert("missing user id place id");
     	return;
     }
     newCheckIn.save(data, {
