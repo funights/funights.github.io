@@ -177,20 +177,20 @@ function getTags(place){
 	query.find({
 	  success: function(allTags) {
 	  	var addRows    = {};
-	  	if(place.get("tags")){
-	  		var tags = place.get("tags");
-
-		  	for (var i=0; i < tags.length ; i++)
+  		var tags = place.get("tags");
+		if(place.get("tags") != undefined){
+		  	for (var i=0; i < allTags.length ; i++)
 		 	 	addRows[tags[i]] = tags[i];
+		 	 }
 		  	
-		  	for (var i=0; i < allTags.length ; i++) {
-		  		var isSelected = (typeof( addRows[allTags[i].id] ) != "undefined");
-	 	 		if ( isSelected )
-	 	 			addToTagsList( allTags[i].get("name") , allTags[i].id );
-	 	 		else 
-	 	 			addToSelectTags(allTags[i].get("name"), allTags[i].id);
- 	 		}
-	  	}
+	  	for (var i=0; i < allTags.length ; i++) {
+	  		var isSelected = (typeof( addRows[allTags[i].id] ) != undefined);
+ 	 		if ( isSelected )
+ 	 				addToSelectTags(allTags[i].get("name"), allTags[i].id);
+ 	 		else 
+ 					addToTagsList( allTags[i].get("name") , allTags[i].id );
+ 		}
+	  	
 	  }
 	});
 }
@@ -228,7 +228,7 @@ function addToTagsList(name, id){
 	var a       = $('<a onclick="removeTag(this)" data-id="'+id+'"></a>');
 	var span    = $('<span></span>');
 	span   .html(name);
-	a      .html(" (-) ");
+	a      .html("   (-)");
 	newDiv .append(a);
 	newDiv .append(span);
 	tagsDiv.append(newDiv);
