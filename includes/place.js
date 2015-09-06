@@ -265,6 +265,8 @@ function addTag( selObj ){
 	var selOption = selObj.options[selObj.selectedIndex];
 	var tags      = place.get( "tags" );
 	var id        = selOption.dataset["id"];
+	if ( tags == null)
+		tags = Array();
 
 	tags[ tags.length ] = id;
 	place.set( "tags", tags );
