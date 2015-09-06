@@ -179,7 +179,7 @@ function getTags(place){
 	  	var addRows    = {};
   		var tags = place.get("tags");
   		
-		if(place.get("tags") != undefined){
+		if (tags != undefined){
 		  	for (var i=0; i < allTags.length ; i++)
 		 	 	addRows[tags[i]] = tags[i];
 		 	 }
