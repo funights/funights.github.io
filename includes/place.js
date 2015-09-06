@@ -178,11 +178,12 @@ function getTags(place){
 	  success: function(allTags) {
 	  	var addRows    = {};
   		var tags = place.get("tags");
+  		
 		if(place.get("tags") != undefined){
 		  	for (var i=0; i < allTags.length ; i++)
 		 	 	addRows[tags[i]] = tags[i];
 		 	 }
-		  	
+		 	  	 
 	  	for (var i=0; i < allTags.length ; i++) {
 	  		var isSelected = (typeof( addRows[allTags[i].id] ) != undefined);
  	 		if ( isSelected )
@@ -190,7 +191,6 @@ function getTags(place){
  	 		else 
  					addToTagsList( allTags[i].get("name") , allTags[i].id );
  		}
-	  	
 	  }
 	});
 }
@@ -211,8 +211,7 @@ function checkIn(){
             //if successful
             success: function(parseObj) {
             	alert("תהנה! הרווחת עוד 20 נקודות");
-                }
-            ,
+                },
             error: function(parseObj, error) {
                 console.log(parseObj);
                 console.log(error);
@@ -278,6 +277,7 @@ function addTag( selObj ){
 function addToSelectTags(name, id ){
 	var selectMenu = $('#chooseTag');
 	var option = $('<option data-id="'+id+'">'+ name +'</option>');
+	
 	selectMenu.append(option);
 }
 

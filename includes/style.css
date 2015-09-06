@@ -128,9 +128,7 @@ input{
 	margin-top: -40px;
 	margin-left:30px;
 	margin-bottom:30px;
-	border-style: solid;
 	border-color: #FAFBF6;
-	border-width: 2px;
 	height: 50px;
 	width: 931px;
 }
@@ -313,7 +311,7 @@ input{
     border-style: solid;
     border-color: #FAFBF6;
     font-family: 'trashim_clmbold',Arial;
-    border-width: 5px;
+    border-width: 1px;
     height: 475px;
     width: 250px;
 }
