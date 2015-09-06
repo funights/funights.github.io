@@ -180,7 +180,7 @@ function getTags(place){
   		var tags = place.get("tags");
   		
 		if (tags != undefined){
-		  	for (var i=0; i < allTags.length ; i++)
+		  	for (var i=0; i < tags.length ; i++)
 		 	 	addRows[tags[i]] = tags[i];
 		 	 }
 		 	  	 
