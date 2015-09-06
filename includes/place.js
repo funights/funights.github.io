@@ -170,7 +170,7 @@ function setType(typeId){
 
 function getTags(place){
 	$( "#tags" ).html("");
-	$( "#chooseTag" ).html( "<option value=''>בחר תגית ▼</option>");
+	$( "#chooseTag" ).html( "<option value=''>הוסף תגית לתיאור מקום  ▼</option>");
 	
 	var Tag = Parse.Object.extend("Tag");
 	var query = new Parse.Query(Tag);

@@ -127,8 +127,8 @@
 	top:1px;
 }
 
-/* לא מעשנים*/
- {
+/* עמוס*/
+#QuyA0rDRTB{
 	-moz-box-shadow:inset 0px 1px 0px 0px #e184f3;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #e184f3;
 	box-shadow:inset 0px 1px 0px 0px #e184f3;
@@ -154,7 +154,7 @@
 	text-decoration:none;
 	text-shadow:0px 1px 0px #9b14b3;
 }
-.myButton:hover {
+#QuyA0rDRTB:hover {
 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #a20dbd), color-stop(1, #c123de));
 	background:-moz-linear-gradient(top, #a20dbd 5%, #c123de 100%);
 	background:-webkit-linear-gradient(top, #a20dbd 5%, #c123de 100%);
@@ -164,14 +164,14 @@
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#a20dbd', endColorstr='#c123de',GradientType=0);
 	background-color:#a20dbd;
 }
-.myButton:active {
+#QuyA0rDRTB:active {
 	position:relative;
 	top:1px;
 }
 
-/**/
+/*צפוף*/
 
-#3ly7QMzbIh {
+ #KW4r8lcFjW{
 	box-shadow:inset 0px 1px 0px 0px #fbafe3;
 	background:linear-gradient(to bottom, #ff5bb0 5%, #ef027d 100%);
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bb0', endColorstr='#ef027d',GradientType=0);
@@ -190,39 +190,22 @@
 	text-decoration:none;
 	text-shadow:0px 1px 0px #c70067;
 }
-.myButton:hover {
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ef027d), color-stop(1, #ff5bb0));
-	background:-moz-linear-gradient(top, #ef027d 5%, #ff5bb0 100%);
-	background:-webkit-linear-gradient(top, #ef027d 5%, #ff5bb0 100%);
-	background:-o-linear-gradient(top, #ef027d 5%, #ff5bb0 100%);
-	background:-ms-linear-gradient(top, #ef027d 5%, #ff5bb0 100%);
+
+#KW4r8lcFjW:hover {
 	background:linear-gradient(to bottom, #ef027d 5%, #ff5bb0 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ef027d', endColorstr='#ff5bb0',GradientType=0);
 	background-color:#ef027d;
 }
-.myButton:active {
+
+#KW4r8lcFjW:active {
 	position:relative;
 	top:1px;
 }
 
---------------------------------------------------------------------------------------------------------------------------------------------
-
-<a href="#" class="myButton">red</a>
-
-.myButton {
-	-moz-box-shadow:inset 0px 1px 0px 0px #f5978e;
-	-webkit-box-shadow:inset 0px 1px 0px 0px #f5978e;
+/*רגוע*/
+#jwAiaEAYmH {
 	box-shadow:inset 0px 1px 0px 0px #f5978e;
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f24537), color-stop(1, #c62d1f));
-	background:-moz-linear-gradient(top, #f24537 5%, #c62d1f 100%);
-	background:-webkit-linear-gradient(top, #f24537 5%, #c62d1f 100%);
-	background:-o-linear-gradient(top, #f24537 5%, #c62d1f 100%);
-	background:-ms-linear-gradient(top, #f24537 5%, #c62d1f 100%);
 	background:linear-gradient(to bottom, #f24537 5%, #c62d1f 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f24537', endColorstr='#c62d1f',GradientType=0);
 	background-color:#f24537;
-	-moz-border-radius:6px;
-	-webkit-border-radius:6px;
 	border-radius:6px;
 	border:1px solid #d02718;
 	display:inline-block;
@@ -235,40 +218,23 @@
 	text-decoration:none;
 	text-shadow:0px 1px 0px #810e05;
 }
-.myButton:hover {
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #f24537));
-	background:-moz-linear-gradient(top, #c62d1f 5%, #f24537 100%);
-	background:-webkit-linear-gradient(top, #c62d1f 5%, #f24537 100%);
-	background:-o-linear-gradient(top, #c62d1f 5%, #f24537 100%);
-	background:-ms-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+
+#jwAiaEAYmH:hover {
 	background:linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62d1f', endColorstr='#f24537',GradientType=0);
 	background-color:#c62d1f;
 }
-.myButton:active {
+
+#jwAiaEAYmH:active {
 	position:relative;
 	top:1px;
 }
 
 
-----------------------------------------------------------------------------------------------------------------------------------------------
-
-<a href="#" class="myButton">blue</a>
-
-.myButton {
-	-moz-box-shadow:inset 0px 1px 0px 0px #97c4fe;
-	-webkit-box-shadow:inset 0px 1px 0px 0px #97c4fe;
+/* לא מעשנים*/
+#VV8VJ41YEZ {
 	box-shadow:inset 0px 1px 0px 0px #97c4fe;
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #3d94f6), color-stop(1, #1e62d0));
-	background:-moz-linear-gradient(top, #3d94f6 5%, #1e62d0 100%);
-	background:-webkit-linear-gradient(top, #3d94f6 5%, #1e62d0 100%);
-	background:-o-linear-gradient(top, #3d94f6 5%, #1e62d0 100%);
-	background:-ms-linear-gradient(top, #3d94f6 5%, #1e62d0 100%);
 	background:linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#3d94f6', endColorstr='#1e62d0',GradientType=0);
 	background-color:#3d94f6;
-	-moz-border-radius:6px;
-	-webkit-border-radius:6px;
 	border-radius:6px;
 	border:1px solid #337fed;
 	display:inline-block;
@@ -281,17 +247,13 @@
 	text-decoration:none;
 	text-shadow:0px 1px 0px #1570cd;
 }
-.myButton:hover {
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #1e62d0), color-stop(1, #3d94f6));
-	background:-moz-linear-gradient(top, #1e62d0 5%, #3d94f6 100%);
-	background:-webkit-linear-gradient(top, #1e62d0 5%, #3d94f6 100%);
-	background:-o-linear-gradient(top, #1e62d0 5%, #3d94f6 100%);
-	background:-ms-linear-gradient(top, #1e62d0 5%, #3d94f6 100%);
+
+#VV8VJ41YEZ:hover {
 	background:linear-gradient(to bottom, #1e62d0 5%, #3d94f6 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e62d0', endColorstr='#3d94f6',GradientType=0);
 	background-color:#1e62d0;
 }
-.myButton:active {
+
+#VV8VJ41YEZ:active {
 	position:relative;
 	top:1px;
 }
