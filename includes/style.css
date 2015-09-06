@@ -44,23 +44,6 @@ a{
 	margin-top:10px;
 }
 
-/*aside{
-	float:left;
-	position: fixed;
-	top: 300px;
-	width:50px;
-	right:20px;
-}
-
-@media (max-width: 1170px) 
-{
-    aside
-    {
-        display: none;
-    }
-}
-*/
-
 #wrapper{
  direction: rtl;
  margin: 0px auto;
@@ -302,7 +285,7 @@ input{
     border-color: #FAFBF6;
     font-family: 'trashim_clmbold',Arial;
     border-width: 1px;
-    height: 475px;
+    height: 482px;
     width: 250px;
 }
 
