@@ -185,7 +185,7 @@ function getTags(place){
 		 	 }
 		 	  	 
 	  	for (var i=0; i < allTags.length ; i++) {
-	  		var isSelected = (addRows[allTags[i].id] != undefined);
+	  		var isSelected = (addRows[allTags[i].id] == undefined);
  	 		if ( isSelected )
  	 				addToSelectTags(allTags[i].get("name"), allTags[i].id);
  	 		else 
