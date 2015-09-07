@@ -475,6 +475,12 @@ input.addBtn {
 	display: inline-block;
 }
 
+.place {
+    width: 150px;
+    height: 170px;
+    overflow: hidden;
+}
+
 #placePagePic{
 	margin-right:30px;
 	margin-top:30px;
@@ -482,9 +488,6 @@ input.addBtn {
 	width: 260px;
 }
 
-#placePagePic{
-	width 100%;
-}
 
 #description{
     position: absolute;
