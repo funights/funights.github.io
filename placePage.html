@@ -23,6 +23,16 @@
 		}(document, 'script', 'facebook-jssdk'));
 		</script>
 		
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=405245006352397";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+		</script>
+		
 			<!-- MICHAL AND LITAL, here you have the place page template. you can design it how ever you want.
                 	to use the values of from the table you need to do
                 	<%= item.get(COLUMN_NAME) %>
@@ -42,7 +52,6 @@
 			</div>
 		-->
     
-     
 		<div id="wrapper"> 
 			<header> 
 				<a id="logo" href="main.html"> </a>
@@ -61,16 +70,7 @@
 				<div id="placeTarget">
 					<h1 id="placePageName"></h1>
 					<h3 id="placePageType"></h3>
-					<div><input onclick="checkIn()" type="submit" name="btn" class="checkInBTN" value=" I'm Here "></div>
-
-					<fieldset id="rating">
-					    <legend>דרג:</legend>
-					    <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Rocks!">5 stars</label>
-					    <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good">4 stars</label>
-					    <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Meh">3 stars</label>
-					    <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
-					    <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>
-					</fieldset>
+				
 					
 					<div id="placePagePic"></div>
 					<p id="description"></p>
@@ -82,6 +82,22 @@
 					<div id="tags"></div>
 				</div>
 				
+				
+				<div id"placeLeft">
+					<div class="fb-like" data-href="http://funights.github.io/placePage.html" data-width="200px" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+					<div><input onclick="checkIn()" type="submit" name="btn" class="checkInBTN" value=" I'm Here "></div>
+
+					<fieldset id="rating">
+					    <legend>דרג:</legend>
+					    <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Rocks!">5 stars</label>
+					    <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good">4 stars</label>
+					    <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Meh">3 stars</label>
+					    <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
+					    <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>
+					</fieldset>
+					
+				</div>
+					
 				<!--
 				<div id="commentArea">
 					<form id="add-comment" method="post">
@@ -94,8 +110,8 @@
 				</div>
 				-->
 				
-				<!--<div class="fb-comments" data-href="http://funights.github.io/placePage.html" data-width="800" data-numposts="7" data-colorscheme = "light"></div>			
--->
+				<div class="fb-comments" data-href="http://funights.github.io/placePage.html" data-width="800" data-numposts="10" data-mobile = "1"></div>			
+
 			 </main>
 		 
 		 	<script src="includes/place.js"></script>

@@ -459,10 +459,14 @@ input.addBtn {
 
 /* Place Page */
 
+#placeLeft{
+	float:left;
+}
+
 #placeTarget{
 	color: #FFFFFF;
 	float:right;
-	width:100%;
+	width:700px;
 }
 
 #placePageName{
@@ -516,7 +520,7 @@ input.addBtn {
 
 .checkInBTN {
 	float: left;
-    margin: 0 0 0 68px;
+    margin: 45px 0 0 68px;
 	font-family: 'DJB Jenna', Arial;
 	font-weight:800;
 	background-color: #DB9A02;
@@ -549,7 +553,7 @@ input.addBtn {
 #rating {
     float:left;
     border:none;
-    margin: 80px 0 0 -90px;
+    margin: 120px 0 0 -90px;
 }
 
 #rating legend{
@@ -607,9 +611,13 @@ input.addBtn {
     left:2px;
 }
 
+.fb-like{
+	float:left;
+	margin: 70px 0 0 68px;
+}
 
 .clear{
- clear:both;
+ 	clear:both;
 }
 
 /*
