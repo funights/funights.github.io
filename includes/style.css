@@ -616,10 +616,20 @@ input.addBtn {
     left:2px;
 }
 
+.currentRating{
+	float:left;
+	margin: 11px 0 0 159px;
+	color:#DB9A02;
+	font-size:15px;
+	font-family: 'trashim_clmbold', Arial;
+}
+
 .fb-like{
 	float:left;
 	margin: 70px 0 0 68px;
 }
+
+
 
 .clear{
  	clear:both;
