@@ -2,6 +2,7 @@ var place;
 var user;
 var userRatingPlace;
 var wasRating = false;
+var placePictures = [];
 
 window.onload = function() {
 	setImageForm();
@@ -54,6 +55,7 @@ function setImageForm() {
 		  //match the key values from the form, to your parse class, then save it
 			  var data = {
 	            place:    place,
+	            user: user,
 	           	placePic: parseFile
 	        };
 	        
@@ -151,13 +153,49 @@ function fillPlaceContent(){
 	   	setImages();
 	   	getUserRating();
 	   	getRating();
+	   	getPlaceImages();
 }
 
 function setImages() {
    	var imageDiv = $("#placePagePic");
    	var url = place.get("placePic").url();
-   	var image = $("<img src="+ url + ">");
-   	imageDiv.append(image);
+   	var image = $("<img id='pic' src="+ url + ">");
+   	imageDiv.html(image);
+   	
+   	placePictures = [];
+   	placePictures.push(url);
+
+}
+
+var step=0;
+function slideit()
+{
+    if (step >= placePictures.length){
+    	step = 0;
+    }
+    $("#pic").attr("src", placePictures[step]);
+    step++;
+    setTimeout("slideit()", 2500);
+}
+
+function getPlaceImages(){
+	var PlaceImage = Parse.Object.extend('PlaceImage');
+	var query = new Parse.Query(PlaceImage);
+	query.include("user");
+	query.include("place");
+	query.equalTo("place", place);
+	query.equalTo("user", user);
+	query.find({
+	  success: function(results) {
+	  	for (var i=0; i < results.length; i++) {
+			placePictures.push(results[i].get("placePic").url());
+		};
+		slideit();
+	  },
+	  error: function(error) {
+	    // alert("Error: " + error.code + " " + error.message);
+	  }
+	});
 }
 
 function setType(typeId){

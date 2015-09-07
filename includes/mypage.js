@@ -40,6 +40,15 @@ function fillMyPageContent(res){
 	for (var i=0; i < res.length; i++) {
 	  var checkIn = res[i];
 	  var when = checkIn.get("when").format("dd/m/yy");
-	  $("#checkins").append("<div>" + checkIn.get("place").get("name") + "</div>" + "<div>"+ when+ "</div>");
+	  var place = checkIn.get("place");
+	  var dis = calcDistance(place.get("address_geo").latitude, place.get("address_geo").longitude);
+	  if (dis>=1){
+		  dis = dis.toFixed(2) + " km";
+	  } else{
+	  	  dis = dis.toFixed(3) * 1000 + " m";
+	  }
+	  
+	  $("#checkins").append("<div>" + checkIn.get("place").get("name") + "</div>" + "<div>"+ when+ "</div>"+"<div>distance:"+ dis+ "</div>");
+	  
 	};
 }
