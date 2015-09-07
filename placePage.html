@@ -85,15 +85,17 @@
 				
 				<div id"placeLeft">
 					<div class="fb-like" data-width="200px" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-					<div><input onclick="checkIn()" type="submit" name="btn" class="checkInBTN" value=" I'm Here "></div>
-
+					<div><input id="checkinid" onclick="checkIn()" type="submit" name="btn" class="checkInBTN" value=" I'm Here "></div>
+					
+					
+					<div id="allrating"></div>
 					<fieldset id="rating">
 					    <legend>דרג:</legend>
-					    <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Rocks!">5 stars</label>
-					    <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good">4 stars</label>
-					    <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Meh">3 stars</label>
-					    <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
-					    <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>
+					    <input type="radio" id="star5" name="rating" value="5" onclick="rate()"/><label for="star5" title="Rocks!">5 stars</label>
+					    <input type="radio" id="star4" name="rating" value="4" onclick="rate()"/><label for="star4" title="Pretty good">4 stars</label>
+					    <input type="radio" id="star3" name="rating" value="3" onclick="rate()"/><label for="star3" title="Meh">3 stars</label>
+					    <input type="radio" id="star2" name="rating" value="2" onclick="rate()"/><label for="star2" title="Kinda bad">2 stars</label>
+					    <input type="radio" id="star1" name="rating" value="1" onclick="rate()"/><label for="star1" title="Sucks big time">1 star</label>
 					</fieldset>
 					
 				</div>

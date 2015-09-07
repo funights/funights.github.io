@@ -1,5 +1,7 @@
 var place;
 var user;
+var userRatingPlace;
+var wasRating = false;
 
 window.onload = function() {
 	setImageForm();
@@ -94,6 +96,7 @@ $(document).on(
 	        	//error
 	        });
 	        
+	        
 	    //some code that requires the parse object
 		$('#add-comment').submit(function(e) {
 	        //on form submit
@@ -124,6 +127,7 @@ $(document).on(
 	     });
 });
 
+
 function init(){
 	// clear data before retrieving new
 	var Place = Parse.Object.extend("Place");
@@ -145,6 +149,8 @@ function fillPlaceContent(){
 	   	getTags(place);
 	   	setType(place.get("type"));
 	   	setImages();
+	   	getUserRating();
+	   	getRating();
 }
 
 function setImages() {
@@ -211,6 +217,8 @@ function checkIn(){
             //if successful
             success: function(parseObj) {
             	alert("תהנה! הרווחת עוד 20 נקודות");
+            	var d = document.getElementById("checkinid");
+				d.className = d.className + " pressed";
                 },
             error: function(parseObj, error) {
                 console.log(parseObj);
@@ -281,6 +289,29 @@ function addToSelectTags(name, id ){
 	selectMenu.append(option);
 }
 
+function getUserRating(){
+	var Rating = Parse.Object.extend("Rating");
+	var query = new Parse.Query(Rating);
+	console.log("user - " + user);
+	console.log("place - " + place);
+	query.include("user");
+	query.include("place");
+	query.equalTo("place", place);
+	query.equalTo("user", user);
+	query.find({
+	  success: function(res) {
+	  	if (res && res.length > 0){
+			userRatingPlace = res[0];
+			wasRating = true;
+			$("#star" + userRatingPlace.get("rating")).prop("checked", true);
+		}
+	  },
+	  error: function(error) {
+	    // alert("Error: " + error.code + " " + error.message);
+	  }
+	});
+}
+
 function getComments(){
 	var Comment = Parse.Object.extend('Comment');
 	var query = new Parse.Query(Comment);
@@ -305,4 +336,62 @@ function fillComments(res){
 	  var when = commentObj.createdAt.format("dd/m/yy HH:MM");
 	  $("#comments").append("<div>" + commentObj.get("user").get("displayName")  +"<span> - "+ when + "</span>"+ "</div>" + "<div>"+ commentObj.get("comment")+ "</div>");
 	};
+}
+
+function fillRating(result){
+	if (result) {
+		var ratingSum=0;
+		for (var i=0; i < result.length; i++) {
+		  ratingSum += result[i].get("rating");
+		};
+		$("#allrating").html((ratingSum/result.length) + " / " + result.length);
+	};
+}
+
+function getRating(){
+	var Rating = Parse.Object.extend('Rating');
+	var query = new Parse.Query(Rating);
+	query.include("user");
+	query.include("place");
+	query.equalTo("place", place);
+	query.find({
+	  success: function(results) {
+	  	fillRating(results);
+	  },
+	  error: function(error) {
+	    // alert("Error: " + error.code + " " + error.message);
+	  }
+	});
+}
+
+function rate(){
+	var ratingScore = parseInt($('#rating input[type=radio]:checked').val());
+	var Rating = Parse.Object.extend('Rating');
+	
+	if (!userRatingPlace){
+		userRatingPlace = new Rating();
+	}
+	var data = {
+        user: user,
+        place: place,
+        rating: ratingScore,
+    };
+    if (!user || !place){
+    	alert("missing user id place id");
+    	return;
+    }
+    userRatingPlace.save(data, {
+            //if successful
+            success: function(parseObj) {
+            	if (!wasRating){
+	            	alert("תהנה! הרווחת עוד 30 נקודות");
+	            	wasRating = true;
+            	}
+                },
+            error: function(parseObj, error) {
+                console.log(parseObj);
+                console.log(error);
+            }
+        }
+    );
 }

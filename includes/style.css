@@ -548,6 +548,11 @@ input.addBtn {
 	position:relative;
 	top:1px;
 }
+.checkInBTN.pressed{
+	background-color: green;
+    background: linear-gradient(to bottom, green 5%, green 100%);
+    border: 1px solid green;
+}
 
 /* Stars Rank */
 #rating {
