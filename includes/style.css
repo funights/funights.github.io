@@ -462,7 +462,7 @@ input.addBtn {
 #placeTarget{
 	color: #FFFFFF;
 	float:right;
-	width:800px;
+	width:100%;
 }
 
 #placePageName{
@@ -500,6 +500,7 @@ input.addBtn {
 #tags span{
 	padding-right: 13px;
 }
+
 #commentArea{
 	color: #FFFFFF;
 	float:right;
@@ -515,37 +516,99 @@ input.addBtn {
 
 .checkInBTN {
 	float: left;
-	margin-top: 26px;
-	font-family: 'DJB Jenna';
+    margin: 0 0 0 68px;
+	font-family: 'DJB Jenna', Arial;
+	font-weight:800;
+	background-color: #DB9A02;
 	box-shadow:inset 0px 1px 0px 0px #ffffff;
-	background:linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
-	background-color:#ededed;
 	border-radius:6px;
-	border:1px solid #dcdcdc;
+	border:1px solid #DB9A02;
 	display:inline-block;
 	cursor:pointer;
-	color:#777777;
-	font-family:Arial;
+	color:#000000;
 	font-size:15px;
 	font-weight:bold;
-	padding:6px 24px;
+	padding:6px 10px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #ffffff;
 }
 
-.ImHere:hover {
-	background:linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
-	background-color:#dfdfdf;
+
+.checkInBTN:hover {
+	background:linear-gradient(to bottom, #C48A01 5%, #C48A01 100%);
+	background-color:#C48A01;
 
 }
-.ImHere {
+
+.checkInBTN:active {
 	position:relative;
 	top:1px;
 }
 
+/* Stars Rank */
+#rating {
+    float:left;
+    border:none;
+    margin: 80px 0 0 -90px;
+}
 
-.clear
-{
+#rating legend{
+	color:#DB9A02;
+    font-size: 20px;
+    font-family: 'trashim_clmbold', Arial;
+}
+
+#rating:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+    clip:rect(0,0,0,0);
+}
+
+#rating:not(:checked) > label {
+    float:right;
+    width:1em;
+    padding-top:4px;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:200%;
+    line-height:1.2;
+    color:#ddd;
+    text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+#rating:not(:checked) > label:before {
+    content: '★ ';
+}
+
+#rating > input:checked ~ label {
+    color: #f70;
+    text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+#rating:not(:checked) > label:hover,
+#rating:not(:checked) > label:hover ~ label {
+    color: gold;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+#rating > input:checked + label:hover,
+#rating > input:checked + label:hover ~ label,
+#rating > input:checked ~ label:hover,
+#rating > input:checked ~ label:hover ~ label,
+#rating > label:hover ~ input:checked ~ label {
+    color: #ea0;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+#rating > label:active {
+    position:relative;
+    top:2px;
+    left:2px;
+}
+
+
+.clear{
  clear:both;
 }
 
