@@ -204,7 +204,7 @@ function setCookie(cname, cvalue, exdays) {
      if (user != "") {
          //stay on page
      } else {
-         window.location.href="login-url";
+         window.location.href="index.html";
      }
  }
 
@@ -339,5 +339,8 @@ Date.prototype.format = function (mask, utc) {
     return dateFormat(this, mask, utc);
 };
 
-// setCookie("userid", "pokcMsJgsd", 1000); //TODO: only for now
 getLocation();
+function logout(){
+    removeCookie();
+    window.location.assign("index.html");
+}

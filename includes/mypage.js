@@ -89,3 +89,4 @@ function fillMyPageContent(res){
 	  
 	};
 }
+checkCookie();
