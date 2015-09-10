@@ -88,10 +88,17 @@
 				 	<div id="filterMusicTarget"></div>	
 					<a href="#" class="myButton">שנה מיקום</a>
 				</div>
-				
 				<h1 class="pageName">קרובים קרובים</h1>
-				<aside class="indexAside" id="highestRanked">
+				<aside class="indexAside">
 					<h3>המבוקש</h3>
+					<h1 id="placeName"></h1>
+					<h3 id="placeType"></h3>
+					<div id="placePic" class="crop"></div>
+					<p id="asideDescription"></p>
+				</aside>
+					<select class="filterTags" id="chooseTag" onchange="addTag(this)"></select>
+					<div id="tags"></div>
+				</div>
 				</aside>
 				<div id="target" class="crop"></div>
 			 </main>

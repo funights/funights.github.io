@@ -370,11 +370,35 @@ function getHighestRating(rating){
 	  	fillRating(results)=max;
 	  	for(var i=0; i<places.length; i++){
 	  		if (max <= fillRating(results))
-	  			max=illRating(results);
+	  			max=fillRating(results);
 		  }
+		  getHighRankDetails(highRank.get(place));
 	  },
 	  error: function(error) {
 	    // alert("Error: " + error.code + " " + error.message);
 	  }
 	});
+}
+
+function getHighRankDetails(place){
+	var placeId = place;
+	query.get(placeId, {
+	  success: function(place) {
+		fillHighRankedPlaceContent(place);
+	  },
+	  error: function(object, error) {
+	    // The object was not retrieved successfully.
+	    // error is a Parse.Error with an error code and message.
+	  }
+	});
+}
+
+function fillHighRankedPlaceContent(){
+  		$("#placeName").html(place.get("name"));
+	   	$("#asideDescription"  ).html(place.get("description"));
+	   	setType(place.get("type"));
+	   	setImages();
+	   	getUserRating();
+	   	getRating();
+	   	getPlaceImages();
 }
