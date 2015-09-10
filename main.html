@@ -67,10 +67,16 @@
 			<header> 
 				<a id="logo" href="#"> </a>
 				<div id= "user">
+				<script>
+				function logout(){
+					FB.logout(function(response){
+						alert('Youe are log out');
+					});
+				}
 					
-					<button class="exit-btn"    FB.logout(function(response) {
-        // Person is now logged out
-    });>Log Out</button>
+				</script>					
+					<button class="exit-btn" onclick="logout()">Log Out</button>
+					<div class="myName"></div>
 				</div>
  			</header>		
 		 		<nav id="cssmenu">
