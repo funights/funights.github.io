@@ -1,6 +1,7 @@
 var autocomplete;
 var address;
 var fileUrl;
+var user;
 window.onload = function() {
 	initAutocomplete();
     var fileInput = document.getElementById('upload');
@@ -63,49 +64,16 @@ function geolocate() {
   }
 }
 
-// $(function() {
-    // var file;
-// 
-    // // Set an event listener on the Choose File field.
-    // $('#fileselect').bind("change", function(e) {
-      // var files = e.target.files || e.dataTransfer.files;
-      // // Our file var now holds the selected file
-      // file = files[0];
-    // });
-// 
-    // // This function is called when the user clicks on Upload to Parse. It will create the REST API request to upload this image to Parse.
-    // $('#uploadbutton').click(function() {
-      // var serverUrl = 'https://api.parse.com/1/files/' + file.name;
-// 
-      // $.ajax({
-        // type: "POST",
-        // beforeSend: function(request) {
-          // request.setRequestHeader("X-Parse-Application-Id", '3qSCOtlV3fKxHclzVynVo0D0MAskpZGQtiSezvoC');
-          // request.setRequestHeader("X-Parse-REST-API-Key", "7v0I8Oo1bSRT0lTresS6ygdYZTwdh5kg3bdx7QlT");
-          // request.setRequestHeader("Content-Type", file.type);
-        // },
-        // url: serverUrl,
-        // data: file,
-        // processData: false,
-        // contentType: false,
-        // success: function(data) {
-          // alert("File available at: " + data.url);
-          // fileUrl = data.url
-        // },
-        // error: function(data) {
-          // var obj = jQuery.parseJSON(data);
-          // alert(obj.error);
-        // }
-      // });
-    // });
-// 
-// 
-  // });
-
-
 $(document).on(
 	'parseload',  //  <---- HERE'S OUR CUSTOM EVENT BEING LISTENED FOR
 	function(){
+        var query = new Parse.Query(Parse.User);
+		var userId = getCookie("userid");
+		query.get(userId, {
+			success: function(cUser){
+				user = cUser;
+			}
+		});
 		getAllPlacesTypes(function(res){
 			var template = $("#placeTypeList").html();
 			var compiled = _.template(template);
@@ -168,7 +136,8 @@ $(document).on(
 		            address: $("#autocomplete").val(),
 		           	description: $("#placeDescription").val(),
 		           	address_geo: geoPoint,
-		           	placePic: parseFile
+		           	placePic: parseFile,
+                    userAdded: user
 		        };
 		        
 		        newPlace.save(data, {
