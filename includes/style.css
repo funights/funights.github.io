@@ -35,6 +35,15 @@ a{
 	text-decoration: none;
 }
 
+
+
+#wrapper{
+ direction: rtl;
+ margin: 0px auto;
+ width:1000px;
+ background-image: url(../images/bg2.jpg);
+}
+
 #logo{
 	float:right;
 	background-image: url(../images/logo4.png);
@@ -44,12 +53,36 @@ a{
 	margin-top:10px;
 }
 
-#wrapper{
- direction: rtl;
- margin: 0px auto;
- width:1000px;
- background-image: url(../images/bg2.jpg);
+
+.exit-btn { 
+	float:left;
+	position:static;
+	margin: 80px 0 0 30px;
+	height:30px;
+	width:100px;
+    border: none;
+    font-family: arial;
+    font-size: 10px;
+    color: #FFFFFF;
+    padding-left:10px;
+    background: none;
+    cursor: pointer;
+    display: inline-block;
+    margin: 15px 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 200;
+    outline: none;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s; 
+    margin-top: 116px;
+    background-color: #282F8A;
+    color: #fff;
+    border-radius: 7px;
+    box-shadow: 0 5px #202670;
 }
+
 
 header{
  width:1000px;
@@ -89,7 +122,7 @@ h3{
 	margin-top:38px;
 }
 
-
+/*
 select {
     -webkit-appearance: none;
     background-color: black;
@@ -103,7 +136,7 @@ select {
 input{
     vertical-align: middle;	
 }
-
+*/
 
 .filterBox{
 	float:left;
@@ -250,6 +283,11 @@ input{
 	width:100%;
 }
 
+ .crop{
+ 	height:135px;
+ 	width: 119px;
+ }
+ 
 
 #placesList{
 	float:left;
@@ -492,10 +530,9 @@ input.addBtn {
 }
 
 #pic{
-	margin-right:30px;
-	margin-top:30px;
-	height: 294px;
-	width: 260px;	
+
+	height: 240px;
+	margin(10px, 0 0 30px);
 }
 
 
@@ -527,7 +564,7 @@ input.addBtn {
 .checkInBTN {
 	float: left;
     margin: 45px 0 0 68px;
-	font-family: 'DJB Jenna', Arial;
+	font-family: 'trashim_clmbold', Arial;
 	font-weight:800;
 	background-color: #DB9A02;
 	box-shadow:inset 0px 1px 0px 0px #ffffff;
@@ -555,16 +592,15 @@ input.addBtn {
 	top:1px;
 }
 .checkInBTN.pressed{
-	background-color: green;
-    background: linear-gradient(to bottom, green 5%, green 100%);
-    border: 1px solid green;
+	background-color: #7FC44A;
+    border: none;
 }
 
 /* Stars Rank */
 #rating {
     float:left;
     border:none;
-    margin: 120px 0 0 -90px;
+    margin: 120px 0 0 -74px;
 }
 
 #rating legend{
@@ -624,11 +660,21 @@ input.addBtn {
 
 .currentRating {
     float: left;
-    margin: 10px 0 0 139px;
+    margin: -28px 0 0 139px;
     font-weight: bold;
     color: #DB9A02;
     font-size: 19px;
     font-family: 'trashim_clmbold', Arial;
+}
+
+#allrating {
+    float: left;
+    display: inline;
+    margin: 15px 0 0 47px;
+    font-weight: bold;
+    color: #FFFFFF;
+    font-size: 19px;
+    font-family: 'DJB Jenna', Arial;
 }
 
 .fb-like{
@@ -636,18 +682,13 @@ input.addBtn {
 	margin: 70px 0 0 68px;
 }
 
-.fb-comments{
-	top: 100px;
-}	
-
-chrome webkit win x1 Locale_en_US{
-	dir=rtl;
-	
+.faceStyle{
+	float:right;
+	background-color:#000000;
+	width: 800px;
 }
 
-facebook{
-	dir: rtl;
-}
+
 
 .clear{
  	clear:both;

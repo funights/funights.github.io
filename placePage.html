@@ -72,7 +72,7 @@
 					<h3 id="placePageType"></h3>
 				
 					
-					<div id="placePagePic"></div>
+					<div id="placePagePic" class="crop"></div>
 					<p id="description"></p>
 					<form method="post" id="add-image">
 						<div><label class="categoryP"></label><input id="upload" type="file" name="image" required><div id="fileDisplayArea"></div></div>
@@ -85,10 +85,9 @@
 				
 				<div id"placeLeft">
 					<div class="fb-like" data-width="200px" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-					<div><input id="checkinid" onclick="checkIn()" type="submit" name="btn" class="checkInBTN" value=" I'm Here "></div>
+					<div><input id="checkinid" onclick="checkIn()" type="submit" name="btn" class="checkInBTN" value=" אני כאן "></div>
 					
 					
-					<div id="allrating"></div>
 					<fieldset id="rating">
 					    <legend>דרג:</legend>
 					    <input type="radio" id="star5" name="rating" value="5" onclick="rate()"/><label for="star5" title="Rocks!">5 stars</label>
@@ -97,23 +96,14 @@
 					    <input type="radio" id="star2" name="rating" value="2" onclick="rate()"/><label for="star2" title="Kinda bad">2 stars</label>
 					    <input type="radio" id="star1" name="rating" value="1" onclick="rate()"/><label for="star1" title="Sucks big time">1 star</label>
 					</fieldset>
+					<div id="allrating"></div>
 					<div class="currentRating">דירוג נוכחי:</div>
 				</div>
-					
-				<!--
-				<div id="commentArea">
-					<form id="add-comment" method="post">
-					  <input id="commentInput" type="text" name="comment" required><br>
-					  <input type="submit" value="שלח">
-					</form>
-					<div id="comments">
-						
-					</div>
-				</div>
-				-->
-				
-				<div class="fb-comments" data-width="800" data-numposts="10" data-mobile = "1"></div>			
+			
 
+				<div class="faceStyle">
+					<div class="fb-comments" data-width="800" data-numposts="10" data-mobile = "1" data-colorscheme="dark"></div>			
+				</div>	
 			 </main>
 		 
 		 	<script src="includes/place.js"></script>

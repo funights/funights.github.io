@@ -173,6 +173,7 @@ function slideit()
     if (step >= placePictures.length){
     	step = 0;
     }
+    
     $("#pic").attr("src", placePictures[step]);
     step++;
     setTimeout("slideit()", 2500);
