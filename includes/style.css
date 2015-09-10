@@ -658,7 +658,7 @@ input.addBtn {
     left:2px;
 }
 
-.currentRating {
+#currentRating {
     float: left;
     margin: -28px 0 0 139px;
     font-weight: bold;
@@ -685,7 +685,7 @@ input.addBtn {
 .faceStyle{
 	float:right;
 	background-color:#000000;
-	width: 800px;
+	width: 600px;
 }
 
 

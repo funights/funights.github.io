@@ -22,37 +22,10 @@
 		  fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));
 		</script>
-		
-		<div id="fb-root"></div>
-		<script>(function(d, s, id) {
-		  var js, fjs = d.getElementsByTagName(s)[0];
-		  if (d.getElementById(id)) return;
-		  js = d.createElement(s); js.id = id;
-		  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=405245006352397";
-		  fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));
-		</script>
-		
-			<!-- MICHAL AND LITAL, here you have the place page template. you can design it how ever you want.
-                	to use the values of from the table you need to do
-                	<%= item.get(COLUMN_NAME) %>
-                	for example:
-                	<%= item.get("name") %> -->
-                	
+
 		<script type='text/html' id='placePageId'> </script>
-				
-	
-	<!-- Yuval and I have organized it in functions on the fileplace.js
-		<div class="placeprivate">
-                    
-				<h1 class="placeTitle"><%= item.get("name") %> </h1>
-                <img src="<%= item.imageUrl %>"/>  
-             	 <%= item.get("name") %>   
-                
-			</div>
-		-->
-    
-		<div id="wrapper"> 
+
+		<div id="wrapper">
 			<header> 
 				<a id="logo" href="main.html"> </a>
  			</header>		
@@ -83,7 +56,7 @@
 				</div>
 				
 				
-				<div id"placeLeft">
+				<div>
 					<div class="fb-like" data-width="200px" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
 					<div><input id="checkinid" onclick="checkIn()" type="submit" name="btn" class="checkInBTN" value=" אני כאן "></div>
 					
@@ -97,12 +70,12 @@
 					    <input type="radio" id="star1" name="rating" value="1" onclick="rate()"/><label for="star1" title="Sucks big time">1 star</label>
 					</fieldset>
 					<div id="allrating"></div>
-					<div class="currentRating">דירוג נוכחי:</div>
+					<div id="currentRating">דירוג נוכחי:</div>
 				</div>
 			
 
 				<div class="faceStyle">
-					<div class="fb-comments" data-width="800" data-numposts="10" data-mobile = "1" data-colorscheme="dark"></div>			
+					<div class="fb-comments" data-width="100%" data-numposts="10" data-mobile = "1" data-colorscheme="dark"></div>
 				</div>	
 			 </main>
 		 

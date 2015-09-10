@@ -20,3 +20,13 @@ body{
 ._5mdd{
 	color:white;
 }
+.fb-comments, .fb-comments iframe[style], .fb-comments span {
+   width: 100% !important;
+}
+.fb-page, .fb-page iframe[style], .fb-page span {
+    width: 100% !important;
+}
+.fb-comments, .fb-comments span, .fb-comments.fb_iframe_widget span iframe {
+    width: 100% !important;
+}
+.fb-comments, .fb-comments iframe[style] {width: 100% !important;}

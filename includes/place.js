@@ -378,13 +378,15 @@ function fillComments(res){
 }
 
 function fillRating(result){
-	if (result) {
+	if (result && result.length > 0) {
 		var ratingSum=0;
 		for (var i=0; i < result.length; i++) {
 		  ratingSum += result[i].get("rating");
 		};
 		$("#allrating").html((ratingSum/result.length) + " / " + result.length);
-	};
+	} else{
+        $("#currentRating").hide();
+    }
 }
 
 function getRating(){
