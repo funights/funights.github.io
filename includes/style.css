@@ -230,7 +230,6 @@ input{
 	font-family: 'trashim_clmbold','arial';
 }
 
-
 #target > div {
 	float:right;
 	margin: 24px;
@@ -492,6 +491,13 @@ input.addBtn {
 	width: 260px;
 }
 
+#pic{
+	margin-right:30px;
+	margin-top:30px;
+	height: 294px;
+	width: 260px;	
+}
+
 
 #description{
     position: absolute;
@@ -630,7 +636,18 @@ input.addBtn {
 	margin: 70px 0 0 68px;
 }
 
+.fb-comments{
+	top: 100px;
+}	
 
+chrome webkit win x1 Locale_en_US{
+	dir=rtl;
+	
+}
+
+facebook{
+	dir: rtl;
+}
 
 .clear{
  	clear:both;
