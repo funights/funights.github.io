@@ -341,10 +341,7 @@ Date.prototype.format = function (mask, utc) {
 
 getLocation();
 function logout(){
-    var currentUser = Parse.User.current();
-    if (currentUser){
-        currentUser.logOut();
-    }
+    Parse.User.logOut();
     removeCookie();
     window.location.assign("index.html");
 }
