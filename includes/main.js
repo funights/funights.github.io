@@ -345,3 +345,36 @@ function logout(){
     removeCookie();
     window.location.assign("index.html");
 }
+
+
+function fillRating(result){
+	if (result) {
+		var ratingSum=0;
+		var rating;
+		for (var i=0; i < result.length; i++) {
+		  ratingSum += result[i].get("rating");
+		};
+			rating= ((ratingSum/result.length));
+	};
+}
+
+function getHighestRating(rating){
+	var Rating = Parse.Object.extend('Rating');
+	var query = new Parse.Query(Rating);
+	var max;
+	query.include("user");
+	query.include("place");
+	query.equalTo("place", place);
+	query.find({
+	  success: function(results) {
+	  	fillRating(results)=max;
+	  	for(var i=0; i<places.length; i++){
+	  		if (max <= fillRating(results))
+	  			max=illRating(results);
+		  }
+	  },
+	  error: function(error) {
+	    // alert("Error: " + error.code + " " + error.message);
+	  }
+	});
+}
