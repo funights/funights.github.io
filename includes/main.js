@@ -341,8 +341,10 @@ Date.prototype.format = function (mask, utc) {
 
 getLocation();
 function logout(){
-    FB.logout(function(response) {
-        removeCookie();
-        window.location.assign("index.html");
-    });
+    var currentUser = Parse.User.current();
+    if (currentUser){
+        currentUser.logOut();
+    }
+    removeCookie();
+    window.location.assign("index.html");
 }
