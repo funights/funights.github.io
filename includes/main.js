@@ -341,6 +341,8 @@ Date.prototype.format = function (mask, utc) {
 
 getLocation();
 function logout(){
-    removeCookie();
-    window.location.assign("index.html");
+    FB.logout(function(response) {
+        removeCookie();
+        window.location.assign("index.html");
+    });
 }
