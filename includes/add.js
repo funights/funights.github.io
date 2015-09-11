@@ -143,22 +143,10 @@ $(document).on(
 		        newPlace.save(data, {
 		                //if successful
 		                success: function(parseObj){
-                                var userQuery = new Parse.Query(Parse.User);
-                               var userId = getCookie("userid");
-                                userQuery.get(userId, {
-                                    success: function(cUser){
-                                        cUser.set("score", cUser.get("score") + 20);
-                                        cUser.save();
-                                        alert("תהנה ! הרווחת 20 נקודות");
-                                        window.location.assign("placePage.html?id=" + parseObj.id);
-
-
-                                    },
-                                    error: function(obj, error){
-                                        console.log(obj);
-		                                console.log(error);
-                                    }
-                                });
+                               user.set("score", user.get("score") + 20);
+                                user.save();
+                                alert("תהנה ! הרווחת 20 נקודות");
+                                window.location.assign("placePage.html?id=" + parseObj.id);
 		                    }
 		                ,
 		                error: function(parseObj, error) {
