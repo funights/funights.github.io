@@ -122,22 +122,6 @@ h3{
 	margin-top:38px;
 }
 
-/*
-select {
-    -webkit-appearance: none;
-    background-color: black;
-    color: white;
-    border-radius: 5px;
-    outline: none;
-}	
-
-
-
-input{
-    vertical-align: middle;	
-}
-*/
-
 .filterBox{
 	float:left;
 	display:block;
@@ -263,6 +247,11 @@ input{
 	font-family: 'trashim_clmbold','arial';
 }
 
+.crop{
+ 	height:135px;
+ 	width: 119px;
+}
+ 
 #target > div {
 	float:right;
 	margin: 24px;
@@ -276,18 +265,13 @@ input{
 #target > div:nth-child(4),
 #target > div:nth-child(5) {
 	width: 198px;
+	height:174px;
 } 
 
 
-#target img {
+.crop img {
 	width:100%;
-}
-
- .crop{
- 	height:135px;
- 	width: 119px;
- }
- 
+} 
 
 #placesList{
 	float:left;
@@ -322,7 +306,7 @@ input{
     border-color: #FAFBF6;
     font-family: 'trashim_clmbold',Arial;
     border-width: 1px;
-    height: 482px;
+    height: 460px;
     width: 250px;
 }
 
@@ -522,15 +506,17 @@ input.addBtn {
     overflow: hidden;
 }
 
+
 #placePagePic{
 	margin-right:30px;
 	margin-top:30px;
 	height: 294px;
 	width: 260px;
+	overflow: hidden;
+	
 }
 
 #pic{
-
 	height: 240px;
 	margin(10px, 0 0 30px);
 }
