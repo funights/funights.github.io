@@ -268,15 +268,17 @@ h3{
 	height:174px;
 } 
 
-
-.crop img {
-	width:100%;
-} 
-
 #placesList{
 	float:left;
 	position: absolute;
 	top:200px;
+}
+
+.crop img {
+    display: block; /* Otherwise it keeps some space around baseline */
+    min-width: 100%;    /* Scale up to fill container width */
+    min-height: 100%;   /* Scale up to fill container height */
+    -ms-interpolation-mode: bicubic; /* Scaled images look a bit better in IE now */
 }
 
 .covers a img:hover {
