@@ -114,6 +114,7 @@ h3{
 	direction: rtl;
 	font-size: 20px;
 	font-family: 'trashim_clmbold','arial';
+	margin-bottom: 10px;
 }
 
 #target{
@@ -257,9 +258,9 @@ h3{
 	margin: 24px;
 	height: 260px;
 	width:310px;
-	overflow: hidden;
 	margin-left: 0;
 }
+
 
 #target > div:nth-child(3),
 #target > div:nth-child(4),
@@ -274,14 +275,16 @@ h3{
 	top:200px;
 }
 
-.crop img {
-    display: block; /* Otherwise it keeps some space around baseline */
-    min-width: 100%;    /* Scale up to fill container width */
-    min-height: 100%;   /* Scale up to fill container height */
-    -ms-interpolation-mode: bicubic; /* Scaled images look a bit better in IE now */
+.place {
+    width: 150px;
+    height: 170px;
+    overflow: hidden;
 }
 
-.covers a img:hover {
+.crop img{
+	width:100%;
+}
+.crop img:hover {
 	transform: scale( 1.1 );
 }
 
@@ -299,7 +302,7 @@ h3{
 	text-align: center;
  }
 
-.indexAside {
+#indexAside {
     float: left;
     display: block;
     margin-left: 30px;
@@ -312,7 +315,7 @@ h3{
     width: 250px;
 }
 
-.indexAside h3{
+#indexAside h3{
 	direction: rtl;
 	font-size: 20px;
 	width:100px;
@@ -322,6 +325,11 @@ h3{
 	margin-top: -25px;
 }
 
+#placeName{
+	color:#FFFFFF;
+	height: 40px;
+	width:200px;
+}
 
 /*add Place*/
 .placeForm{
@@ -501,13 +509,6 @@ input.addBtn {
 #placePageType{
 	display: inline-block;
 }
-
-.place {
-    width: 150px;
-    height: 170px;
-    overflow: hidden;
-}
-
 
 #placePagePic{
 	margin-right:30px;
