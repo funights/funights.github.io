@@ -127,9 +127,9 @@ function fillMyPlaces(places) {
             }
             ;
         }
-        $("#myplaces").append("<div>" + place.get("name") + "</div>");
+        $("#myplaces").append("<div id='namePlace'>" + place.get("name") + "</div>");
         $("#myplaces").append(tagsDiv);
-        $("#myplaces").append("<div>distance:" + dis + "</div>");
+        $("#myplaces").append("<div id='distancePlace'>distance:" + dis + "</div>");
     }
     ;
 }
