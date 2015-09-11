@@ -134,6 +134,7 @@ function fillMyPlaces(places) {
     ;
 }
 function fillMyPageContent(checkins, places){
+     $("#myscore").html(user.get("score"));
     fillMyPlaces(places);
     fillMyCheckins(checkins);
 }
