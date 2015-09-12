@@ -92,16 +92,15 @@ function fillMyCheckins(checkins) {
                 var span = $('<span id='+allTagsDict[tag].id+'></span>');
                 span.html(name);
                 tagsDiv.append(span);
-            }
-            ;
+            };
         }
         $("#checkins").append("<div>" + checkIn.get("place").get("name") + "</div>");
         $("#checkins").append("<div>" + when + "</div>");
         $("#checkins").append(tagsDiv);
         $("#checkins").append("<div>distance:" + dis + "</div>");
-    }
-    ;
+    };
 }
+
 function fillMyPlaces(places) {
     for (var i = 0; i < places.length; i++) {
         var place = places[i];
@@ -115,10 +114,10 @@ function fillMyPlaces(places) {
         var tags = place.get("tags");
         var tagsDiv = "";
         if (tags) {
-            tagsDiv = $("<div><div>");
+            tagsDiv = $("<div id='placeTag' ><div>");
 
-            for (var i = 0; i < tags.length; i++) {
-                var tag  = tags[i];
+            for (var j = 0; j < tags.length; j++) {
+                var tag  = tags[j];
                 var name = allTagsDict[tag].get("name");
                 var id   = allTagsDict[tag].id;
                 var span = $('<span id='+id+'></span>');
