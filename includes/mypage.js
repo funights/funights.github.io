@@ -74,7 +74,6 @@ function fillMyCheckins(checkins) {
         var when = checkIn.get("when").format("dd/m/yy");
         var place = checkIn.get("place");
 
-
         var dis = calcDistance(place.get("address_geo").latitude, place.get("address_geo").longitude);
         if (dis >= 1) {
             dis = dis.toFixed(2) + " km";
@@ -90,7 +89,7 @@ function fillMyCheckins(checkins) {
             for (var j = 0; j < tags.length; j++) {
                 var tag = tags[j];
                 var name = allTagsDict[tag].get("name");
-                var span = $('<span id='+'allTagsDict[tag].id'+></span>');
+                var span = $('<span id='+allTagsDict[tag].id+'></span>');
                 span.html(name);
                 tagsDiv.append(span);
             }
