@@ -114,7 +114,7 @@ function fillMyPlaces(places) {
         var tags = place.get("tags");
         var tagsDiv = "";
         if (tags) {
-            tagsDiv = $("<div><div>");
+            tagsDiv = $("<div id='placeTag' ><div>");
 
             for (var j = 0; j < tags.length; j++) {
                 var tag  = tags[j];
