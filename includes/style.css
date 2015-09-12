@@ -659,7 +659,7 @@ input.addBtn {
 #allrating {
     float: left;
     display: inline;
-    margin: 15px 0 0 47px;
+    margin: 15px 0 0 83px;
     font-weight: bold;
     color: #FFFFFF;
     font-size: 19px;
@@ -673,8 +673,9 @@ input.addBtn {
 
 .faceStyle{
 	float:right;
-	background-color:#000000;
 	width: 600px;
+	margin-right:200px;
+    margin-top: 50px;
 }
 
 
@@ -707,3 +708,38 @@ h2 span.spacer      { padding: 0 2px; background: none; }
     font-size: 20px;
     margin-right: -259px;
 }
+
+
+/*MyPage*/
+#myPageTarget > div > h1 {
+    color: #FFFFFF;
+    margin-top: 30px;
+    margin-right: 30px;
+}
+
+#myPageTarget > div > img {
+    margin-top: 30px;
+    margin-right: 30px;
+    height: 130px;
+  }
+  
+ #myPage h2 {
+  	color: #DB9A02;
+    margin-top: 30px;
+    margin-right: 30px;
+ }  
+   
+  #namePlace{
+  	margin:30px;
+  	display:inline;
+  }
+  
+  #myPlaces >div > div {
+  	display:inline;
+  	padding:20px;
+  }
+  
+  #distancePlace{
+  	margin:30px;
+  	display:inline;
+  }
