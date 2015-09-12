@@ -30,3 +30,17 @@ body{
     width: 100% !important;
 }
 .fb-comments, .fb-comments iframe[style] {width: 100% !important;}
+
+.aboutus{
+	margin-top: 20px;
+	font-size: 26px;
+    float: left;
+    padding-right: 52px;
+    padding-left: 50px;	
+    line-height: 140%;  
+}
+.kissImage{
+    margin-top: 56px;
+    float: left;
+    margin-left: 70px;
+}
