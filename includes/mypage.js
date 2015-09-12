@@ -118,15 +118,17 @@ function fillMyPlaces(places) {
         if (tags) {
             tagsDiv = $("<div><div>");
 
-            for (var j = 0; j < tags.length; j++) {
-                var tag = tags[j];
+            for (var i = 0; i < tags.length; i++) {
+                var tag  = tags[i];
                 var name = allTagsDict[tag].get("name");
+                var id   = allTagsDict[tag].id;
                 var span = $('<span></span>');
                 span.html(name);
                 tagsDiv.append(span);
-            }
-            ;
-        }
+                tagsDiv.append (id);
+            };
+            
+          }
         $("#myplaces").append("<div id='namePlace'>" + place.get("name") + "</div>");
         $("#myplaces").append(tagsDiv);
         $("#myplaces").append("<div id='distancePlace'>distance:" + dis + "</div>");
@@ -134,7 +136,7 @@ function fillMyPlaces(places) {
     ;
 }
 function fillMyPageContent(checkins, places){
-     $("#myscore").html(user.get("score"));
+    $("#myscore").html(user.get("score"));
     fillMyPlaces(places);
     fillMyCheckins(checkins);
 }

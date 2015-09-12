@@ -358,6 +358,7 @@ h3{
 	color: #000000;
 
 }
+
 .placeForm input{
 	padding: 5px;
 	background: #FFFFFF; 
@@ -711,6 +712,12 @@ h2 span.spacer      { padding: 0 2px; background: none; }
 
 
 /*MyPage*/
+
+ #myPage{
+ 	margin-top:200px;
+ }
+   
+
 #myPageTarget > div > h1 {
     color: #FFFFFF;
     margin-top: 30px;
@@ -718,17 +725,36 @@ h2 span.spacer      { padding: 0 2px; background: none; }
 }
 
 #myPageTarget > div > img {
+	float:right;
     margin-top: 30px;
     margin-right: 30px;
     height: 130px;
   }
+
+.myName{
+	text-align: center;
+}
+
+.myScoreH {
+	float: right;
+	display: block;
+	margin-top: 30px;
+	margin-right:30px;
+}
   
+ #myscore {
+ 	float:right;
+ 	margin-right:20px;
+    margin-top: 25px;
+
+ }
+ 
  #myPage h2 {
   	color: #DB9A02;
     margin-top: 30px;
     margin-right: 30px;
- }  
-   
+ }
+ 
   #namePlace{
   	margin:30px;
   	display:inline;
