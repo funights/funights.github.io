@@ -293,7 +293,9 @@ function addTag( selObj ){
 	var id        = selOption.dataset["id"];
 	if ( tags == null)
 		tags = Array();
-
+    if (tags.indexOf(id)>-1){
+        return;
+    }
 	tags[ tags.length ] = id;
 	place.set( "tags", tags );
 	place.save();

@@ -85,9 +85,13 @@ function fillMyCheckins(checkins) {
         var tagsDiv = "";
         if (tags) {
             tagsDiv = $("<div></div>");
-            
+            var mytags = [];
             for (var j = 0; j < tags.length; j++) {
                 var tag  = tags[j];
+                if (mytags.indexOf(tag) > -1){
+                    continue;
+                }
+                mytags.push(tag);
                 if (allTagsDict[tag]){
                     var name = allTagsDict[tag].get("name");
                     var span = $('<span id='+allTagsDict[tag].id+'></span>');
@@ -98,8 +102,8 @@ function fillMyCheckins(checkins) {
         }
         $('#checkins')                 .append("<div></div>");
         var row =  $("#checkins > div:last-child");
-        
-        $(row).append("<div><img src='" + (checkIn.get("place").get("placePic").url()) + "'></div>");
+
+        $(row).append("<div><a href='" + "placePage.html?id="+ checkIn.get("place").id + "'><img src='" + (checkIn.get("place").get("placePic").url()) + "'></a></div>");
         var place = $("<div>" + checkIn.get("place").get("name") + "</div>");
         var when  = $("<div>" + when + "</div>");
         
@@ -127,9 +131,13 @@ function fillMyPlaces(places) {
         var tagsDiv = "";
         if (tags) {
             tagsDiv = $("<div><div>");
-
+            var mytags = [];
             for (var j = 0; j < tags.length; j++) {
                 var tag  = tags[j];
+                if (mytags.indexOf(tag) > -1){
+                    continue;
+                }
+                mytags.push(tag);
                 var name = allTagsDict[tag].get("name");
                 var id   = allTagsDict[tag].id;
                 var span = $('<span id='+id+'></span>');
