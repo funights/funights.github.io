@@ -755,6 +755,11 @@ h2 span.spacer      { padding: 0 2px; background: none; }
     margin-right: 30px;
  }
  
+ #myPlaces{
+ 	float: right;
+ 	display: block;
+ }
+ 
   #namePlace{
   	float:right;
   	margin:30px;
@@ -762,13 +767,8 @@ h2 span.spacer      { padding: 0 2px; background: none; }
   }
   
   #placeTag{
-  	display: block;
-  	float:right;
-  }
-  
-  #myPlaces >div > div {
-  	display:inline;
-  	padding:20px;
+  	display: inline;
+  	float: right;
   }
   
   #distancePlace{
