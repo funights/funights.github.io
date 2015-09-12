@@ -90,7 +90,7 @@ function fillMyCheckins(checkins) {
             for (var j = 0; j < tags.length; j++) {
                 var tag = tags[j];
                 var name = allTagsDict[tag].get("name");
-                var span = $('<span></span>');
+                var span = $('<span id='+'allTagsDict[tag].id'+></span>');
                 span.html(name);
                 tagsDiv.append(span);
             }
