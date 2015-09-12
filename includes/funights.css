@@ -48,20 +48,19 @@ body{
 	margin: auto;
     width: 22%;
     margin-top: 335px;
-    background-image: url(../images/bg2.jpg);
-    width: 376px;
-    height: 257px;
 }
 .connectIndexImage{
 	float:right;
+	margin-bottom: 20px;
 }
 h2{
 	direction: rtl;
     font-size: 25px;
     float: right;
-    margin-top: 38px;
-    margin-right: -12px;
+    margin-top: 19px;
+    margin-right: 13px;
 }
 #fbfriends{
 	margin-left: 30px;
 }
+
