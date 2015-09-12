@@ -63,6 +63,9 @@ function setImageForm() {
 			                //if successful
 			                success: function(parseObj) {
 			                		setImages();
+                                    user.set("score", user.get("score") + 10);
+                                    user.save();
+                                    alert("תהנה! הרווחת עוד 10 נקודות");
 			                    }
 			                ,
 			                error: function(parseObj, error) {
@@ -255,10 +258,12 @@ function checkIn(){
     newCheckIn.save(data, {
             //if successful
             success: function(parseObj) {
-            	alert("תהנה! הרווחת עוד 20 נקודות");
-            	var d = document.getElementById("checkinid");
-				d.className = d.className + " pressed";
-                },
+               user.set("score", user.get("score") + 5);
+                user.save();
+                alert("תהנה! הרווחת עוד 5 נקודות");
+                var d = document.getElementById("checkinid");
+                d.className = d.className + " pressed";
+            },
             error: function(parseObj, error) {
                 console.log(parseObj);
                 console.log(error);
@@ -316,7 +321,10 @@ function addTag( selObj ){
 
 	tags[ tags.length ] = id;
 	place.set( "tags", tags );
-	place.save();	
+	place.save();
+    user.set("score", user.get("score") + 5);
+    user.save();
+    alert("תהנה! הרווחת עוד 5 נקודות");
 	getTags(place);
 
 }

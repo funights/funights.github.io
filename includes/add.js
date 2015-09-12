@@ -142,8 +142,11 @@ $(document).on(
 		        
 		        newPlace.save(data, {
 		                //if successful
-		                success: function(parseObj) {
-		                		window.location.assign("placePage.html?id=" + parseObj.id);
+		                success: function(parseObj){
+                               user.set("score", user.get("score") + 20);
+                                user.save();
+                                alert("תהנה ! הרווחת 20 נקודות");
+                                window.location.assign("placePage.html?id=" + parseObj.id);
 		                    }
 		                ,
 		                error: function(parseObj, error) {
