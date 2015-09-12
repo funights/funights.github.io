@@ -755,6 +755,12 @@ h2 span.spacer      { padding: 0 2px; background: none; }
     margin-right: 30px;
  }
  
+ #checkins{
+ 	float:right;
+ 	display:block;
+ 	margin-right:30px;
+ }
+ 
  #myPlaces{
  	float: right;
  	display: block;
