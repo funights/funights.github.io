@@ -44,3 +44,13 @@ body{
     float: left;
     margin-left: 70px;
 }
+.fb-buttonIndex{
+	margin: auto;
+    width: 22%;
+    margin-top: 335px;
+}
+h2{
+	direction: rtl;
+	font-size: 25px;
+	margin-bottom: 10px;
+}
