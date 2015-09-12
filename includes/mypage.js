@@ -116,16 +116,15 @@ function fillMyPlaces(places) {
         var tags = place.get("tags");
         var tagsDiv = "";
         if (tags) {
-            tagsDiv = $("<div id='id'><div>");
+            tagsDiv = $("<div><div>");
 
             for (var i = 0; i < tags.length; i++) {
                 var tag  = tags[i];
                 var name = allTagsDict[tag].get("name");
                 var id   = allTagsDict[tag].id;
-                var span = $('<span></span>');
+                var span = $('<span data-id="'+id+'"></span>');
                 span.html(name);
                 tagsDiv.append(span);
-                tagsDiv.append (id);
             };
           }
         $("#myplaces").append("<div id='namePlace'>" + place.get("name") + "</div>");
