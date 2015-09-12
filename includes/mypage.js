@@ -124,8 +124,8 @@ function fillMyPlaces(places) {
                 var id   = allTagsDict[tag].id;
                 var span = $('<span id='+id+'></span>');
                 span.html(name);
-                tagsDiv.append(span);
             };
+             tagsDiv.append(span);
           }
         $("#myplaces").append("<div id='namePlace'>" + place.get("name") + "</div>");
         $("#myplaces").append(tagsDiv);
