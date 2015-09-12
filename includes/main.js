@@ -1,7 +1,7 @@
 var yafaKey = "obmZctGH4sM63Kcg5nSuudbe45Cy7ad7RCD1mTxP";
-
+// setCookie('userid', "mA22yn2H4x" );
 $(function() {
-
+  
   Parse.$ = jQuery;
 
   // Initialize Parse with your Parse application javascript keys
@@ -37,6 +37,8 @@ $(function() {
 	
 });
 
+
+window.addEventListener( "load", addLandscapeImageClass );
 
 function getAllMusicGeneres(onSuccess, onFail){
 	var MusicGenere = Parse.Object.extend("MusicGenere");
@@ -99,6 +101,7 @@ function getAllPlaces(onSuccess, onFail){
 	query.find({
 	  success: function(results) {
 	  	onSuccess(results);
+	  	addLandscapeImageClass();
 	  },
 	  error: function(error) {
 	  	onFail(error);
@@ -401,4 +404,11 @@ function fillHighRankedPlaceContent(){
 	   	getUserRating();
 	   	getRating();
 	   	getPlaceImages();
+}
+
+function addLandscapeImageClass() {
+	$( "img" ).each(function() {
+		if( this.offsetWidth > this.offsetHeight )
+			$( this ).addClass( "landscapeImage" );
+	});
 }

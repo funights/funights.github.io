@@ -71,8 +71,8 @@ function getTags(checkins, places){
 function fillMyCheckins(checkins) {
     for (var i = 0; i < checkins.length; i++) {
         var checkIn = checkins[i];
-        var when = checkIn.get("when").format("dd/m/yy");
-        var place = checkIn.get("place");
+        var when    = checkIn.get("when").format("dd/m/yy");
+        var place   = checkIn.get("place");
 
         var dis = calcDistance(place.get("address_geo").latitude, place.get("address_geo").longitude);
         if (dis >= 1) {
@@ -84,20 +84,30 @@ function fillMyCheckins(checkins) {
         var tags = place.get("tags");
         var tagsDiv = "";
         if (tags) {
-            tagsDiv = $("<div><div>");
-
+            tagsDiv = $("<div></div>");
+            
             for (var j = 0; j < tags.length; j++) {
-                var tag = tags[j];
+                var tag  = tags[j];
                 var name = allTagsDict[tag].get("name");
                 var span = $('<span id='+allTagsDict[tag].id+'></span>');
                 span.html(name);
                 tagsDiv.append(span);
             };
         }
-        $("#checkins").append("<div>" + checkIn.get("place").get("name") + "</div>");
-        $("#checkins").append("<div>" + when + "</div>");
-        $("#checkins").append(tagsDiv);
-        $("#checkins").append("<div>distance:" + dis + "</div>");
+        $('#checkins')                 .append("<div></div>");
+        var row =  $("#checkins > div:last-child");
+        
+        $(row).append("<div><img src='" + (checkIn.get("place").get("placePic").url()) + "'></div>");
+        var place = $("<div>" + checkIn.get("place").get("name") + "</div>");
+        var when  = $("<div>" + when + "</div>");
+        
+        var tagsCell = $("<div></div>");
+        
+        $( tagsCell ).append( place);
+        $( tagsCell ).append( when );
+        $(tagsCell).append("<div>" + dis + "</div>");
+        $( tagsCell ).append( tagsDiv );
+        $(row).append( tagsCell ); 
     };
 }
 
@@ -114,7 +124,7 @@ function fillMyPlaces(places) {
         var tags = place.get("tags");
         var tagsDiv = "";
         if (tags) {
-            tagsDiv = $("<div id='placeTag' ><div>");
+            tagsDiv = $("<div><div>");
 
             for (var j = 0; j < tags.length; j++) {
                 var tag  = tags[j];
