@@ -44,13 +44,24 @@ body{
     float: left;
     margin-left: 164px;
 }
-.fb-buttonIndex{
+.connectIndex{
 	margin: auto;
     width: 22%;
     margin-top: 335px;
+    background-image: url(../images/bg2.jpg);
+    width: 376px;
+    height: 257px;
+}
+.connectIndexImage{
+	float:right;
 }
 h2{
 	direction: rtl;
-	font-size: 25px;
-	margin-bottom: 10px;
+    font-size: 25px;
+    float: right;
+    margin-top: 38px;
+    margin-right: -12px;
+}
+#fbfriends{
+	margin-left: 30px;
 }
