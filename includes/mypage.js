@@ -88,10 +88,12 @@ function fillMyCheckins(checkins) {
             
             for (var j = 0; j < tags.length; j++) {
                 var tag  = tags[j];
-                var name = allTagsDict[tag].get("name");
-                var span = $('<span id='+allTagsDict[tag].id+'></span>');
-                span.html(name);
-                tagsDiv.append(span);
+                if (allTagsDict[tag]){
+                    var name = allTagsDict[tag].get("name");
+                    var span = $('<span id='+allTagsDict[tag].id+'></span>');
+                    span.html(name);
+                    tagsDiv.append(span);
+                }
             };
         }
         $('#checkins')                 .append("<div></div>");

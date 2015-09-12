@@ -99,9 +99,17 @@
 				<aside id="indexAside">
 					<h3>המבוקש</h3>
 					<h4 id="placeName"></h4>
-					<h3 id="placeType"></h3>
-					<div id="placePic" class="crop"></div>
+					<h3 id="placePageType"></h3>
+					<div id="placePagePic" class="crop" style="margin-right: 13px; margin-top: 30px; height: 211px; margin-bottom: 10px; width: 219px; overflow: hidden;"></div>
 					<p id="asideDescription"></p>
+                    <fieldset id="rating" style="margin-top: 10px; float: none">
+					    <legend>דרג:</legend>
+					    <input type="radio" id="star5" name="rating" value="5" onclick="rate()"/><label for="star5" title="Rocks!">5 stars</label>
+					    <input type="radio" id="star4" name="rating" value="4" onclick="rate()"/><label for="star4" title="Pretty good">4 stars</label>
+					    <input type="radio" id="star3" name="rating" value="3" onclick="rate()"/><label for="star3" title="Meh">3 stars</label>
+					    <input type="radio" id="star2" name="rating" value="2" onclick="rate()"/><label for="star2" title="Kinda bad">2 stars</label>
+					    <input type="radio" id="star1" name="rating" value="1" onclick="rate()"/><label for="star1" title="Sucks big time">1 star</label>
+					</fieldset>
 				</aside>
 				<div id="target" class="crop"></div>
 			 </main>

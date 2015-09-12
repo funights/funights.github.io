@@ -367,15 +367,34 @@ function getHighestRating(rating){
 	var max;
 	query.include("user");
 	query.include("place");
-	query.equalTo("place", place);
 	query.find({
 	  success: function(results) {
-	  	fillRating(results)=max;
-	  	for(var i=0; i<places.length; i++){
-	  		if (max <= fillRating(results))
-	  			max=fillRating(results);
-		  }
-		  getHighRankDetails(highRank.get(place));
+        var ratingPlace = {};
+        var numPlaces = {};
+        var places = {};
+        var max = -1;
+        var highestPlace;
+        for(var i=0; i<results.length; i++){
+            var rating = results[i];
+            var place = rating.get("place");
+            var placeId = place.id;
+            if (!ratingPlace[placeId]){
+                places[placeId] = place;
+                ratingPlace[placeId] = 0;
+                numPlaces[placeId] = 0;
+            }
+            ratingPlace[placeId] += rating.get("rating");
+            numPlaces[ placeId] += 1;
+        }
+
+        for (var placeId in ratingPlace) {
+            var placeAvg = ratingPlace[placeId] / numPlaces[placeId];
+            if (placeAvg > max){
+                max = placeAvg;
+                highestPlace = placeId;
+            }
+        }
+        fillHighRankedPlaceContent(places[highestPlace], max);
 	  },
 	  error: function(error) {
 	    // alert("Error: " + error.code + " " + error.message);
@@ -383,27 +402,29 @@ function getHighestRating(rating){
 	});
 }
 
-function getHighRankDetails(place){
-	var placeId = place;
-	query.get(placeId, {
-	  success: function(place) {
-		fillHighRankedPlaceContent(place);
-	  },
-	  error: function(object, error) {
-	    // The object was not retrieved successfully.
-	    // error is a Parse.Error with an error code and message.
-	  }
-	});
+function setImages(place) {
+   	var imageDiv = $("#placePagePic");
+   	var url = place.get("placePic").url();
+   	var image = $("<img id='pic' src="+ url + ">");
+   	imageDiv.html(image);
+
+   	placePictures = [];
+   	placePictures.push(url);
+
 }
 
-function fillHighRankedPlaceContent(){
-  		$("#placeName").html(place.get("name"));
-	   	$("#asideDescription"  ).html(place.get("description"));
-	   	setType(place.get("type"));
-	   	setImages();
-	   	getUserRating();
-	   	getRating();
-	   	getPlaceImages();
+function setType(typeId){
+	var PlaceType = Parse.Object.extend("PlaceType");
+	var query = new Parse.Query(PlaceType);
+	query.get(typeId,{
+		success: function(type){
+		console.log('ptype', type);
+		 $('#placePageType').html(type.get('name'));
+		},
+	  error: function(object, error) {
+	    console.debug('error',error);
+	  }
+	});
 }
 
 function addLandscapeImageClass() {

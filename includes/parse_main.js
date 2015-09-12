@@ -46,6 +46,8 @@ $(document).on(
 	    getAllPlaces(getPlacesSuccess, function(error){
 			alert(error.message);
 		});
+
+        getHighestRating();
 	
 });
 
@@ -54,4 +56,13 @@ function onChangeFilter(){ // when changing MusicGenere or PlaceType filter run 
 	getAllPlaces(getPlacesSuccess, function(error){
 		alert(error);
 	});
+}
+
+function fillHighRankedPlaceContent(place, rating){
+    $("#placeName").html(place.get("name"));
+    $("#asideDescription"  ).html(place.get("description"));
+    setType(place.get("type"));
+    setImages(place);
+    rating = Math.round( rating );
+    $("#star" + rating).prop("checked", true);
 }

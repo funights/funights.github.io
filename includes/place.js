@@ -62,7 +62,7 @@ function setImageForm() {
 			newPlaceImage.save(data, {
 			                //if successful
 			                success: function(parseObj) {
-			                		setImages();
+			                		setImages(place);
                                     user.set("score", user.get("score") + 10);
                                     user.save();
                                     alert("תהנה! הרווחת עוד 10 נקודות");
@@ -153,21 +153,10 @@ function fillPlaceContent(){
 	   	$("#description"  ).html(place.get("description"));
 	   	getTags(place);
 	   	setType(place.get("type"));
-	   	setImages();
+	   	setImages(place);
 	   	getUserRating();
 	   	getRating();
 	   	getPlaceImages();
-}
-
-function setImages() {
-   	var imageDiv = $("#placePagePic");
-   	var url = place.get("placePic").url();
-   	var image = $("<img id='pic' src="+ url + ">");
-   	imageDiv.html(image);
-   	
-   	placePictures = [];
-   	placePictures.push(url);
-
 }
 
 var step=0;
@@ -198,20 +187,6 @@ function getPlaceImages(){
 	  },
 	  error: function(error) {
 	    // alert("Error: " + error.code + " " + error.message);
-	  }
-	});
-}
-
-function setType(typeId){
-	var PlaceType = Parse.Object.extend("PlaceType");
-	var query = new Parse.Query(PlaceType);
-	query.get(typeId,{
-		success: function(type){
-		console.log('ptype', type);
-		 $('#placePageType').html(type.get('name'));
-		},
-	  error: function(object, error) {
-	    console.debug('error',error);
 	  }
 	});
 }
