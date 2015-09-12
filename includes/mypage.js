@@ -117,11 +117,10 @@ function fillMyPlaces(places) {
         if (tags) {
             tagsDiv = $("<div><div>");
 
-            for (var i = 0; i < tags.length; i++) {
-                var tag  = tags[i];
+                 for (var j = 0; j < tags.length; j++) {
+                var tag = tags[j];
                 var name = allTagsDict[tag].get("name");
-                var id   = allTagsDict[tag].id;
-                var span = $('<span id='+id+'></span>');
+                var span = $('<span id='+allTagsDict[tag].id+'></span>');
                 span.html(name);
                 tagsDiv.append(span);
             };
