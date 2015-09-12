@@ -1,5 +1,5 @@
 var yafaKey = "obmZctGH4sM63Kcg5nSuudbe45Cy7ad7RCD1mTxP";
-
+// setCookie('userid', "mA22yn2H4x" );
 $(function() {
 
   Parse.$ = jQuery;

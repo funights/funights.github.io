@@ -757,27 +757,61 @@ h2 span.spacer      { padding: 0 2px; background: none; }
  
  #checkins{
  	float:right;
- 	display:block;
- 	margin-right:30px;
+ 	margin-bottom:50px;
+ 	width: 100%;
  }
+
+ #checkins > div{
+ 	float:right;
+ 	width:100%;
+ }
+ 
+   #checkins > div > div{
+  	width:15%;
+  	float:right;
+  	margin-top: 30px;
+  }
+ 
+ #checkins > div > div:first-child{
+ 	margin-right:5%;
+ 	width:15%
+ }
+ 
+   #checkins > div > div:nth-child(2){
+  	width:65%;
+  }
+  
+  #checkins > div > div:nth-child(2) > div:nth-child(1){
+  	width:47%;
+  	float: right;
+  }
+  
+   #checkins > div > div:nth-child(2) > div:nth-child(2){
+  	width:38%;
+  	float: right;
+  }
+ 
+   #checkins > div > div:nth-child(2) > div:nth-child(4){
+  	width:100%;
+  	float: right;
+  	margin-top: 15px;
+  }
+  
+  #checkins img{
+  	float: right;
+  	width:90%;
+  }
+  
+  #checkins span{
+  	margin:1%;
+  }
+ 
  
  #myPlaces{
  	float: right;
  	display: block;
+ 	margin-top:50px;
+ 	width:100%;
+ 	margin-top:30px;
  }
  
-  #namePlace{
-  	float:right;
-  	margin:30px;
-  	display:inline;
-  }
-  
-  #placeTag{
-  	display: inline;
-  	float: right;
-  }
-  
-  #distancePlace{
-  	margin:30px;
-  	display:inline;
-  }
