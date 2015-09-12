@@ -85,7 +85,7 @@ function fillMyCheckins(checkins) {
         var tagsDiv = "";
         if (tags) {
             tagsDiv = $("<div></div>");
-
+            
             for (var j = 0; j < tags.length; j++) {
                 var tag  = tags[j];
                 var name = allTagsDict[tag].get("name");
@@ -124,7 +124,7 @@ function fillMyPlaces(places) {
         var tags = place.get("tags");
         var tagsDiv = "";
         if (tags) {
-            tagsDiv = $("<div id='placeTag' ><div>");
+            tagsDiv = $("<div><div>");
 
             for (var j = 0; j < tags.length; j++) {
                 var tag  = tags[j];

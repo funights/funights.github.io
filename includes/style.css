@@ -281,6 +281,17 @@ h3{
     overflow: hidden;
 }
 
+.place img.landscapeImage {
+height: Calc(100%);
+width: 100%
+}
+
+.place a {
+display: block;
+height: Calc(100%);
+text-align: center;
+}
+
 .crop img{
 	width:100%;
 }
