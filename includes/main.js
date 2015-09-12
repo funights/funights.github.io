@@ -101,6 +101,7 @@ function getAllPlaces(onSuccess, onFail){
 	query.find({
 	  success: function(results) {
 	  	onSuccess(results);
+	  	addLandscapeImageClass();
 	  },
 	  error: function(error) {
 	  	onFail(error);
