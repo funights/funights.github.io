@@ -15,7 +15,6 @@ $(document).on(
 				var score = cUser.get( "score");
 				var scoreStatus = "אדם עסוק";
 				var scoreColor  = "#fff";
-				score=1000;
 				     if( score >= 100  && score < 500  ) { scoreStatus = "בלייה מתחיל"; scoreColor = "blue";  }
 				else if( score >= 500  && score < 1000 ) { scoreStatus = "בליין ממוצע" ; scoreColor = "green"; }
 				else if( score >= 1000                 ) { scoreStatus = "בליין מטורף" ; scoreColor = "gold";  }
