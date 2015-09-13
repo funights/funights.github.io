@@ -403,7 +403,7 @@ function getHighestRating(rating){
 function setImages(place) {
    	var imageDiv = $("#placePagePic");
    	var url = place.get("placePic").url();
-   	var image = $("<img id='pic' src="+ url + ">");
+   	var image = $("<a href='placePage.html?id=" + place.id + "'><img id='pic' src="+ url + "></a>");
    	imageDiv.html(image);
 
    	placePictures = [];
