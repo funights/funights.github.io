@@ -63,7 +63,8 @@ function setImageForm() {
 			                //if successful
 			                success: function(parseObj) {
 			                		setImages(place);
-                                    user.set("score", user.get("score") + 10);
+                                var score = user.get("score") ? user.get("score") : 0
+                                user.set("score", score + 10);
                                     user.save();
                                     alert("תהנה! הרווחת עוד 10 נקודות");
 			                    }
@@ -233,7 +234,8 @@ function checkIn(){
     newCheckIn.save(data, {
             //if successful
             success: function(parseObj) {
-               user.set("score", user.get("score") + 5);
+                var score = user.get("score") ? user.get("score") : 0
+                user.set("score", score + 5);
                 user.save();
                 alert("תהנה! הרווחת עוד 5 נקודות");
                 var d = document.getElementById("checkinid");
@@ -299,7 +301,8 @@ function addTag( selObj ){
 	tags[ tags.length ] = id;
 	place.set( "tags", tags );
 	place.save();
-    user.set("score", user.get("score") + 5);
+    var score = user.get("score") ? user.get("score") : 0
+    user.set("score", score + 5);
     user.save();
     alert("תהנה! הרווחת עוד 5 נקודות");
 	getTags(place);
