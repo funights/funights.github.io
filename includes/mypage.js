@@ -143,7 +143,7 @@ function fillMyPlaces(places) {
             var mytags = [];
             for (var j = 0; j < tags.length; j++) {
                 var tag  = tags[j];
-                if (mytags.indexOf(tag) > -1){
+                if (mytags.indexOf(tag) > -1 || !allTagsDict[tag]){
                     continue;
                 }
                 mytags.push(tag);
