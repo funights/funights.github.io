@@ -12,7 +12,16 @@ $(document).on(
 				user = cUser;
 				$("#myPageTarget").html(compiled({item:cUser}));
 				getCheckins();
-
+				var score = cUser.get( "score");
+				var scoreStatus = "אדם עסוק";
+				var scoreColor  = "#fff";
+				     if( score >= 100  && score < 500  ) { scoreStatus = "בלייה מתחיל"; scoreColor = "blue";  }
+				else if( score >= 500  && score < 1000 ) { scoreStatus = "בליין ממוצע" ; scoreColor = "green"; }
+				else if( score >= 1000                 ) { scoreStatus = "בליין מטורף" ; scoreColor = "gold";  }
+				
+				$( ".myName, #mystatus" ).css( "color", scoreColor );
+				
+				$( "#mystatus" ).html( scoreStatus );
 			}
 		});
 			
