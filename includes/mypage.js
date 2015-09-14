@@ -81,7 +81,9 @@ function fillMyCheckins(checkins) {
         var checkIn = checkins[i];
         var when    = checkIn.get("when").format("dd/m/yy");
         var place   = checkIn.get("place");
-
+        if (!place){
+            continue;
+        }
         var dis = calcDistance(place.get("address_geo").latitude, place.get("address_geo").longitude);
         if (dis >= 1) {
             dis = dis.toFixed(2) + " km";
@@ -132,7 +134,9 @@ function fillMyPlaces(places) {
         var lastPlaces = places[i];
         var when    = lastPlaces.get("when").format("dd/m/yy");
         var place   = lastPlaces.get("place");
-
+        if (!place){
+            continue;
+        }
         var dis = calcDistance(place.get("address_geo").latitude, place.get("address_geo").longitude);
         if (dis >= 1) {
             dis = dis.toFixed(2) + " km";
