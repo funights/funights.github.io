@@ -109,7 +109,9 @@ function fillMyCheckins(checkins) {
                 }
             };
         }
-        $('#checkins')                 .append("<div></div>");
+        
+        
+        $('#checkins').append("<div></div>");
         var row =  $("#checkins > div:last-child");
 
         $(row).append("<div><a href='" + "placePage.html?id="+ checkIn.get("place").id + "'><img src='" + (checkIn.get("place").get("placePic").url()) + "'></a></div>");
@@ -128,15 +130,15 @@ function fillMyCheckins(checkins) {
 
 function fillMyPlaces(places) {
     for (var i = 0; i < places.length; i++) {
-        var place = places[i];
-        var dis = calcDistance(place.get("address_geo").latitude, place.get("address_geo").longitude);
+        var myplaces = places[i];
+        var dis = calcDistance(place.get("address_geo").latitude, myplaces.get("address_geo").longitude);
         if (dis >= 1) {
             dis = dis.toFixed(2) + " km";
         } else {
             dis = dis.toFixed(3) * 1000 + " m";
         }
 
-        var tags = place.get("tags");
+        var tags = myplaces.get("tags");
         var tagsDiv = "";
         if (tags) {
             tagsDiv = $("<div><div>");
@@ -154,12 +156,30 @@ function fillMyPlaces(places) {
                 tagsDiv.append(span);
             };
           }
-        $("#myplaces").append("<div id='namePlace'>" + place.get("name") + "</div>");
+          
+        $('#myplaces').append("<div></div>");
+        var row = $("#myplaces > div:last-child");
+          
+        $(row).append("<div><a href='" + "placePage.html?id="+ myPlaces.get("place").id + "'><img src='" + (myPlaces.get("place").get("placePic").url()) + "'></a></div>");
+        var place = $("<div>" + myplaces.get("place").get("name") + "</div>");
+        var when =  $("<div>" + when + "</div>");
+        
+        var placesTagsCell = $("<div></div>");
+        
+        $(placesTagsCell).append(place);
+        $(placesTagsCell).append(when);
+        $(placesTagsCell).append("<div>" + dis + "</div>");
+        $(placesTagsCell).append(tagsDiv);
+        $(row).append (placeTagsCell);
+        
+      /*    
+        $("#myplaces").append("<div id='namePlace'>" + lastPlace.get("name") + "</div>");
         $("#myplaces").append(tagsDiv);
         $("#myplaces").append("<div id='distancePlace'>distance:" + dis + "</div>");
-    }
-    ;
+    */
+    };
 }
+
 function fillMyPageContent(checkins, places){
     $("#myscore").html(user.get("score"));
     fillMyPlaces(places);
