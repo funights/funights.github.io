@@ -132,7 +132,7 @@ function fillMyCheckins(checkins) {
 function fillMyPlaces(places) {
     for (var i = 0; i < places.length; i++) {
         var lastPlaces = places[i];
-        var when    = lastPlaces.get("when").format("dd/m/yy");
+        var when    = lastPlaces.createdAt.format("dd/m/yy");
         var place   = lastPlaces.get("place");
         if (!place){
             continue;
