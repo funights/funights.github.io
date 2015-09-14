@@ -62,7 +62,7 @@ function setImageForm() {
 			newPlaceImage.save(data, {
 			                //if successful
 			                success: function(parseObj) {
-			                		setImages(place);
+                                setImages(place);
                                 var score = user.get("score") ? user.get("score") : 0
                                 user.set("score", score + 10);
                                     user.save();
@@ -403,7 +403,7 @@ function rate(){
 	var data = {
         user: user,
         place: place,
-        rating: ratingScore,
+        rating: ratingScore
     };
     if (!user || !place){
     	alert("missing user id place id");
@@ -414,9 +414,12 @@ function rate(){
             success: function(parseObj) {
             	if (!wasRating){
 	            	alert("תהנה! הרווחת עוד 30 נקודות");
+                    var score = user.get("score") ? user.get("score") : 0
+                    user.set("score", score + 30);
+                    user.save();
 	            	wasRating = true;
             	}
-                },
+            },
             error: function(parseObj, error) {
                 console.log(parseObj);
                 console.log(error);
