@@ -167,8 +167,8 @@ function fillMyPlaces(places) {
         $('#places').append("<div></div>");
         var row =  $("#places > div:last-child");
 
-        $(row).append("<div><a href='" + "placePage.html?id="+ lastPlaces.get("place").id + "'><img src='" + (lastPlaces.get("place").get("placePic").url()) + "'></a></div>");
-        var place = $("<div>" + lastPlaces.get("place").get("name") + "</div>");
+        $(row).append("<div><a href='" + "placePage.html?id="+ place.id + "'><img src='" + place.get("placePic").url() + "'></a></div>");
+        var place = $("<div>" + place.get("name") + "</div>");
         var when  = $("<div>" + when + "</div>");
         
         var tagsCell = $("<div></div>");
