@@ -23,14 +23,14 @@ function getTopScorers(){
 }
 
 function fillTopScorers(results){
-    for(var i=0; i<results.length; i++){
+    for(var i=0; i<5; i++){
         var user = results[i];
-        var div = $("<div class='userClass'></div>");
-        var img = $( "<img src='http://graph.facebook.com/" + user.get("facebookId") + "/picture?type=normal'/>");
+        var div  = $("<div class='userClass'></div>");
+        var img  = $( "<img src='http://graph.facebook.com/" + user.get("facebookId") + "/picture?type=normal'/>");
         div.append(img);
-        div.append($('<h2 class="myScoreH">הניקוד שלי:</h2>'));
-        div.append($('<h1 class="userScore">' + user.get("score") + '</h1>'));
-         div.append($('<h1 class="userName">' + user.get("displayName") + '</h1>'));
+        div.append($('<h3 class= "userName">שם: ' 	+ user.get("displayName") + '</h3>'));
+        div.append($('<h3 class= "userScore">ניקוד: '	+ user.get("score"      ) + '</h3>'));
+  
         $("#scores").append(div);
     }
 }
