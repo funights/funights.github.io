@@ -55,8 +55,8 @@ $(document).on(
 		if (userId){
 			query.get(userId, {
 				success: function(cUser){
-					$("#helloUser").html("Hello, " + user.get("displayName"));
 					user = cUser;
+					$("#helloUser").html("Hello, " + user.get("displayName"));
 				}
 			});
 		}
