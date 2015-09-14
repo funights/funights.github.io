@@ -131,12 +131,11 @@ function fillMyCheckins(checkins) {
 
 function fillMyPlaces(places) {
     for (var i = 0; i < places.length; i++) {
-        var lastPlaces = places[i];
-        var when    = lastPlaces.createdAt.format("dd/m/yy");
-        var place   = lastPlaces.get("place");
+        var place = places[i];
         if (!place){
             continue;
         }
+        var when    = place.createdAt.format("dd/m/yy");
         var dis = calcDistance(place.get("address_geo").latitude, place.get("address_geo").longitude);
         if (dis >= 1) {
             dis = dis.toFixed(2) + " km";
