@@ -689,18 +689,10 @@ input.addBtn {
     margin-top: 50px;
 }
 
-
-
 .clear{
  	clear:both;
 }
 
-/*
-h2                  { position: absolute; top: 200px; left: 0; width: 100%; }
-h2 span             { color: white; font: bold 24px/45px Helvetica, Sans-Serif; letter-spacing: -1px;  
-                      background: rgb(0, 0, 0); background: rgba(0, 0, 0, 0.7); padding: 10px; }
-h2 span.spacer      { padding: 0 2px; background: none; }
-*/
 .fil{
     float: right;
     size: 30px;
@@ -747,19 +739,23 @@ h2 span.spacer      { padding: 0 2px; background: none; }
 .myScoreH {
     float: right;
     display: block;
-    width: 300px;
+    width: 15%;
     margin-top: 50px;
     margin-right: 30px;
 }
-
-.profileUser > h1, h2, h3{
-	float: right;
-}
   
- #myscore {
+   #myscore {
     float: right;
-    margin-right: 20px;
-    margin-top: 55px;
+    margin-right: 10px;
+    margin-top: 50px;
+    width:60%;
+ }
+ 
+ #myStatus{
+ 	float: right;
+    margin-right: 10px;
+    margin-top: 50px;
+    width:60%;
  }
  
  #myPage h2 {

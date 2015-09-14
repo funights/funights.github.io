@@ -13,15 +13,14 @@ $(document).on(
 				$("#myPageTarget").html(compiled({item:cUser}));
 				getCheckins();
 				var score = cUser.get( "score");
-				var scoreStatus = "אדם עסוק";
-				var scoreColor  = "#fff";
-				     if( score >= 100  && score < 500  ) { scoreStatus = "בליין מתחיל"; scoreColor = "blue";  }
-				else if( score >= 500  && score < 1000 ) { scoreStatus = "בליין ממוצע" ; scoreColor = "green"; }
-				else if( score >= 1000                 ) { scoreStatus = "בליין מטורף" ; scoreColor = "gold";  }
+					 if( score <  100                  ) { scoreStatus = "בליין?"    ; scoreColor = "#FFFFFF";}
+				else if( score >= 100  && score < 500  ) { scoreStatus = "בליין מתחיל" ; scoreColor = "blue";   }
+				else if( score >= 500  && score < 1000 ) { scoreStatus = "בליין ממוצע" ; scoreColor = "green";  }
+				else if( score >= 1000                 ) { scoreStatus = "בליין מטורף" ; scoreColor = "gold";   }
 				
-				$( ".myName, #mystatus" ).css( "color", scoreColor );
-				
-				$( "#mystatus" ).html( scoreStatus );
+				$( ".myName, #myStatus" ).css( "color", scoreColor );
+				$("#myscore" ).html(user.get("score"));
+				$( "#myStatus" ).html( scoreStatus );
 			}
 		});
 			
@@ -39,7 +38,7 @@ function getAddedPlaces(checkins){
 	  	getTags(checkins, results);
 	  },
 	  error: function(error) {
-	    // alert("Error: " + error.code + " " + error.message);
+	  //   alert("Error: " + error.code + " " + error.message);
 	  }
 	});
 }
@@ -130,11 +129,11 @@ function fillMyCheckins(checkins) {
 
 function fillMyPlaces(places) {
     for (var i = 0; i < places.length; i++) {
-        var myplaces = places[i];
-        var when    = myplaces.get("when").format("dd/m/yy");
-        var place   = myplaces.get("place");
-        
-        var dis = calcDistance(place.get("address_geo").latitude, myplaces.get("address_geo").longitude);
+        var lastPlaces = places[i];
+        var when    = lastPlaces.get("when").format("dd/m/yy");
+        var place   = lastPlaces.get("place");
+
+        var dis = calcDistance(place.get("address_geo").latitude, place.get("address_geo").longitude);
         if (dis >= 1) {
             dis = dis.toFixed(2) + " km";
         } else {
@@ -144,48 +143,43 @@ function fillMyPlaces(places) {
         var tags = place.get("tags");
         var tagsDiv = "";
         if (tags) {
-            tagsDiv = $("<div><div>");
+            tagsDiv = $("<div></div>");
             var mytags = [];
             for (var j = 0; j < tags.length; j++) {
                 var tag  = tags[j];
-                if (mytags.indexOf(tag) > -1 || !allTagsDict[tag]){
+                if (mytags.indexOf(tag) > -1){
                     continue;
                 }
                 mytags.push(tag);
-                var name = allTagsDict[tag].get("name");
-                var id   = allTagsDict[tag].id;
-                var span = $('<span id='+id+'></span>');
-                span.html(name);
-                tagsDiv.append(span);
+                if (allTagsDict[tag]){
+                    var name = allTagsDict[tag].get("name");
+                    var span = $('<span id='+allTagsDict[tag].id+'></span>');
+                    span.html(name);
+                    tagsDiv.append(span);
+                }
             };
-          }
-          
-        $('#myplaces').append("<div></div>");
-        var row = $("#myplaces > div:last-child");
-          
-        $(row).append("<div><a href='" + "placePage.html?id="+ myPlaces.get("place").id + "'><img src='" + (myPlaces.get("place").get("placePic").url()) + "'></a></div>");
-        var place = $("<div>" + myplaces.get("place").get("name") + "</div>");
-        var when =  $("<div>" + when + "</div>");
+        }
         
-        var placesTagsCell = $("<div></div>");
         
-        $(placesTagsCell).append(place);
-        $(placesTagsCell).append(when);
-        $(placesTagsCell).append("<div>" + dis + "</div>");
-        $(placesTagsCell).append(tagsDiv);
-        $(row).append (placeTagsCell);
+        $('#places').append("<div></div>");
+        var row =  $("#places > div:last-child");
+
+        $(row).append("<div><a href='" + "placePage.html?id="+ lastPlaces.get("place").id + "'><img src='" + (lastPlaces.get("place").get("placePic").url()) + "'></a></div>");
+        var place = $("<div>" + lastPlaces.get("place").get("name") + "</div>");
+        var when  = $("<div>" + when + "</div>");
         
-      /*    
-        $("#myplaces").append("<div id='namePlace'>" + lastPlace.get("name") + "</div>");
-        $("#myplaces").append(tagsDiv);
-        $("#myplaces").append("<div id='distancePlace'>distance:" + dis + "</div>");
-    */
+        var tagsCell = $("<div></div>");
+        
+        $(tagsCell ).append( place);
+        $(tagsCell ).append( when );
+        $(tagsCell ).append( "<div>" + dis + "</div>");
+        $(tagsCell ).append( tagsDiv );
+        $(row      ).append( tagsCell ); 
     };
 }
 
 function fillMyPageContent(checkins, places){
-    $("#myscore").html(user.get("score"));
-    fillMyPlaces(places);
     fillMyCheckins(checkins);
+    fillMyPlaces(places);
 }
 checkCookie();
