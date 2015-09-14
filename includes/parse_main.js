@@ -1,3 +1,4 @@
+var user;
 function getPlacesSuccess(res){
 	// Calculate the distance for all places from the user
 	for (i = 0; i < res.length; i++) { 
@@ -48,6 +49,19 @@ $(document).on(
 		});
 
         getHighestRating();
+        
+        var query = new Parse.Query(Parse.User);
+		var userId = getCookie("userid");
+		if (userId){
+			query.get(userId, {
+				success: function(cUser){
+					$("#helloUser").html("Hello, " + user.get("displayName"));
+					user = cUser;
+				}
+			});
+		}
+        
+        
 	
 });
 
