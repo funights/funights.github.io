@@ -1,4 +1,3 @@
-var yafaKey = "obmZctGH4sM63Kcg5nSuudbe45Cy7ad7RCD1mTxP";
 // setCookie('userid', "mA22yn2H4x" );
 $(function() {
   
@@ -395,14 +394,16 @@ function getHighestRating(rating){
         for(var i=0; i<results.length; i++){
             var rating = results[i];
             var place = rating.get("place");
-            var placeId = place.id;
-            if (!ratingPlace[placeId]){
-                places[placeId] = place;
-                ratingPlace[placeId] = 0;
-                numPlaces[placeId] = 0;
+            if (place) {
+                var placeId = place.id;
+                if (!ratingPlace[placeId]) {
+                    places[placeId] = place;
+                    ratingPlace[placeId] = 0;
+                    numPlaces[placeId] = 0;
+                }
+                ratingPlace[placeId] += rating.get("rating");
+                numPlaces[ placeId] += 1;
             }
-            ratingPlace[placeId] += rating.get("rating");
-            numPlaces[ placeId] += 1;
         }
 
         for (var placeId in ratingPlace) {
