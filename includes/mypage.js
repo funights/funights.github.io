@@ -15,7 +15,7 @@ $(document).on(
 				var score = cUser.get( "score");
 				var scoreStatus = "אדם עסוק";
 				var scoreColor  = "#fff";
-				     if( score >= 100  && score < 500  ) { scoreStatus = "בלייה מתחיל"; scoreColor = "blue";  }
+				     if( score >= 100  && score < 500  ) { scoreStatus = "בליין מתחיל"; scoreColor = "blue";  }
 				else if( score >= 500  && score < 1000 ) { scoreStatus = "בליין ממוצע" ; scoreColor = "green"; }
 				else if( score >= 1000                 ) { scoreStatus = "בליין מטורף" ; scoreColor = "gold";  }
 				
@@ -131,6 +131,9 @@ function fillMyCheckins(checkins) {
 function fillMyPlaces(places) {
     for (var i = 0; i < places.length; i++) {
         var myplaces = places[i];
+        var when    = myplaces.get("when").format("dd/m/yy");
+        var place   = myplaces.get("place");
+        
         var dis = calcDistance(place.get("address_geo").latitude, myplaces.get("address_geo").longitude);
         if (dis >= 1) {
             dis = dis.toFixed(2) + " km";
@@ -138,7 +141,7 @@ function fillMyPlaces(places) {
             dis = dis.toFixed(3) * 1000 + " m";
         }
 
-        var tags = myplaces.get("tags");
+        var tags = place.get("tags");
         var tagsDiv = "";
         if (tags) {
             tagsDiv = $("<div><div>");

@@ -727,7 +727,6 @@ h2 span.spacer      { padding: 0 2px; background: none; }
  	margin-top:200px;
  }
    
-
 #myPageTarget > div > h1 {
     color: #FFFFFF;
     margin-top: 30px;
@@ -746,17 +745,21 @@ h2 span.spacer      { padding: 0 2px; background: none; }
 }
 
 .myScoreH {
+    float: right;
+    display: block;
+    width: 300px;
+    margin-top: 50px;
+    margin-right: 30px;
+}
+
+.profileUser > h1, h2, h3{
 	float: right;
-	display: block;
-	margin-top: 30px;
-	margin-right:30px;
 }
   
  #myscore {
- 	float:right;
- 	margin-right:20px;
-    margin-top: 25px;
-
+    float: right;
+    margin-right: 20px;
+    margin-top: 55px;
  }
  
  #myPage h2 {
