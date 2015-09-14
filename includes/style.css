@@ -805,6 +805,7 @@ input.addBtn {
   }
  
  
+ 
  #myPlaces{
  	float: right;
  	display: block;
@@ -812,6 +813,57 @@ input.addBtn {
  	width:100%;
  	margin-top:30px;
  }
+ 
+  #lastPlaces{
+ 	float:right;
+ 	margin-bottom:50px;
+ 	width: 100%;
+ }
+
+ #lastPlaces > div{
+ 	float:right;
+ 	width:100%;
+ }
+ 
+   #lastPlaces > div > div{
+  	width:15%;
+  	float:right;
+  	margin-top: 30px;
+  }
+ 
+ #lastPlaces > div > div:first-child{
+ 	margin-right:5%;
+ 	width:15%
+ }
+ 
+   #lastPlaces > div > div:nth-child(2){
+  	width:65%;
+  }
+  
+  #lastPlaces > div > div:nth-child(2) > div:nth-child(1){
+  	width:47%;
+  	float: right;
+  }
+  
+   #lastPlaces > div > div:nth-child(2) > div:nth-child(2){
+  	width:38%;
+  	float: right;
+  }
+ 
+   #lastPlaces > div > div:nth-child(2) > div:nth-child(4){
+  	width:100%;
+  	float: right;
+  	margin-top: 15px;
+  }
+  
+  #lastPlaces img{
+  	float: right;
+  	width:90%;
+  }
+  
+  #lastPlaces span{
+  	margin:1%;
+  }
  
  /* scoreBoard */
 
