@@ -163,11 +163,9 @@ function fillMyPlaces(places) {
             };
         }
         
-        
-        $('#places').append("<div></div>");
-        var row =  $("#places > div:last-child");
+        var row = $("<div></div>");
 
-        $(row).append("<div><a href='" + "placePage.html?id="+ place.id + "'><img src='" + place.get("placePic").url() + "'></a></div>");
+        row.append("<div><a href='" + "placePage.html?id="+ place.id + "'><img src='" + place.get("placePic").url() + "'></a></div>");
         var place = $("<div>" + place.get("name") + "</div>");
         var when  = $("<div>" + when + "</div>");
         
@@ -178,6 +176,7 @@ function fillMyPlaces(places) {
         $(tagsCell ).append( "<div>" + dis + "</div>");
         $(tagsCell ).append( tagsDiv );
         $(row      ).append( tagsCell ); 
+        $("#lastPlaces").append(row);
     };
 }
 
