@@ -35,8 +35,6 @@ a{
 	text-decoration: none;
 }
 
-
-
 #wrapper{
  direction: rtl;
  margin: 0px auto;
@@ -53,34 +51,25 @@ a{
 	margin-top:10px;
 }
 
-
-.exit-btn { 
-	float:left;
-	position:static;
-	margin: 80px 0 0 30px;
-	height:30px;
+#user{
 	width:100px;
+	height: 100px;
+	float:left;
+}
+
+#myProfile{
+	height:100%;
+}
+
+
+.logout {
+    float: left;
+    border-radius: 4px;
     border: none;
-    font-family: arial;
-    font-size: 10px;
-    color: #FFFFFF;
-    padding-left:10px;
-    background: none;
-    cursor: pointer;
-    display: inline-block;
-    margin: 15px 30px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 200;
-    outline: none;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    transition: all 0.3s; 
-    margin-top: 116px;
-    background-color: #282F8A;
-    color: #fff;
-    border-radius: 7px;
-    box-shadow: 0 5px #202670;
+    margin: 102px 0 0 22px;
+    height: 21px;
+    width: 72px;
+    background-image: url(../images/logout.jpg);
 }
 
 

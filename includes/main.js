@@ -203,17 +203,35 @@ function setCookie(cname, cvalue, exdays) {
 
  function checkCookie() {
      var user = getCookie("userid");
+     hiUser(user);
      if (user != "") {
          //stay on page
      } else {
          window.location.href="index.html";
      }
  }
+ 
+ function hiUser(){
+	var template = $("#myProfile").html();
+	template = $("<div></div>");
+	var compiled = _.template(template);
+	var userId = getCookie("userid");
+	var query = new Parse.Query(Parse.User);
+	query.get(userId, {
+		success: function(cUser){
+			user = cUser;
+			$("#myProfile").append(compiled({item:cUser}));
+		}
+	});
+};
+
 
  function removeCookie() {
-      setCookie("userid", "", -1); //setting the userid to an empty string 
+      setCookie("userid", "", -1);
+       //setting the userid to an empty string 
       //and setting the expiration time to have passed
  }
+ 
  
  /*
  * Date Format 1.2.3
@@ -228,6 +246,8 @@ function setCookie(cname, cvalue, exdays) {
  * The date defaults to the current date/time.
  * The mask defaults to dateFormat.masks.default.
  */
+
+
 
 var dateFormat = function () {
     var token = /d{1,4}|m{1,4}|yy(?:yy)?|([HhMsTt])\1?|[LloSZ]|"[^"]*"|'[^']*'/g,

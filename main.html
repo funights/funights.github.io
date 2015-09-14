@@ -18,6 +18,13 @@
 	</head>
 	<body>	 
 		
+			<script type="text/html" id='myPtofile'>
+					<div class="placeprivate">
+	               	<h1 class="myName"><%= item.get("displayName") %> </h1>
+					<img src='http://graph.facebook.com/<%= item.get("facebookId")%>/picture?type=normal'/>   
+				</div>
+		 
+          </script>
 		
 		<script type="text/html" id='filterList'>
 			<select class="fil" id="filterType" onchange="onChangeFilter()">
@@ -71,9 +78,9 @@
 
 		<div id="wrapper"> 
 			<header> 
-				<a id="logo" href="#"> </a>
-				<div id= "user">
-					<button class="exit-btn" onclick="logout();">Log Out</button>
+				<a id="logo" href="main.html"> </a>
+				<div id= "myProfile">
+					<button class="logout" onclick="logout();"></button>
 					<div class="myName"></div>
 				</div>
  			</header>		
