@@ -17,31 +17,24 @@
 		<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 	</head>
 	<body>	 
-		
-			<script type="text/html" id='myPtofile'>
-					<div class="placeprivate">
-	               	<h1 class="myName"><%= item.get("displayName") %> </h1>
-					<img src='http://graph.facebook.com/<%= item.get("facebookId")%>/picture?type=normal'/>   
-				</div>
-		 
-          </script>
-		
+		<script type="text/html" id='myPtofile'>
+			<div class="placeprivate">
+               	<h1 class="myName"><%= item.get("displayName") %> </h1>
+				<img src='http://graph.facebook.com/<%= item.get("facebookId")%>/picture?type=normal'/>   
+			</div>
+        </script>
 		<script type="text/html" id='filterList'>
 			<select class="fil" id="filterType" onchange="onChangeFilter()">
 				<div class="filter"></div>
-				
 					<option value="0">▼ סנן לפי סוג</option>
 					<% _.each(items,function(item,key,list){ 
 			            // create more variables
 			        %>
 			        </div>
 			      <option value="<%= item.id %>"><%= item.get("name") %></option>
-				
 		        <% }); %>
 			</select>
-
-          </script>
-		
+        </script>
 		<script type="text/html" id='filterMusicList'>
 			<select class="fil" id="filterType" onchange="onChangeFilter()">
 				
@@ -50,42 +43,27 @@
 		            // create more variables
 		        %>
 		        <option value="<%= item.id %>"><%= item.get("genere") %></option>
-				
 		        <% }); %>
 			</select>
-
-          </script>
-
-        <!-- This is the place list that you need to work on
-             Every change on places should be here
-        -->
-
-		<script type="text/html" id='placesList'>
-				
+  		  </script>		
+  		  <script type="text/html" id='placesList'>
 			<% _.each(items,function(item,key,list){ 
 	            // create more variables
 	        %>
-	
 			<div class="place">
 				<h3><%= item.get("name") %> <%=item.get("i") %></h3>
                 <a href='placePage.html?id=<%= item.id%>'><img src="<%= item.imageUrl %>"/></a>
 			</div>
-		 
 	        <% }); %>
-	       
-			
           </script>
 
 		<div id="wrapper"> 
 			<header> 
 				<a id="logo" href="main.html"> </a>
-				<div id= "myProfile">
-					<button class="logout" onclick="logout();"></button>
-					<div class="myName"></div>
-				</div>
 				<div id="helloUser"></div>
  			</header>		
 		 		<nav id="cssmenu">
+					<button class="logout" onclick="logout();"></button>
 					<ul>
 					   <li class='active'><a href='#'><span>קרובים קרובים</span></a></li>
 					   <li><a href='add.html'><span>הוסף מקום</span></a></li>
@@ -103,8 +81,8 @@
                     <div id="changePositionField">
                         <input id="autocomplete" class="formFilter" placeholder="בחר כתובת " onFocus="geolocate()" type="text" required>
                     </div>
-
 				</div>
+				
 				<h1 class="pageName">קרובים קרובים</h1>
 				<aside id="indexAside">
 					<h3>המבוקש</h3>
@@ -123,7 +101,7 @@
 				</aside>
 				<div id="target" class="crop"></div>
 			 </main>
-		 
+		</div>
  		<script src="includes/parse_main.js"></script>
 
 	</body>

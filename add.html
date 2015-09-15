@@ -15,7 +15,12 @@
 		<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 	</head>
 	<body>	 
-		
+		<script type="text/html" id='myPtofile'>
+			<div class="placeprivate">
+               	<h1 class="myName"><%= item.get("displayName") %> </h1>
+				<img src='http://graph.facebook.com/<%= item.get("facebookId")%>/picture?type=normal'/>   
+			</div>
+        </script>
 		<script type="text/html" id='placeTypeList'>
 			<select class="fil" id="placeSelect" required>
 				<div class="filter"></div>
@@ -44,12 +49,13 @@
 			</select>
 
           </script>
-		
-		<div id="wrapper"> 
+		<div id="wrapper">
 			<header> 
 				<a id="logo" href="main.html"> </a>
+				<div id="helloUser"></div>
  			</header>		
-		 	<nav id="cssmenu">
+		 		<nav id="cssmenu">
+					<button class="logout" onclick="logout();"></button>
 					<ul>
 					   <li><a href='main.html'><span>קרובים קרובים</span></a></li>
 					   <li class='active'><a href='add.html'><span>הוסף מקום</span></a></li>
@@ -75,13 +81,6 @@
 							<div><label class="categoryP">&nbsp;</label><input type="submit" name="btn" class="addBtn" value="+הוסף"></div>
 						</div>
 					</form>
-					
-					<!-- <form id="fileupload" name="fileupload" enctype="multipart/form-data" method="post">
-					  <fieldset>
-					    <input type="file" name="fileselect" id="fileselect"></input>
-					    <input id="uploadbutton" type="button" value="Upload to Parse"/>
-					  </fieldset>
-					</form> -->
 				</section>
 		
   			</main>

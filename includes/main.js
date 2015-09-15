@@ -32,8 +32,6 @@ $(function() {
 
 
 	$("location").on("click", getLocation);
-
-	
 });
 
 
@@ -429,7 +427,6 @@ function setImages(place) {
 
    	placePictures = [];
    	placePictures.push(url);
-
 }
 
 function setType(typeId){

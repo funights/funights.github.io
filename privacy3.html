@@ -12,11 +12,19 @@
 		<link rel="stylesheet" href="includes/funights.css">
 	</head>
 	<body>	 
-		
+		<script type="text/html" id='myProfile'>
+			<div class="placeprivate">
+               	<h1 class="myName"><%= item.get("displayName") %> </h1>
+				<img src='http://graph.facebook.com/<%= item.get("facebookId")%>/picture?type=normal'/>   
+			</div>
+        </script>
 		<div id="wrapper"> 
 			<header> 
 				<a id="logo" href="main.html"> </a>
+				<div id="helloUser"></div>
  			</header>		
+		 		<nav id="cssmenu">
+					<button class="logout" onclick="logout();"></button>
 		 		<nav id="cssmenu">
 					<ul>
 					   <li><a href='main.html'><span>קרובים קרובים</span></a></li>

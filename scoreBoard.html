@@ -15,7 +15,12 @@
 		<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 	</head>
 	<body>	 
-		
+		<script type="text/html" id='myProfile'>
+			<div class="placeprivate">
+               	<h1 class="myName"><%= item.get("displayName") %> </h1>
+				<img src='http://graph.facebook.com/<%= item.get("facebookId")%>/picture?type=normal'/>   
+			</div>
+        </script>
 		<div id="wrapper"> 
 			<header> 
 				<a id="logo" href="main.html"> </a>

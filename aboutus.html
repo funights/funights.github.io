@@ -13,12 +13,20 @@
 		<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 	</head>
 	<body>	 
+		<script type="text/html" id='myPtofile'>
+			<div class="placeprivate">
+               	<h1 class="myName"><%= item.get("displayName") %> </h1>
+				<img src='http://graph.facebook.com/<%= item.get("facebookId")%>/picture?type=normal'/>   
+			</div>
+        </script>
 		
 		<div id="wrapper"> 
 			<header> 
 				<a id="logo" href="main.html"> </a>
+				<div id="helloUser"></div>
  			</header>		
 		 		<nav id="cssmenu">
+					<button class="logout" onclick="logout();"></button>
 					<ul>
 					   <li><a href='main.html'><span>קרובים קרובים</span></a></li>
 					   <li><a href='add.html'><span>הוסף מקום</span></a></li>
@@ -49,6 +57,6 @@
 			 	<img class="kissImage" src= "images/kiss1.gif">
 
 			 </main>
-		 
+		</div>
 	</body>
 </html>
