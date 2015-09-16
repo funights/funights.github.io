@@ -520,8 +520,7 @@ input.addBtn {
 	margin-top:30px;
 	height: 294px;
 	width: 260px;
-	overflow: hidden;
-	
+	overflow: hidden;	
 }
 
 #pic{
@@ -536,6 +535,11 @@ input.addBtn {
     top: 347px;
 	width: 200px;
 	float:right;
+}
+
+#add-image{
+	margin-right:30px;
+	margin-top: -40px;
 }
 
 #tags span{
