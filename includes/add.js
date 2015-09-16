@@ -146,8 +146,7 @@ $(document).on(
                             var score = user.get("score") ? user.get("score") : 0 ;
                             user.set("score", score + 20);
                                 user.save();
-                                alert("תהנה ! הרווחת 20 נקודות");
-                                window.location.assign("placePage.html?id=" + parseObj.id);
+                                jqAlert("תהנה ! הרווחת 20 נקודות", "placePage.html?id=" + parseObj.id);
 		                    }
 		                ,
 		                error: function(parseObj, error) {

@@ -32,10 +32,13 @@ function fillTopScorers(results){
 			 if( score <  100                  ) { scoreStatus = "בליין?"    ; scoreColor = "#FFFFFF";}
 		else if( score >= 100  && score < 500  ) { scoreStatus = "בליין מתחיל" ; scoreColor = "#FF235A";}
 		else if( score >= 500  && score < 1000 ) { scoreStatus = "בליין ממוצע" ; scoreColor = "#4CFF67"; }
-		else if( score >= 1000				   ) { scoreStatus = "בליין מטורף" ; scoreColor = "#C425FF"; }   
-		$( ".userName, .userScore" ).css( "color", scoreColor );
+		else if( score >= 1000				   ) { scoreStatus = "בליין מטורף" ; scoreColor = "#C425FF"; }  
+		 
+		
         div.append($('<h3 class= "userName">שם: ' 	+ user.get("displayName") + '</h3>'));
-        div.append($('<h3 class= "userScore">ניקוד: '	+ user.get("score"      ) + '</h3>'));
+        var score_h3 = $('<h3 class= "userScore">ניקוד: '	+ user.get("score" ) + '</h3>');
+        var score = div.append( score_h3 );
+        score_h3.css( "color", scoreColor );
         $("#scores").append(div);
        }
     }

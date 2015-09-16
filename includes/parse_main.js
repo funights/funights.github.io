@@ -6,7 +6,7 @@ function getPlacesSuccess(res){
 		var dis = calcDistance(place.get("address_geo").latitude, place.get("address_geo").longitude);
 		place.dis = dis;
         if (place.get("placePic")){
-            place.imageUrl = place.get("placePic").url()
+            place.imageUrl = place.get("placePic").url();
         } else {
             place.imageUrl = ""
         }

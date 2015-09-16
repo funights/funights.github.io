@@ -152,6 +152,8 @@ function init(){
 function fillPlaceContent(){
   		$("#placePageName").html(place.get("name"));
 	   	$("#description"  ).html(place.get("description"));
+	   	$('#address'      ).html(place.get("address"));
+	   	getDistance(place);
 	   	getTags(place);
 	   	setType(place.get("type"));
 	   	setImages(place);
@@ -190,6 +192,16 @@ function getPlaceImages(){
 	    // alert("Error: " + error.code + " " + error.message);
 	  }
 	});
+}
+
+function getDistance(place){
+		   	var dis = calcDistance(place.get("address_geo").latitude, place.get("address_geo").longitude);
+	        if (dis >= 1) {
+	            dis = dis.toFixed(2) + " km";
+	        } else {
+	            dis = dis.toFixed(3) * 1000 + " m";
+	        }
+	        $('#distance').html(dis);
 }
 
 function getTags(place){

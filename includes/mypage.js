@@ -3,7 +3,7 @@ var user;
 $(document).on(
 	'parseload',  //  <---- HERE'S OUR CUSTOM EVENT BEING LISTENED FOR
 	function(res){
-		 var template = $("#myPageId").html();
+		var template = $("#myPageId").html();
 		var compiled = _.template(template);
 		var userId = getCookie("userid");
 		var query = new Parse.Query(Parse.User);
@@ -13,14 +13,14 @@ $(document).on(
 				$("#myPageTarget").html(compiled({item:cUser}));
 				getCheckins();
 				var score = cUser.get( "score");
-					 if( score <  100                  ) { scoreStatus = "בליין?"    ; scoreColor = "#FFFFFF";}
+					 if( score <  100                  ) { scoreStatus = "בליין?!"   ; scoreColor = "#FFFFFF";   }
 				else if( score >= 100  && score < 500  ) { scoreStatus = "בליין מתחיל" ; scoreColor = "#FF235A";   }
-				else if( score >= 500  && score < 1000 ) { scoreStatus = "בליין ממוצע" ; scoreColor = "4CFF67";  }
-				else if( score >= 1000                 ) { scoreStatus = "בליין מטורף" ; scoreColor = "C425FF";   }
-				
-				$( ".myName, #myStatus" ).css( "color", scoreColor );
-				$("#myscore" ).html(user.get("score"));
-				$( "#myStatus" ).html( scoreStatus );
+				else if( score >= 500  && score < 1000 ) { scoreStatus = "בליין ממוצע" ; scoreColor = "4CFF67";    }
+				else if( score >= 1000                 ) { scoreStatus = "בליין מטורף" ; scoreColor = "C425FF";    }
+				 
+				$( ".myName, #myStatus, #myscore" ).css( "color", scoreColor );
+				$( "#myscore"                     ).html( user.get("score"));
+				$( "#myStatus"                    ).html( scoreStatus );
 			}
 		});
 			

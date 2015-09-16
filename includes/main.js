@@ -1,6 +1,14 @@
 // setCookie('userid', "mA22yn2H4x" );
 $(function() {
   
+  if( !getCookie("userid") && window.location.href.split( "index").length == 1 ){
+  	window.location = "index.html";
+  }
+  
+  if( getCookie("userid") && $( "#fblogin" ).length > 0 ){
+  	window.location = "main.html";
+  }  
+  
   Parse.$ = jQuery;
 
   // Initialize Parse with your Parse application javascript keys
@@ -200,31 +208,12 @@ function setCookie(cname, cvalue, exdays) {
 
  function checkCookie() {
      var user = getCookie("userid");
-     hiUser(user);
      if (user != "") {
          //stay on page
      } else {
          window.location.href="index.html";
      }
  }
- /*
- function hiUser(){
-	var template = $("#myProfile").html();
-	template = $("<div></div>");
-	var compiled = _.template(template);
-	var userId = getCookie("userid");
-	var query = new Parse.Query(Parse.User);
-    var img  = $("<img src='http://graph.facebook.com/" + user.get("facebookId") + "/picture?type=normal'/>");
-	query.get(userId, {
-		success: function(cUser){
-			user = cUser;
-			$("#myProfile").append("<img src='http://graph.facebook.com/" + user.get("facebookId") + "/picture?type=normal'/>");
-			$("#myProfile").append(compiled({item:cUser}));
-			
-		}
-	});
-};
-*/
 
  function removeCookie() {
       setCookie("userid", "", -1);
@@ -451,4 +440,34 @@ function addLandscapeImageClass() {
 		if( this.offsetWidth > this.offsetHeight )
 			$( this ).addClass( "landscapeImage" );
 	});
+}
+
+window.addEventListener( "load", showUserImage );
+function showUserImage() {
+	var userId = getCookie("userid");
+	var query = new Parse.Query(Parse.User);
+	query.get(userId, {
+		success: function(cUser){
+			var img = $( "<img src='http://graph.facebook.com/"+cUser.get( "facebookId" )+"/picture?type=normal'>");
+			$( "#helloUser" ).prepend( img );
+		} 
+	} );
+}
+
+function jqAlert( msg, url ) {
+    $("<div></div>").html(msg).dialog({
+        title: "",
+        resizable: false,
+        modal: true,
+        buttons: {
+            "אישור": function() 
+            {
+            	if( typeof( url ) != "undefined" ) {
+            		window.location = url;
+            	} else {
+                	$( this ).dialog( "close" );
+                }
+            }
+        }
+    });
 }
