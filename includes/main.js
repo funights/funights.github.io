@@ -207,21 +207,24 @@ function setCookie(cname, cvalue, exdays) {
          window.location.href="index.html";
      }
  }
- 
+ /*
  function hiUser(){
 	var template = $("#myProfile").html();
 	template = $("<div></div>");
 	var compiled = _.template(template);
 	var userId = getCookie("userid");
 	var query = new Parse.Query(Parse.User);
+    var img  = $("<img src='http://graph.facebook.com/" + user.get("facebookId") + "/picture?type=normal'/>");
 	query.get(userId, {
 		success: function(cUser){
 			user = cUser;
+			$("#myProfile").append("<img src='http://graph.facebook.com/" + user.get("facebookId") + "/picture?type=normal'/>");
 			$("#myProfile").append(compiled({item:cUser}));
+			
 		}
 	});
 };
-
+*/
 
  function removeCookie() {
       setCookie("userid", "", -1);

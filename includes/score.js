@@ -36,7 +36,6 @@ function fillTopScorers(results){
 		$( ".userName, .userScore" ).css( "color", scoreColor );
         div.append($('<h3 class= "userName">שם: ' 	+ user.get("displayName") + '</h3>'));
         div.append($('<h3 class= "userScore">ניקוד: '	+ user.get("score"      ) + '</h3>'));
-  		
         $("#scores").append(div);
        }
     }
