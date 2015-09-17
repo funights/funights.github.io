@@ -118,6 +118,10 @@ h3{
 	margin-top:38px;
 }
 
+#target h3{
+	color:#FFFFFF;
+}
+
 .filterBox{
 	float:left;
 	display:block;
@@ -325,18 +329,36 @@ text-align: center;
 	direction: rtl;
 	font-size: 20px;
 	width:100px;
-	height:30px;
+	height:50px;
 	font-family: 'trashim_clmbold','arial';
 	color: #FAFBF6;
 	margin-top: -25px;
 }
 
+#indexAside h4{
+	direction: rtl;
+	width:100px;
+	height:50px;
+	font-family: 'trashim_clmbold','arial';
+	color: #FAFBF6;
+    margin-top: -40px;
+    margin-right: 60px;
+}
+
+
 #placeName{
-	height: 40px;
-	width:200px;
 	margin-right: 14px;
 }
 
+#indexAside img{
+	float:left;
+	margin-left:10px;
+}
+
+#asideDescription{
+	color:#FFFFFF;
+	margin-top:10px;
+}
 /*add Place*/
 .placeForm{
 	width:1000px;
@@ -540,7 +562,7 @@ input.addBtn {
 
 #pic{
 	height: 240px;
-	margin(10px, 0 0 30px);
+	margin(0 0 0 30px);
 }
 
 #upload{
