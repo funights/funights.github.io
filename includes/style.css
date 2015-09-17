@@ -375,14 +375,20 @@ text-align: center;
 .placeForm input{
 	font-family: 'trashim_clmbold',Arial;
 }
+
 #fileDisplayArea img {
     border-radius: 5px;
     border: 5px solid white;
     margin-top: 10px;
+    margin-right: 100px;
     width: 166px;
-    position: absolute;
-    left: 0;
-    bottom: 72px;
+}
+
+#placeForm img {
+    border-radius: 5px;
+    border: 5px solid white;
+    margin-top: 10px;
+    width: 166px;
 }
 
 .placeForm select{
