@@ -160,6 +160,7 @@ function showError(error) {
 
 function getLocation(){
     if (navigator.geolocation) {
+    	$("#changePositionField").html("style=diaplay:block;"); 
         navigator.geolocation.getCurrentPosition(savePosition, showError);
     } else {
         // TODO:
@@ -463,10 +464,9 @@ function jqAlert( msg, url ) {
             "אישור": function() 
             {
             	if( typeof( url ) != "undefined" ) {
-            		window.location = url;
-            	} else {
-                	$( this ).dialog( "close" );
-                }
+            	
+            	} else
+                $( this ).dialog( "close" );
             }
         }
     });
