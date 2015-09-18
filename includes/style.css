@@ -110,6 +110,7 @@ h3{
 	font-size: 20px;
 	font-family: 'trashim_clmbold','arial';
 	margin-bottom: 10px;
+	color:#FFFFFF;
 }
 
 #target{
@@ -338,7 +339,7 @@ text-align: center;
 #indexAside h4{
 	direction: rtl;
 	width:100px;
-	height:50px;
+	height:30px;
 	font-family: 'trashim_clmbold','arial';
 	color: #FAFBF6;
     margin-top: -40px;
@@ -381,14 +382,7 @@ text-align: center;
     border: 5px solid white;
     margin-top: 10px;
     margin-right: 100px;
-    width: 166px;
-}
-
-#placeForm img {
-    border-radius: 5px;
-    border: 5px solid white;
-    margin-top: 10px;
-    width: 166px;
+    width: 145px;
 }
 
 .placeForm select{
