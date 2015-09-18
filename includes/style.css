@@ -390,9 +390,10 @@ text-align: center;
     width: 145px;
 }
 
-.placeForm select{
-	background: #FFFFFF;
-	color: #000000;
+.placeForm select {
+    background: #FFFFFF;
+    color: #000000;
+    margin-top: -4px;
 }
 
 .placeForm input{
