@@ -332,7 +332,6 @@ text-align: center;
 }
 
 <<<<<<< HEAD
-=======
 #indexAside h4{
 	direction: rtl;
 	width:100px;
@@ -344,7 +343,8 @@ text-align: center;
 }
 
 
->>>>>>> I wish
+=======
+>>>>>>> origin/master
 #placeName{
 	height: 40px;
 	width:200px;
@@ -368,19 +368,18 @@ text-align: center;
     border: 5px solid white;
     margin-top: 10px;
 <<<<<<< HEAD
+    margin-right: 100px;
+    width: 145px;
+=======
     width: 166px;
     position: absolute;
     left: 0;
     bottom: 72px;
-=======
-    margin-right: 100px;
-    width: 145px;
->>>>>>> I wish
+>>>>>>> origin/master
 }
 .placeForm select{
 	background: #FFFFFF;
 	color: #000000;
-
 }
 
 .placeForm input{
@@ -447,7 +446,10 @@ height: 108px;
 .formFilter{
 	display: block;
 	float:right;
-	margin-top:-5px;
+    margin-top: 10px;
+	margin-right:10px;
+	border-radius: 5px;
+	height:25px;
 }
 
 .categoryP{
@@ -456,7 +458,7 @@ height: 108px;
 }
 
 #autocomplete{
-	margin-top:7px;
+	font-family: 'trashim_clmbold','arial';
 }
 
 .uploadPhoto{
