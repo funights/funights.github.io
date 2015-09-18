@@ -59,11 +59,14 @@
 					<p   id = "address"></p>
 					<p   id = "distance"></p>
 					<form method="post" id="add-image">
-						<div><input id="upload" type="file" name="image" required> <div id="fileDisplayArea"></div></div>
+						<div><input id="upload" class="fileUpload" type="file" name="image" required> 
+							<div id="fileDisplayArea2"></div></div>
 						<div><input type="submit" name="btn" class="myLabel" value="+הוסף"></div>
 					</form>
-					<select class="filterTags" id="chooseTag" onchange="addTag(this)"></select>
-					<div id="tags"></div>
+					<div class= "tagsLocation">
+						<select class="filterTags" id="chooseTag" onchange="addTag(this)"></select>
+						<div id="tags"></div>
+					</div>
 				</div>
 				
 				

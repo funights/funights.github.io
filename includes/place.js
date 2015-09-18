@@ -7,7 +7,7 @@ var placePictures = [];
 window.onload = function() {
 	setImageForm();
     var fileInput = document.getElementById('upload');
-    var holder    = document.getElementById('fileDisplayArea');
+    var holder    = document.getElementById('fileDisplayArea2');
 
     fileInput.addEventListener('change', function(e) {
       // Put the rest of the demo code here.
