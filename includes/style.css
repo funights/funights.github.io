@@ -321,35 +321,41 @@ text-align: center;
     width: 250px;
 }
 
-#indexAside h3{
-	direction: rtl;
-	font-size: 20px;
-	width:100px;
-	height:30px;
-	font-family: 'trashim_clmbold','arial';
-	color: #FAFBF6;
-	margin-top: -25px;
+#indexAside h3 {
+    direction: rtl;
+    font-size: 20px;
+    width: 100px;
+    height: 50px;
+    font-family: 'trashim_clmbold','arial';
+    color: #FAFBF6;
+    margin-top: -25px;
+    margin-right: 10px;
 }
 
-<<<<<<< HEAD
-#indexAside h4{
-	direction: rtl;
-	width:100px;
-	height:30px;
-	font-family: 'trashim_clmbold','arial';
-	color: #FAFBF6;
+#indexAside h4 {
+    direction: rtl;
+    float: right;
+    width: 100px;
     margin-top: -40px;
+    font-family: 'trashim_clmbold','arial';
+    color: #FAFBF6;
     margin-right: 60px;
 }
 
+#asideDescription{
+	float:right;
+	margin-right:10px;
+	margin-top:10px;
+	color: #FAFBF6;
+	margin-bottom: 25px;
+}
 
-=======
->>>>>>> origin/master
+/**
 #placeName{
 	height: 40px;
 	width:200px;
 }
-
+**/
 /*add Place*/
 .placeForm{
 	width:1000px;
@@ -367,16 +373,10 @@ text-align: center;
     border-radius: 5px;
     border: 5px solid white;
     margin-top: 10px;
-<<<<<<< HEAD
     margin-right: 100px;
     width: 145px;
-=======
-    width: 166px;
-    position: absolute;
-    left: 0;
-    bottom: 72px;
->>>>>>> origin/master
 }
+
 .placeForm select{
 	background: #FFFFFF;
 	color: #000000;
@@ -623,6 +623,7 @@ input.addBtn {
 	color:#DB9A02;
     font-size: 20px;
     font-family: 'trashim_clmbold', Arial;
+    margin-right: 10px;
 }
 
 #rating:not(:checked) > input {
