@@ -350,6 +350,12 @@ text-align: center;
 	margin-bottom: 25px;
 }
 
+.asideRating{
+	margin-right: 10px; 
+	margin-top: -85px;
+	float:right;
+}
+
 /**
 #placeName{
 	height: 40px;
