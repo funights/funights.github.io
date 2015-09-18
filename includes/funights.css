@@ -20,6 +20,7 @@
     padding-right: 52px;
     padding-left: 50px;	
     line-height: 140%;  
+    color: #FFFFFF;
 }
 
 .kissImage{
@@ -45,4 +46,7 @@ h2{
 }
 #fbfriends{
 	margin-left: 30px;
+}
+.userName{
+	color: #FFFFFF;
 }
