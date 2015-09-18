@@ -332,6 +332,7 @@ text-align: center;
 }
 
 <<<<<<< HEAD
+=======
 #indexAside h4{
 	direction: rtl;
 	width:100px;
@@ -343,8 +344,7 @@ text-align: center;
 }
 
 
-=======
->>>>>>> origin/master
+>>>>>>> I wish
 #placeName{
 	height: 40px;
 	width:200px;
@@ -368,14 +368,14 @@ text-align: center;
     border: 5px solid white;
     margin-top: 10px;
 <<<<<<< HEAD
-    margin-right: 100px;
-    width: 145px;
-=======
     width: 166px;
     position: absolute;
     left: 0;
     bottom: 72px;
->>>>>>> origin/master
+=======
+    margin-right: 100px;
+    width: 145px;
+>>>>>>> I wish
 }
 .placeForm select{
 	background: #FFFFFF;
