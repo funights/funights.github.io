@@ -9,6 +9,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'DJB Jenna';
+    url('Jenna/DJB Jenna.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 *{
  padding:0px;
  margin:0px;
@@ -19,7 +26,7 @@ header,section,aside,footer,a,nav{
 }
 
 body{
-	font-family:'trashim_clmbold', 'Architects Daughter', cursive, Arial;
+	font-family: 'trashim_clmbold', Arial;
 	width:100%;
 	background-image: url(../images/background.jpg);
 }
@@ -44,28 +51,25 @@ a{
 	margin-top:10px;
 }
 
-/*
 .logout {
     float: left;
     border-radius: 4px;
     border: none;
- 	margin: 2px 0px 0 -198px;
+    margin: 2px 0px 0 2px;
     height: 21px;
     width: 72px;
     background-image: url(../images/logout.jpg);
 }
-*/
 
 .logout2{
 	float: left;
     border-radius: 4px;
     border: none;
-    margin: 2px 0px 0 -198px;
+    margin: 2px 0px 0 2px;
     height: 21px;
     width: 72px;
     background-image: url(../images/logout.jpg);
 }
-
 header{
  width:1000px;
  height:100px;
@@ -113,7 +117,7 @@ h1{
 h3{
 	direction: rtl;
 	font-size: 20px;
-	font-family: 'trashim_clmbold', 'Architects Daughter', cursive, Arial;
+	font-family: 'trashim_clmbold','arial';
 	margin-bottom: 10px;
 	color:#FFFFFF;
 }
@@ -143,7 +147,7 @@ h3{
 	float:right;
 	position:absolute;
 	color:#ffec64;
-	font-family: 'trashim_clmbold', 'Architects Daughter', cursive, Arial;
+	font-family: 'trashim_clmbold','DJB Jenna','Arial';
 	display:inline;
 	margin-top:25px;
 }
@@ -153,17 +157,8 @@ h3{
 	float:right;
 	margin-right:4px;
 	margin-left:20px;
-	font-family: 'trashim_clmbold', 'Architects Daughter', cursive, Arial;
+	font-family
 }
-
-.changeAddress {
-    display: block;
-    float: right;
-    margin-top: 10px;
-    border-radius: 5px;
-    height: 22px;
-    margin-right:20px;
- }
 
 .category{
 	display:inline;
@@ -191,7 +186,7 @@ h3{
 	display:inline-block;
 	cursor:pointer;
 	color:#777777;
-	font-family:'trashim_clmbold', 'Architects Daughter', cursive, Arial;
+	font-family:Arial;
 	font-size:18px;
 	font-weight:bold;
 	padding:12px 16px;
@@ -230,10 +225,10 @@ h3{
 	display:inline-block;
 	cursor:pointer;
 	color:#333333;
-	font-family:'trashim_clmbold', 'Architects Daughter', cursive, Arial;
+	font-family:'trashim_clmbold','arial';
 	font-size:15px;
 	font-weight:bold;
-	padding:5px 5px;
+	padding:5px px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #ffee66;
 }
@@ -260,7 +255,7 @@ h3{
 	margin-right: 50px;
 	margin-top:70px;
 	color: #FAFBF6;
-	font-family: 'trashim_clmbold', 'Architects Daughter', cursive, Arial;
+	font-family: 'trashim_clmbold','arial';
 }
 
 .crop{
@@ -335,7 +330,7 @@ text-align: center;
     margin-top: 92px;
     border-style: solid;
     border-color: #FAFBF6;
-    font-family: 'trashim_clmbold', 'Architects Daughter', cursive, Arial;
+    font-family: 'trashim_clmbold',Arial;
     border-width: 1px;
     height: 460px;
     width: 250px;
@@ -346,7 +341,7 @@ text-align: center;
     font-size: 20px;
     width: 100px;
     height: 50px;
-    font-family: 'trashim_clmbold', 'Architects Daughter', cursive, Arial;
+    font-family: 'trashim_clmbold','arial';
     color: #FAFBF6;
     margin-top: -25px;
     margin-right: 10px;
@@ -357,7 +352,7 @@ text-align: center;
     float: right;
     width: 100px;
     margin-top: -40px;
-    font-family: 'trashim_clmbold', 'Architects Daughter', cursive, Arial;
+    font-family: 'trashim_clmbold','arial';
     color: #FAFBF6;
     margin-right: 60px;
 }
@@ -389,7 +384,7 @@ text-align: center;
 	line-height: 40px;
 	position:absolute;
 	color:#ffec64;
-	font-family:'trashim_clmbold', 'Architects Daughter', cursive, Arial;
+	font-family: 'trashim_clmbold','DJB Jenna','Arial';
 	display:block;
 	margin-top:25px;
 	margin-right: 30px;
@@ -416,7 +411,7 @@ text-align: center;
 	border-radius: 5px; 
 	margin-right:100px;
 	color:#000000;
-	font-family:'trashim_clmbold', 'Architects Daughter', cursive, Arial;
+	font-family:'trashim_clmbold','arial';
 }
 
 #tags{
@@ -441,8 +436,7 @@ text-align: center;
 input.addBtn{
 	width: 175px;
     box-sizing: border-box;
-    margin-right:0;
-    font-family:'trashim_clmbold', 'Architects Daughter', cursive, Arial;
+    margin-right:0;font-family:'trashim_clmbold','arial';
     
 }
 
@@ -479,7 +473,8 @@ height: 108px;
     margin-top: 10px;
     border-radius: 5px;
     height: 22px;
-}
+    margin-right: 26px;
+   }
 
 .categoryP{
 	float: right;
@@ -487,7 +482,7 @@ height: 108px;
 }
 
 #autocomplete{
-	font-family: 'trashim_clmbold', 'Architects Daughter', cursive, Arial;
+	font-family: 'trashim_clmbold','arial';
 }
 
 .uploadPhoto{
@@ -517,7 +512,7 @@ input.addBtn {
 	display:inline-block;
 	cursor:pointer;
 	color:#333333;
-	font-family:'trashim_clmbold', 'Architects Daughter', cursive, Arial;
+	font-family:'trashim_clmbold','arial';
 	font-size:15px;
 	font-weight:bold;
 	padding:6px 24px;
@@ -611,7 +606,7 @@ input.addBtn {
 	float:right;
 	margin-right:30px;
 	margin-top:-40px;
-	font-family:'trashim_clmbold', 'Architects Daughter', cursive, Arial;
+	font-family:Arial;
 }
 
 #fileDisplayArea2 img {
@@ -630,7 +625,7 @@ input.addBtn {
     display: inline-block;
     cursor: pointer;
     color: #ffffff;
-    font-family: 'trashim_clmbold', 'Architects Daughter', cursive, Arial;
+    font-family: 'trashim_clmbold', Arial;
     font-weight: bold;
     padding: 5px 9px;
     text-decoration: none;
@@ -660,7 +655,7 @@ input.addBtn {
     display: inline-block;
     cursor: pointer;
     color: #ffffff;
-    font-family: 'trashim_clmbold', 'Architects Daughter', cursive, Arial;
+    font-family: 'trashim_clmbold', Arial;
     font-weight: bold;
     padding: 6px 36px;
     text-decoration: none;
@@ -705,7 +700,7 @@ input.addBtn {
 .checkInBTN {
 	float: left;
     margin: 45px 0 0 68px;
-	font-family: 'trashim_clmbold', 'Architects Daughter', cursive, Arial;
+	font-family: 'trashim_clmbold', Arial;
 	font-weight:800;
 	background-color: #DB9A02;
 	box-shadow:inset 0px 1px 0px 0px #ffffff;
@@ -747,7 +742,7 @@ input.addBtn {
 #rating legend{
 	color:#DB9A02;
     font-size: 20px;
-    font-family: 'trashim_clmbold', 'Architects Daughter', cursive, Arial;
+    font-family: 'trashim_clmbold', Arial;
     margin-right: 10px;
 }
 
@@ -806,7 +801,7 @@ input.addBtn {
     font-weight: bold;
     color: #DB9A02;
     font-size: 19px;
-    font-family: 'trashim_clmbold', 'Architects Daughter', cursive, Arial;
+    font-family: 'trashim_clmbold', Arial;
 }
 
 #allrating {
@@ -816,7 +811,7 @@ input.addBtn {
     font-weight: bold;
     color: #FFFFFF;
     font-size: 19px;
-    font-family: 'trashim_clmbold', 'Architects Daughter', cursive, Arial;
+    font-family: 'DJB Jenna', Arial;
 }
 
 .fb-like{
@@ -840,7 +835,8 @@ input.addBtn {
     size: 30px;
     padding: 5px;
     margin: 10px;
-    font-family: 'trashim_clmbold', 'Architects Daughter', cursive, Arial;
+    font-family: 'trashim_clmbold', Arial;
+}
 
 #chooseTag{
      float: right;
@@ -848,7 +844,7 @@ input.addBtn {
     padding: 5px;
     margin-top: 40px;
     font-weight: bold;
-    font-family:'trashim_clmbold', 'Architects Daughter', cursive, Arial;
+    font-family: 'trashim_clmbold', Arial;
     font-size: 20px;
     margin-right: 15px;
 }
@@ -1051,7 +1047,7 @@ input.addBtn {
   -webkit-border-radius: 28;
   -moz-border-radius: 28;d
   border-radius: 28px;
-  font-family: 'trashim_clmbold', 'Architects Daughter', cursive, Arial;
+  font-family: Arial;
   color: #f7ec18;
   font-size: 20px;
   padding: 10px 20px 10px 20px;
