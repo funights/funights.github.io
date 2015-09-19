@@ -449,7 +449,7 @@ function showUserImage() {
 	var query = new Parse.Query(Parse.User);
 	query.get(userId, {
 		success: function(cUser){
-			var img = $( "<img src='http://graph.facebook.com/"+cUser.get( "facebookId" )+"/picture?type=normal'>");
+			var img = $( "<a href='myPage.html'><img src='http://graph.facebook.com/"+cUser.get( "facebookId" )+"/picture?type=normal'></a>");
 			$( "#helloUser" ).prepend( img );
 		} 
 	} );

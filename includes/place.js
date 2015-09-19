@@ -206,7 +206,7 @@ function getDistance(place){
 
 function getTags(place){
 	$( "#tags" ).html("");
-	$( "#chooseTag" ).html( "<option value=''>הוסף תגית לתיאור מקום  ▼</option>");
+	$( "#chooseTag" ).html( "<option value=''>הוסף תגית לתיאור מקום  </option>");
 	
 	var Tag = Parse.Object.extend("Tag");
 	var query = new Parse.Query(Tag);

@@ -9,7 +9,7 @@
     width: 100% !important;
 }
 .fb-comments, .fb-comments span, .fb-comments.fb_iframe_widget span iframe {
-    width: 100% !important;
+    width: 100% !important; 
 }
 .fb-comments, .fb-comments iframe[style] {width: 100% !important;}
 
@@ -37,6 +37,7 @@
 	float:right;
 	margin-bottom: 20px;
 }
+
 h2{
 	direction: rtl;
     font-size: 25px;
@@ -44,9 +45,15 @@ h2{
     margin-top: 19px;
     margin-right: 13px;
 }
+
 #fbfriends{
 	margin-left: 30px;
 }
+
 .userName{
 	color: #FFFFFF;
+}
+
+._56q9{
+	background-color:#000000;
 }
