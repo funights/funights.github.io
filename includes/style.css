@@ -806,16 +806,20 @@ input.addBtn {
 }
 
 #currentRating {
-    float: left;
-    margin: -60px 0 0 131px;
+    float: right;
+    margin-right:60px;
     font-weight: bold;
     color: #DB9A02;
     font-size: 19px;
-    font-family: 'trashim_clmbold', 'Architects Daughter', cursive,Arial;
+    font-family: 'trashim_clmbold', 'Architects Daughter', cursive, Arial;
+    width: 78px;
+    white-space: nowrap;
+    margin-top: 40px;
 }
 
 #allrating {
-    float: left;
+    float: right;
+    width: 70px;
     margin: 36px;
     font-weight: bold;
     color: #FFFFFF;
@@ -823,6 +827,10 @@ input.addBtn {
     font-family: 'Architects Daughter', cursive, Arial;
 }
 
+label[for="star5"]{
+	margin-right:20px;
+	
+}
 .fb-like{
 	float:left;
 	margin: 70px 0 0 68px;
@@ -1121,3 +1129,12 @@ input.addBtn {
 	margin:15px;
 }
 
+/*lightBoxes*/
+
+div.ui-dialog-buttonset {
+	float: left !important; 
+}
+
+.ui-dialog-content{
+	direction: rtl;
+}

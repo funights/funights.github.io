@@ -63,10 +63,11 @@ function setImageForm() {
 			                //if successful
 			                success: function(parseObj) {
                                 setImages(place);
-                                var score = user.get("score") ? user.get("score") : 0
+                                var score = user.get("score") ? user.get("score") : 0;
                                 user.set("score", score + 10);
                                     user.save();
-                                    alert("תהנה! הרווחת עוד 15 נקודות");
+                                    $( "#fileDisplayArea2" ).hide();
+                                    jqAlert("תהנה! הרווחת עוד 15 נקודות");
 			                    }
 			                ,
 			                error: function(parseObj, error) {
@@ -123,7 +124,7 @@ $(document).on(
 	                		alert("success");
 	                		$("#commentInput").val("");
 	                		getComments();
-	                		alert("מעולה! הרווחת עוד 10 נקודות");
+	                		jqAlert("מעולה! הרווחת עוד 10 נקודות");
 	                    },
 	                error: function(parseObj, error) {
 	                    console.log(parseObj);
@@ -250,7 +251,7 @@ function checkIn(){
                 var score = user.get("score") ? user.get("score") : 0;
                 user.set("score", score + 5);
                 user.save();
-                alert("תהנה! הרווחת עוד 5 נקודות");
+                jqAlert("הרווחת 5 נקודות, השתמש בתגיות לתיאור המקום ותרוויח נקודות נוספות");
                 var d = document.getElementById("checkinid");
                 d.className = d.className + " pressed";
             },
