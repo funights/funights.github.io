@@ -66,7 +66,7 @@ function setImageForm() {
                                 var score = user.get("score") ? user.get("score") : 0
                                 user.set("score", score + 10);
                                     user.save();
-                                    alert("תהנה! הרווחת עוד 10 נקודות");
+                                    alert("תהנה! הרווחת עוד 15 נקודות");
 			                    }
 			                ,
 			                error: function(parseObj, error) {
@@ -123,6 +123,7 @@ $(document).on(
 	                		alert("success");
 	                		$("#commentInput").val("");
 	                		getComments();
+	                		alert("מעולה! הרווחת עוד 10 נקודות");
 	                    },
 	                error: function(parseObj, error) {
 	                    console.log(parseObj);
@@ -246,7 +247,7 @@ function checkIn(){
     newCheckIn.save(data, {
             //if successful
             success: function(parseObj) {
-                var score = user.get("score") ? user.get("score") : 0
+                var score = user.get("score") ? user.get("score") : 0;
                 user.set("score", score + 5);
                 user.save();
                 alert("תהנה! הרווחת עוד 5 נקודות");
@@ -257,8 +258,7 @@ function checkIn(){
                 console.log(parseObj);
                 console.log(error);
             }
-        }
-    );
+    });
 }
 
 
@@ -287,7 +287,8 @@ function removeTag(a_obj){
 			if( tags[i] == id )
 				tags.splice( i, 1 );
 		place.set( "tags", tags );
-		place.save();	
+		place.save();
+		alert("תהנה! הרווחת עוד 5 רוצה לעשות לייק למקום?");	
 	}
 	
 	function removeObject() {
@@ -313,7 +314,7 @@ function addTag( selObj ){
 	tags[ tags.length ] = id;
 	place.set( "tags", tags );
 	place.save();
-    var score = user.get("score") ? user.get("score") : 0
+    var score = user.get("score") ? user.get("score") : 0;
     user.set("score", score + 5);
     user.save();
     alert("תהנה! הרווחת עוד 5 נקודות");
@@ -425,10 +426,10 @@ function rate(){
             //if successful
             success: function(parseObj) {
             	if (!wasRating){
-	            	alert("תהנה! הרווחת עוד 30 נקודות");
-                    var score = user.get("score") ? user.get("score") : 0
+                    var score = user.get("score") ? user.get("score") : 0;
                     user.set("score", score + 30);
                     user.save();
+                    alert("תהנה! הרווחת עוד 5 נקודות");
 	            	wasRating = true;
             	}
             },
