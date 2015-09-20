@@ -79,9 +79,9 @@ $(document).on(
 	    	Parse.FacebookUtils.logIn(null, {
 		        success: function(user) {
 		            if (!user.existed()) {
-		                alert("User signed up and logged in through Facebook!");
+		                jqAlert("המשתמש מחובר דרך פייסבוק");
 		            } else {
-		                alert("User logged in through Facebook!");
+		             //   alert("User logged in through Facebook!");
 		            }
 		            testAPI();
 		        },
@@ -109,7 +109,7 @@ $(document).on(
 <!--<button id="fblogin">facebook</button>-->
 	<div class="connectIndex">
 		<img class="connectIndexImage" src="images/funights.png"/>
-		<h2>התחבר:</h2>	
+		<h2>התחבר</h2>	
 		<a href="#" id="fblogin"><img src="images/connect-facebook-button.png"></a>
 		<div id="status"></div>
 	</div>

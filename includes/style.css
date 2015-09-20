@@ -41,6 +41,15 @@ a{
  width:1000px;
 }
 
+h2{
+	direction: rtl;
+    font-size: 25px;
+    float: right;
+    margin-top: 19px;
+    margin-right: 13px;
+    color: #FFFFFF;
+}
+
 #logo{
 	float:right;
 	background-image: url(../images/logo4.png);
