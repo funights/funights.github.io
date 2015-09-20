@@ -3,7 +3,7 @@ var address;
 var fileUrl;
 var user;
 window.onload = function() {
-	initAutocomplete();
+	setTimeout( function() { initAutocomplete(); }, 300 );
     var fileInput = document.getElementById('upload');
     var holder    = document.getElementById('fileDisplayArea');
 
