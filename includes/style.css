@@ -61,15 +61,17 @@ a{
 	clear: both;
 }
 
-.logout2{
+.logout2 {
 	float: left;
-    border-radius: 4px;
-    border: none;
-    margin: 2px 0px 0 -197px;
-    height: 21px;
-    width: 72px;
-    background-image: url(../images/logout.jpg);
+	border-radius: 4px;
+	border: none;
+	margin: 2px 5px;
+	height: 21px;
+	width: 72px;
+	background-image: url(../images/logout.jpg);
+	clear: both;
 }
+
 header{
  width:1000px;
  height:100px;
