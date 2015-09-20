@@ -384,7 +384,7 @@ function fillRating(result){
 		for (var i=0; i < result.length; i++) {
 		  ratingSum += result[i].get("rating");
 		};
-		$("#allrating").html((ratingSum/result.length) + " / " + result.length);
+		$("#allrating").html(Math.round(ratingSum/result.length) + " / " + result.length);
 	} else{
         $("#currentRating").hide();
     }

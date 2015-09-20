@@ -464,7 +464,7 @@ function jqAlert( msg, url ) {
             "אישור": function() 
             {
             	if( typeof( url ) != "undefined" ) {
-            	
+            		window.location = url;
             	} else
                 $( this ).dialog( "close" );
             }

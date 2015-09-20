@@ -23,47 +23,58 @@ function getPlacesSuccess(res){
 }
 $(document).on(
 	'parseload',  //  <---- HERE'S OUR CUSTOM EVENT BEING LISTENED FOR
-	function(){
-	    //some code that requires the parse object
-		
-		getAllPlacesTypes(function(res){
+
+    function() {
+    	if( window.location.href.split( "main" ).length > 1 )
+    		onPageLoad();
+		showHelloUser();
+    }
+);
+
+function onPageLoad(){
+    //some code that requires the parse object
+	
+	getAllPlacesTypes(function(res){
+		if( $("#filterTarget").length > 0 ) {
 			var template = $("#filterList").html();
 			var compiled = _.template(template);
-			
-			$("#filterTarget").html(compiled({items:res}));
-		}, function(error){
-			alert(error.message);
-		});
 		
-		getAllMusicGeneres(function(res){
-			var template = $("#filterMusicList").html();
-			var compiled = _.template(template);
-			
-			$("#filterMusicTarget").html(compiled({items:res}));
-		}, function(error){
-			alert(error.message);
-		});   
-	    
-	    getAllPlaces(getPlacesSuccess, function(error){
-			alert(error.message);
-		});
-
-        getHighestRating();
-        
-        var query = new Parse.Query(Parse.User);
-		var userId = getCookie("userid");
-		if (userId){
-			query.get(userId, {
-				success: function(cUser){
-					user = cUser;
-					$("#helloUser").html("Hello, " + user.get("displayName"));
-				}
-			});
+			$("#filterTarget").html(compiled({items:res}));
 		}
-        
-        
+	}, function(error){
+		alert(error.message);
+	});
 	
-});
+	getAllMusicGeneres(function(res){
+		var template = $("#filterMusicList").html();
+		var compiled = _.template(template);
+		
+		$("#filterMusicTarget").html(compiled({items:res}));
+	}, function(error){
+		alert(error.message);
+	});   
+    
+    getAllPlaces(getPlacesSuccess, function(error){
+		alert(error.message);
+	});
+
+    getHighestRating();
+
+}
+
+function showHelloUser() {
+	    
+    var query = new Parse.Query(Parse.User);
+	var userId = getCookie("userid");
+	if (userId){
+		query.get(userId, {
+			success: function(cUser){
+				user = cUser;
+				$("#helloUser").html("Hello, " + user.get("displayName"));
+			}
+		});
+	}
+}
 
 function onChangeFilter(){ // when changing MusicGenere or PlaceType filter run again the query
 	$("#target").html("Loading...");

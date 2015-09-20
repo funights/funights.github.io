@@ -52,13 +52,14 @@ a{
 }
 
 .logout {
-    float: left;
-    border-radius: 4px;
-    border: none;
-    margin: 2px 0px 0 -197px;
-    height: 21px;
-    width: 72px;
-    background-image: url(../images/logout.jpg);
+	float: left;
+	border-radius: 4px;
+	border: none;
+	margin: 2px 5px;
+	height: 21px;
+	width: 72px;
+	background-image: url(../images/logout.jpg);
+	clear: both;
 }
 
 .logout2{
@@ -99,6 +100,7 @@ main{
     color: #FFFFFF;
     margin-top:80px;
 	width: 200px;
+	height: 22px;
 }
 
 #helloUser img{
@@ -404,7 +406,7 @@ text-align: center;
     border: 5px solid white;
     margin-top: 10px;
     margin-right: 100px;
-    width: 145px;
+    width: 16c5px;
 }
 
 .placeForm select {
@@ -805,7 +807,7 @@ input.addBtn {
 
 #currentRating {
     float: left;
-    margin: -91px 0 0 131px;
+    margin: -60px 0 0 131px;
     font-weight: bold;
     color: #DB9A02;
     font-size: 19px;
