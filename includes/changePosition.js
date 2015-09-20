@@ -1,7 +1,7 @@
 var autocomplete;
 
 $(document).ready(function(){
-    initAutocomplete();
+    setTimeout( function() { initAutocomplete(); }, 1000 );
     $('#changePosition').click(function(e){
         e.preventDefault();
         $("#changePositionField").show();
@@ -11,6 +11,7 @@ $(document).ready(function(){
 function initAutocomplete() {
   // Create the autocomplete object, restricting the search to geographical
   // location types.
+
   autocomplete = new google.maps.places.Autocomplete(
       /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
       {types: ['geocode']});
@@ -18,7 +19,6 @@ function initAutocomplete() {
   // When the user selects an address from the dropdown, populate the address
   // fields in the form.
   autocomplete.addListener('place_changed', changeUserPosition);
-
     $("#changePositionField").hide();
 }
 

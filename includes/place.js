@@ -289,7 +289,7 @@ function removeTag(a_obj){
 				tags.splice( i, 1 );
 		place.set( "tags", tags );
 		place.save();
-		alert("תהנה! הרווחת עוד 5 רוצה לעשות לייק למקום?");	
+		jqAlert("תודה, הרווחת עוד 5 רוצה לעשות לייק למקום?");	
 	}
 	
 	function removeObject() {
@@ -318,7 +318,7 @@ function addTag( selObj ){
     var score = user.get("score") ? user.get("score") : 0;
     user.set("score", score + 5);
     user.save();
-    alert("תהנה! הרווחת עוד 5 נקודות");
+    jqAlert("תודה, הרווחת עוד 5 נקודות. רוצה להוסיף גם תגובה משלך?");
 	getTags(place);
 
 }
@@ -430,7 +430,7 @@ function rate(){
                     var score = user.get("score") ? user.get("score") : 0;
                     user.set("score", score + 30);
                     user.save();
-                    alert("תהנה! הרווחת עוד 5 נקודות");
+                    jqAlert("תהנה! הרווחת עוד 5 נקודות");
 	            	wasRating = true;
             	}
             },

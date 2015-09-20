@@ -39,7 +39,6 @@ a{
  direction: rtl;
  margin: 0px auto;
  width:1000px;
- background-image: url(../images/bg2.jpg);
 }
 
 #logo{
@@ -74,11 +73,14 @@ a{
 header{
  width:1000px;
  height:100px;
+  background-image: url(../images/bg2.jpg);
 }
 
 main{
  width:1000px;
- height:2000px;
+padding-bottom: 100px;
+  background-image: url(../images/bg2.jpg);
+  float: right;
 }
 
 
@@ -133,7 +135,7 @@ h3{
 .filterBox{
 	float:left;
 	display:block;
-	margin-top: -40px;
+	margin-top: 30px;
 	margin-left:30px;
 	margin-bottom:30px;
 	border-color: #FAFBF6;
@@ -393,7 +395,6 @@ text-align: center;
 	width:1000px;
 	float:right;
 	line-height: 40px;
-	position:absolute;
 	color:#ffec64;
 	font-family: 'trashim_clmbold','Architects Daughter', cursive,'Arial';
 	display:block;

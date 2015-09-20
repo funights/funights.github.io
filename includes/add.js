@@ -3,7 +3,7 @@ var address;
 var fileUrl;
 var user;
 window.onload = function() {
-	setTimeout( function() { initAutocomplete(); }, 300 );
+
     var fileInput = document.getElementById('upload');
     var holder    = document.getElementById('fileDisplayArea');
 
@@ -27,6 +27,7 @@ window.onload = function() {
 	
 	  return false;
     });
+	setTimeout( function() { initAutocomplete(); }, 1000 );
 }
 
 function initAutocomplete() {
@@ -140,21 +141,42 @@ $(document).on(
                     userAdded: user
 		        };
 		        
-		        newPlace.save(data, {
-		                //if successful
-		                success: function(parseObj){
-                            var score = user.get("score") ? user.get("score") : 0 ;
-                            user.set("score", score + 20);
-                                user.save();
-                                jqAlert("תהנה ! הרווחת 20 נקודות", "placePage.html?id=" + parseObj.id);
-		                    }
-		                ,
-		                error: function(parseObj, error) {
-		                    console.log(parseObj);
-		                    console.log(error);
-		                }
-		            }
-		        );
+		        checkIfExists();
+		        
+		        function checkIfExists() {
+	        		var Place = Parse.Object.extend("Place");
+					var query = new Parse.Query(Place);
+					query.find({
+					  success: function(results) {
+					  	for( var i2 = 0 ; i2 < results.length; i2++ )
+					  		if(     results[i2].attributes.name        == $( "#placeName" ).val() )
+					  			if(    results[i2].attributes.address_geo._latitude  == geoPoint._latitude
+					  				&& results[i2].attributes.address_geo._longitude == geoPoint._longitude ){
+					  				jqAlert("המקום קיים", "placePage.html?id=" + results[i2].id, "עבור לעמוד המקום");
+					  				return;
+					  			}
+			  			doSave();
+					  }
+					});
+		        }
+		        
+		        function doSave() {
+			        newPlace.save(data, {
+			                //if successful
+			                success: function(parseObj){
+	                            var score = user.get("score") ? user.get("score") : 0 ;
+	                            user.set("score", score + 20);
+	                                user.save();
+	                                jqAlert("תהנה ! הרווחת 20 נקודות", "placePage.html?id=" + parseObj.id);
+			                    }
+			                ,
+			                error: function(parseObj, error) {
+			                    console.log(parseObj);
+			                    console.log(error);
+			                }
+			            }
+			        );
+		       }
 			}, function(error) {
 			  // The file either could not be read, or could not be saved to Parse.
 			});				

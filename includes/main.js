@@ -455,19 +455,23 @@ function showUserImage() {
 	} );
 }
 
-function jqAlert( msg, url ) {
+function jqAlert( msg, url, buttonText ) {
+	if(typeof( buttonText) == "undefined" )
+		buttonText = "אישור";
+    
+    buttons = {};
+    buttons[buttonText] = function() 
+        {
+        	if( typeof( url ) != "undefined" ) {
+        		window.location = url;
+        	} else
+            $( this ).dialog( "close" );
+        };
+    
     $("<div></div>").html(msg).dialog({
         title: "",
         resizable: false,
         modal: true,
-        buttons: {
-            "אישור": function() 
-            {
-            	if( typeof( url ) != "undefined" ) {
-            		window.location = url;
-            	} else
-                $( this ).dialog( "close" );
-            }
-        }
+        buttons: buttons
     });
 }
