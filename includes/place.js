@@ -182,7 +182,6 @@ function getPlaceImages(){
 	query.include("user");
 	query.include("place");
 	query.equalTo("place", place);
-	query.equalTo("user", user);
 	query.find({
 	  success: function(results) {
 	  	for (var i=0; i < results.length; i++) {
