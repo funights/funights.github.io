@@ -1154,6 +1154,7 @@ div.ui-dialog-buttonset {
 	
 	.pageName{
 		padding-right: 10%;
+		padding-top:20%;
 	}
 	
 	#target > div {
@@ -1192,6 +1193,7 @@ div.ui-dialog-buttonset {
 	
 	.filterBox{
 		width: 90%;
+		
 	}
 
 	#indexAside{
