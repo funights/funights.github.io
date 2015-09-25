@@ -18,6 +18,7 @@ window.onload = function() {
 	  reader.onload = function (event) {
 	    var img = new Image();
 	    img.src = event.target.result;
+	    $(".myLabel").show();
 	    // note: no onload required since we've got the dataurl...I think! :)
 	    if (img.width > 560) { // holder width
 	      img.width = 560;

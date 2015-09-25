@@ -268,7 +268,6 @@ h3{
 	
 }
 
-
 .pageName{
 	margin-right: 50px;
 	margin-top:70px;
@@ -281,6 +280,9 @@ h3{
  	width: 119px;
 }
  
+ #wantedPic{
+ 	width: 100%;
+ }
 #target > div {
 	float:right;
 	margin: 24px;
@@ -1187,6 +1189,12 @@ h2{
 	background-color:#000000;
 }
 
+
+.waze{
+	width:100%;
+}
+
+
 /* end of desktop*/
 
 @media only screen and (max-width:600px){
@@ -1240,11 +1248,7 @@ h2{
 	    width: 100%;
 		margin-right: 17.5%;
 	}
-	
-	#pic{
-		width: 100%;
-		height: auto;
-	}
+
 	
 	#asideDescription{
 		text-align: center;

@@ -163,7 +163,6 @@ function showError(error) {
 
 function getLocation(){
     if (navigator.geolocation) {
-    	$("#changePositionField").html("style=diaplay:block;"); 
         navigator.geolocation.getCurrentPosition(savePosition, showError);
     } else {
         // TODO:
@@ -419,7 +418,7 @@ function getHighestRating(rating){
 function setImages(place) {
    	var imageDiv = $("#placePagePic");
    	var url = place.get("placePic").url();
-   	var image = $("<a href='placePage.html?id=" + place.id + "'><img id='pic' src="+ url + "></a>");
+   	var image = $("<a href='placePage.html?id=" + place.id + "'><img id='wantedPic' src="+ url + "></a><a href= 'waze://?ll="+place.get("address_geo").latitude +","+ place.get("address_geo").longitude+"'><img class= 'waze' src='images/waze.png'></a>");
    	imageDiv.html(image);
 
    	placePictures = [];
