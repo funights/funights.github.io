@@ -1033,7 +1033,6 @@ label[for="star5"]{
 
 .userClass img{
 	height: 100px;
-	width:100px;
 }
 
 .orange{
@@ -1060,13 +1059,13 @@ label[for="star5"]{
   float:right;
 }
 
-.stats{
+.stats {
     float: right;
     color: #FFFFFF;
-    margin-top: 125px;
-    margin-right: -80px;
+    margin-top: 35px;
     font-size: 27px;
-  }
+    clear: both;
+}
 
 .status1, 
 .status2,
@@ -1232,5 +1231,32 @@ div.ui-dialog-buttonset {
 	.placeForm > form > div > div {
 		margin-top:30px;
 	}
-}
+	
+	/*ScoreBoard*/
+		
+	#scores{
+		width: 100%;
+	}
 
+	.userClass{
+		width: 100%;
+		text-align:center;
+	}
+
+	.linksToAddPoints{
+		width: 100%;
+		margin-right: 10%;
+	}
+	
+	.stats{
+		width:80%;
+		margin-right: 15%;
+	}
+	
+	.stats > p{
+		width: 100%;
+		margin-bottom: 2%;
+	}
+
+	
+}
