@@ -1158,6 +1158,7 @@ div.ui-dialog-buttonset {
 	
 	#target > div {
 		width: 100%;
+		height: auto;
 		
 	}
 	
