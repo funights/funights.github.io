@@ -1,7 +1,7 @@
 var autocomplete;
 
 $(document).ready(function(){
-    setTimeout( function() { initAutocomplete(); }, 1000 );
+//    setTimeout( function() { initAutocomplete(); }, 1000 );
     $('#changePosition').click(function(e){
         e.preventDefault();
         $("#changePositionField").show();

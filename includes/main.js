@@ -479,3 +479,14 @@ function jqAlert( msg, url, buttonText ) {
         buttons: buttons
     });
 }
+
+function loadAfter( objName, func ) {
+	eval( "obj = "+objName+";")
+	if( typeof( obj ) == "undefined" ) {
+		setTimeout( function() {
+			loadAfter( objName, func )
+		}, 300 );
+	} else {
+		eval( func+"();" );
+	}
+}

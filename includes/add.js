@@ -27,7 +27,8 @@ window.onload = function() {
 	
 	  return false;
     });
-	setTimeout( function() { initAutocomplete(); }, 1000 );
+	//setTimeout( function() { initAutocomplete(); }, 1000 );
+	//loadAfter( "google", "initAutocomplete" );
 }
 
 function initAutocomplete() {
