@@ -1183,7 +1183,7 @@ div.ui-dialog-buttonset {
 	
 	#asideDescription{
 		text-align: center;
-		width: 50%;
+		width: 70%;
 	}
 	
 	#filterTarget{
@@ -1212,10 +1212,6 @@ div.ui-dialog-buttonset {
 		width:100%;
 	}
 	
-	#placePagePic{
-		width: 100%;
-		overflow: display;
-	}
 
 }
 
