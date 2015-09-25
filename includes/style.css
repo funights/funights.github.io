@@ -88,10 +88,10 @@ header{
 }
 
 main{
- width:1000px;
-padding-bottom: 100px;
-  background-image: url(../images/bg2.jpg);
-  float: right;
+	width:1000px;
+	padding-bottom: 100px;
+    background-image: url(../images/bg2.jpg);
+    float: right;
 }
 
 
@@ -310,7 +310,7 @@ h3{
 
 .place img.landscapeImage {
 height: Calc(100%);
-width: 100%
+width: 100%;
 }
 
 .place a {
@@ -326,20 +326,6 @@ text-align: center;
 .crop img:hover {
 	transform: scale( 1.1 );
 }
-
-.bottomleftHeadline {
-    position: absolute;
-    bottom: 150px;
-    width: 100%;
-    font-weight: bold;
-    color: #000000;
-    font-size: 20px;
-    /* default fallback */
-	background: rgb(255, 255, 255) transparent;
-	/* nice browsers */
-	background: rgba(255, 255, 255, 0.5);
-	text-align: center;
- }
 
 #indexAside {
     float: left;
@@ -383,11 +369,6 @@ text-align: center;
 	margin-bottom: 25px;
 }
 
-.asideRating {
-    margin-right: 10px;
-    margin-top: -85px;
-    float: right;
-}
 
 /**
 #placeName{
@@ -752,7 +733,7 @@ input.addBtn {
 #rating {
     float:left;
     border:none;
-    margin: 120px 0 0 -74px;
+    margin: 10px 0 0 40px;
 }
 
 #rating legend{
@@ -1146,6 +1127,7 @@ div.ui-dialog-buttonset {
 }
 
 @media (max-width:700px){
+	
 	body{
 		width:100%;
 	}
@@ -1153,57 +1135,87 @@ div.ui-dialog-buttonset {
 	#wrapper{
 	 direction: rtl;
 	 margin: 0px auto;
-	 width:100%;;
+	 width:100%;
+	}
+	
+	main{
+		width: 100%;
+		height: 100%;
 	}
 	
 	header{
 	 width:100%;
 	}
 	
-	main{
-	 width:100%;
+	#target {
+	    width: 50%;
+	    margin-right: 25%;
+	}
+	
+	.pageName{
+		padding-right: 10%;
+	}
+	
+	#target > div {
+		width: 100%;
+		height: Calc(100%);
+	}
+	
+	#target > div:nth-child(3),
+	#target > div:nth-child(4),
+	#target > div:nth-child(5) {
+		width: 100%;
+	
+		
+	}
+	
+	#indexAside {
+		float:right;
+		border-style: none;
+	    width: 100%;
+	    margin-right: 25%;
+	}
+	
+	#pic{
+		width: 100%;
+	}
+	
+	#asideDescription{
+		text-align: center;
+		width: 50%;
 	}
 	
 	#filterTarget{
-		width: 100%;
+		width: 90%;
 	}
 	
 	.filterBox{
 		width: 90%;
-	}
-	
-	.filterForm{
-		float:right;
-		margin-right:10%;
 	}
 
 	#indexAside{
 		width: 90%;
 	}
 	
-	.place {
-	    width:100%;
-	    overflow: hidden;
+	#rating {
+	    float: right;
+	    margin-right: 10%;
+	    width: 100%;
 	}
 	
-	.place img.landscapeImage {
-		height: Calc(100%);
-		width: 100%;
+	.place img{
+		height: 100%);
 	}
-	
+	 
 	.place a {
-	display: block;
-	height: Calc(100%);
-	text-align: center;
+		display: block;
+		height: Calc(100%);
+		text-align: center;
 	}
 	
 	.crop img{
 		width:100%;
 	}
 	
-	.crop img:hover {
-		transform: scale( 1.1 );
-	}
-
 }
 
