@@ -1158,15 +1158,14 @@ div.ui-dialog-buttonset {
 	
 	#target > div {
 		width: 100%;
-		height: Calc(100%);
+		
 	}
 	
 	#target > div:nth-child(3),
 	#target > div:nth-child(4),
 	#target > div:nth-child(5) {
 		width: 100%;
-	
-		
+		height: auto;
 	}
 	
 	#indexAside {
@@ -1204,16 +1203,10 @@ div.ui-dialog-buttonset {
 	}
 	
 	.place img{
-		height: 100%);
+		width: 100%;
 	}
-	 
-	.place a {
-		display: block;
-		height: Calc(100%);
-		text-align: center;
-	}
-	
-	.crop img{
+
+	.crop {
 		width:100%;
 	}
 	
