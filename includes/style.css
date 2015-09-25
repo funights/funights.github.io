@@ -1274,7 +1274,8 @@ div.ui-dialog-buttonset {
 	}
 	
 	.myScoreH {
-		width: 30%;
+		width: 20%;
+		font-size:15px;
 	}
 	  
     #myscore {
@@ -1282,7 +1283,8 @@ div.ui-dialog-buttonset {
 	 }
 	 
 	 #myStatus{
-	 	width: 40%;
+ 		width: 20%;
+		font-size:15px;
 	 }
 	 
 	 #myStatus {
