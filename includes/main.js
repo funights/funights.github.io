@@ -144,7 +144,10 @@ function savePosition(position){
 function showError(error) {
     switch(error.code) {
         case error.PERMISSION_DENIED:
-            alert("בבקשה אפשר גישה לשירותי מיקום");
+        	if( !getCookie( 'approvedLocation' )) {
+            	alert("בבקשה אפשר גישה לשירותי מיקום");
+            	setCookie( 'approvedLocation', 'true' );
+           }
             break;
         case error.POSITION_UNAVAILABLE:
            // alert("Location information is unavailable.");
