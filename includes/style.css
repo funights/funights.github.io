@@ -283,6 +283,7 @@ h3{
  #wantedPic{
  	width: 100%;
  }
+ 
 #target > div {
 	float:right;
 	margin: 24px;
@@ -562,8 +563,8 @@ input.addBtn {
 #placePagePic{
 	margin-right:30px;
 	margin-top:30px;
-	height: 294px;
-	width: 260px;
+	height: auto;
+	width: 150px;
 	overflow: hidden;
 	
 }
@@ -1190,8 +1191,9 @@ h2{
 }
 
 
-.waze{
-	width:100%;
+.crop img.waze{
+	width:40px;
+	display:none;
 }
 
 
@@ -1280,6 +1282,10 @@ h2{
 
 	.crop {
 		width:100%;
+	}
+	
+	.crop img.waze{
+		width: 40px;
 	}
 	
 	/*addPlace Mobile*/
