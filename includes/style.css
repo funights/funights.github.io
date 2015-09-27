@@ -1266,6 +1266,7 @@ h2{
 
 	.waze{
 		width:40px;
+		display: block;
 	}
 	
 	#asideDescription{
@@ -1298,10 +1299,6 @@ h2{
 
 	.crop {
 		width:100%;
-	}
-	
-	.crop img.waze{
-		width: 40px;
 	}
 	
 	/*addPlace Mobile*/
@@ -1418,11 +1415,6 @@ h2{
 	  	text-align: center;
 	  	margin-bottom: 5%;
 	  }
-	  	
-  	.waze3{
-  		float: left;
-  		margin-top: -5px;
-  	}
 	  
 	  #checkins img{
 	  	width: 100%;
@@ -1523,6 +1515,7 @@ h2{
 	
 	.waze2{
 		margin-right: 10%;
+		display: block;
 	}
 	
 	#description{
@@ -1568,8 +1561,8 @@ h2{
 	}
 	
 	#chooseTag {
-	    width: 80%;
-	    margin-top: 10%;
+	    width: 92%;
+	    margin-top: 40%;
 	    margin-right: 10%;
 	 }
 	
@@ -1599,36 +1592,43 @@ h2{
 }
 
 .checkInBTN {
-    width: 56%;
-    margin-left: 15%;
+    width: 68%;
+    margin-left: 12%;
 }
 
 /* Stars Rank */
 #rating {
-	float: left;
+    float: left;
     margin-left: 8%;
     margin-top: 30%;
-    width: 128%;
+    width: 38%;
+}
+
+label[for="star5"]{
+	float: left;
+	margin-left: 3%;
+	
 }
 
 #currentRating {
     width: 100%;
     float: left;
-    margin-left: 24%;
-    }
+    margin-left: 6%;
+}
 
 #allrating {
     float: left;
-    width: 30%;
-    margin-top: -16%;
-    margin-left: 10%;
+    width: 38%;
+    margin-top: 0%;
+    margin-left: 19%;
    }
 
 .fb-like {
     float: left;
-    width: 50%;
-    margin-left: 125%;
-   }
+    width: 20%;
+    margin-left: 200%;
+    margin-top: 105%;
+}
 
 .faceStyle{
 	float:right;
