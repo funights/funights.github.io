@@ -57,15 +57,18 @@
 					<h1  id = "placePageName"></h1>
 					<h3  id = "placePageType"></h3>
 					<div id = "placePagePic" class="crop"></div>
-					<p   id = "description"></p>
-					<p class = "addresses">כתובת:</p>
-					<p   id = "address"></p>
-					<p   id = "distance"></p>
 					<form method="post" id="add-image">
 						<div><input id="upload" class="fileUpload" type="file" name="image" required> 
 							<div id="fileDisplayArea2"></div></div>
 						<div><input type="submit" name="btn" class="myLabel" value="+הוסף" style="display:none"></div>
 					</form>
+					<div class= "placeDetails">
+						<p   id = "description"></p>
+						<p class = "addresses">כתובת:</p>
+						<p   id = "address"></p>
+						<p   id = "distance"></p>
+					</div>
+					
 					<div class= "tagsLocation">
 						<select class="filterTags" id="chooseTag" onchange="addTag(this)"></select>
 						<div id="tags"></div>

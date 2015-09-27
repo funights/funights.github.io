@@ -364,12 +364,12 @@ text-align: center;
     margin-right: 60px;
 }
 
-#asideDescription{
-	float:right;
-	margin-right:10px;
-	margin-top:10px;
-	color: #FAFBF6;
-	margin-bottom: 25px;
+#asideDescription {
+    float: right;
+    margin-right: 10px;
+    margin-top: 40px;
+    color: #FAFBF6;
+    margin-bottom: 25px;
 }
 
 
@@ -560,13 +560,24 @@ input.addBtn {
 	display: inline-block;
 }
 
-#placePagePic{
-	margin-right:30px;
-	margin-top:30px;
-	height: auto;
-	width: 150px;
-	overflow: hidden;
-	
+#placePagePic {
+    margin-right: 30px;
+    margin-top: 30px;
+    height: auto;
+    width: 200px;
+    overflow: hidden;
+}
+
+.placeDetails{
+	margin-top:125px;
+}
+
+#wantedPic{
+	width: 100%;
+}
+
+.linkPlace{
+	width: 190px;
 }
 
 #pic{
@@ -606,14 +617,13 @@ input.addBtn {
 	float:right;
 	margin-right:30px;
 	margin-top:-40px;
-	font-family:Arial;
+	font-family:'trashim_clmbold','Architects Daughter', cursive, Arial;
 }
 
 #fileDisplayArea2 img {
     border-radius: 5px;
     border: 5px solid #FFFFFF;
     margin-top: 10px;
-    margin-right: -1px;
     width: 165px;
 }
 
@@ -629,10 +639,10 @@ input.addBtn {
     font-weight: bold;
     padding: 5px 9px;
     text-decoration: none;
-    text-shadow: 0px -1px 0px #2b665e;
+    text-shadow: 0px 0px 0px #2b665e;
     float: right;
     margin-right: 0px;
-    margin-top: 15px;
+    margin-top: 65px;
 }
 
 .fileUpload input.upload {
@@ -1471,296 +1481,6 @@ h2{
 	 
 	 
 	/* Place Page */	
-	#placeTarget{
-		width: 80%;
-	}
-	
-	#placePageName{
-		width: 30%;
-	}
-	
-	#placePageType{
-		width: 20%;
-		margin-right 40%
-	}
-	
-	#description{
-	 width: 30%;
-	}
-	
-	.addresses{
-	    margin-right: 338px;
-	    margin-top: -100px;
-	    width: 200px;
-	    float: right;
-	}
-	
-	#address{
-		margin-right: 338px;
-	    margin-top: -80px;
-	    width: 200px;
-	    float: right;
-	}
-	
-	#distance{
-	    margin-right: 562px;
-	    margin-top: -85px;
-	    float: right;
-	}
-	
-	#add-image{
-		float:right;
-		margin-right:30px;
-		margin-top:-40px;
-		font-family:Arial;
-	}
-	
-	#fileDisplayArea2 img {
-	    border-radius: 5px;
-	    border: 5px solid #FFFFFF;
-	    margin-top: 10px;
-	    margin-right: -1px;
-	    width: 165px;
-	}
-	
-	.fileUpload {
-	    box-shadow: inset 0px 1px 3px 0px #91b8b3;
-	    background: linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
-	    border-radius: 5px;
-	    border: 1px solid #566963;
-	    display: inline-block;
-	    cursor: pointer;
-	    color: #ffffff;
-	    font-family: 'trashim_clmbold','Architects Daughter', cursive, Arial;
-	    font-weight: bold;
-	    padding: 5px 9px;
-	    text-decoration: none;
-	    text-shadow: 0px -1px 0px #2b665e;
-	    float: right;
-	    margin-right: 0px;
-	    margin-top: 15px;
-	}
-	
-	.fileUpload input.upload {
-	    position: absolute;
-	    top: 0;
-	    right: 0;
-	    margin: 0;
-	    padding: 0;
-	    font-size: 20px;
-	    cursor: pointer;
-	    opacity: 0;
-	    filter: alpha(opacity=0);
-	}
-	
-	.myLabel {
-	    box-shadow: inset 0px 1px 3px 0px #91b8b3;
-	    background: linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
-	    border-radius: 5px;
-	    border: 1px solid #566963;
-	    display: inline-block;
-	    cursor: pointer;
-	    color: #ffffff;
-	    font-family: 'trashim_clmbold','Architects Daughter', cursive, Arial;
-	    font-weight: bold;
-	    padding: 6px 36px;
-	    text-decoration: none;
-	    text-shadow: 0px -1px 0px #2b665e;
-	    float: right;
-	    margin-right: 0px;
-	    margin-top: 5px;
-	}
-	
-	.myLabel:hover {
-		background-color:#6c7c7c;
-	}
-	
-	.myLabel:active {
-		position:relative;
-		top:1px;
-	}
-	
-	.tagsLocation{
-		float:right;
-		margin-right:200px;	
-		width:700px;
-	}
-	
-	#tags span{
-		padding-right: 13px;
-	}
-	
-	#commentArea{
-		color: #FFFFFF;
-		float:right;
-		width:100%;
-		display:block;
-		margin-top:200px;
-	}
-	
-	#commentInput{
-		top:300px;
-	}
-	
-	
-	.checkInBTN {
-		float: left;
-	    margin: 45px 0 0 68px;
-		font-family: 'trashim_clmbold','Architects Daughter', cursive, Arial;
-		font-weight:800;
-		background-color: #DB9A02;
-		box-shadow:inset 0px 1px 0px 0px #ffffff;
-		border-radius:6px;
-		border:1px solid #DB9A02;
-		display:inline-block;
-		cursor:pointer;
-		color:#000000;
-		font-size:15px;
-		font-weight:bold;
-		padding:6px 10px;
-		text-decoration:none;
-		text-shadow:0px 1px 0px #ffffff;
-	}
-	
-	
-	.checkInBTN:hover {
-		background:linear-gradient(to bottom, #C48A01 5%, #C48A01 100%);
-		background-color:#C48A01;
-	
-	}
-	
-	.checkInBTN:active {
-		position:relative;
-		top:1px;
-	}
-	.checkInBTN.pressed{
-		background-color: #7FC44A;
-	    border: none;
-	}
-	
-	/* Stars Rank */
-	#rating {
-	    float:left;
-	    border:none;
-	    margin: 10px 0 0 40px;
-	}
-	
-	#rating legend{
-		color:#DB9A02;
-	    font-size: 20px;
-	    font-family: 'trashim_clmbold','Architects Daughter', cursive, Arial;
-	    margin-right: 10px;
-	}
-	
-	#rating:not(:checked) > input {
-	    position:absolute;
-	    top:-9999px;
-	    clip:rect(0,0,0,0);
-	}
-	
-	#rating:not(:checked) > label {
-	    float:right;
-	    width:1em;
-	    padding-top:4px;
-	    overflow:hidden;
-	    white-space:nowrap;
-	    cursor:pointer;
-	    font-size:200%;
-	    line-height:1.2;
-	    color:#ddd;
-	    text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
-	}
-	
-	#rating:not(:checked) > label:before {
-	    content: '★ ';
-	}
-	
-	#rating > input:checked ~ label {
-	    color: #f70;
-	    text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
-	}
-	
-	#rating:not(:checked) > label:hover,
-	#rating:not(:checked) > label:hover ~ label {
-	    color: gold;
-	    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
-	}
-	
-	#rating > input:checked + label:hover,
-	#rating > input:checked + label:hover ~ label,
-	#rating > input:checked ~ label:hover,
-	#rating > input:checked ~ label:hover ~ label,
-	#rating > label:hover ~ input:checked ~ label {
-	    color: #ea0;
-	    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
-	}
-	
-	#rating > label:active {
-	    position:relative;
-	    top:2px;
-	    left:2px;
-	}
-	
-	#currentRating {
-	    float: right;
-	    margin-right:60px;
-	    font-weight: bold;
-	    color: #DB9A02;
-	    font-size: 19px;
-	    font-family: 'trashim_clmbold', 'Architects Daughter', cursive, Arial;
-	    width: 78px;
-	    white-space: nowrap;
-	    margin-top: 40px;
-	}
-	
-	#allrating {
-	    float: right;
-	    width: 70px;
-	    margin: 36px;
-	    font-weight: bold;
-	    color: #FFFFFF;
-	    font-size: 19px;
-	    font-family: 'Architects Daughter', cursive, Arial;
-	}
-	
-	label[for="star5"]{
-		margin-right:20px;
-		
-	}
-	.fb-like{
-		float:left;
-		margin: 70px 0 0 68px;
-	}
-	
-	.faceStyle{
-		float:right;
-		width: 600px;
-		margin-right:200px;
-	    margin-top: 50px;
-	}
-	
-	.clear{
-	 	clear:both;
-	}
-	
-	.fil{
-	    float: right;
-	    size: 30px;
-	    padding: 5px;
-	    margin: 10px;
-	    font-family: 'trashim_clmbold', 'Architects Daughter', cursive, Arial;
-	}
-	
-	#chooseTag{
-	     float: right;
-	    display: block;
-	    padding: 5px;
-	    margin-top: 40px;
-	    font-weight: bold;
-	    font-family: 'trashim_clmbold','Architects Daughter', cursive, Arial;
-	    font-size: 20px;
-	    margin-right: 15px;
-	}
 
  
 }
