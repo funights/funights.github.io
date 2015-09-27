@@ -5,12 +5,13 @@ function getPlacesSuccess(res){
 		var place = res[i];
 		var dis = calcDistance(place.get("address_geo").latitude, place.get("address_geo").longitude);
 		place.dis = dis;
+		
         if (place.get("placePic")){
             place.imageUrl = place.get("placePic").url();
         } else {
-            place.imageUrl = ""
+            place.imageUrl = "";
         }
-		console.log(place.get("name") + " " + dis);
+		console.log(place.get("name")  + " " + dis);
 	}
 	// sotring the places by distance
 	res.sort(function(a,b){return a.dis - b.dis});
@@ -19,7 +20,7 @@ function getPlacesSuccess(res){
 	var template = $("#placesList").html();
 	var compiled = _.template(template);
 	
-	$("#target").html(compiled({items:closePlaces}));
+	$("#target").html(compiled({items:closePlaces}) );
 }
 $(document).on(
 	'parseload',  //  <---- HERE'S OUR CUSTOM EVENT BEING LISTENED FOR
