@@ -409,7 +409,8 @@ text-align: center;
 }
 
 #tags{
-	margin-top: 100px;
+    margin-top: 177px;
+    margin-right: 280px;
 }
 
 .tagsClass{
@@ -569,49 +570,40 @@ input.addBtn {
     overflow: hidden;
 }
 
-.placeDetails{
-	margin-top:125px;
-}
-
 #wantedPic{
 	width: 100%;
 }
 
-.linkPlace{
-	width: 190px;
-	width: auto;
-}
 
-#pic{
-	height: 240px;
-	margin:10px, 0 0 30px;
+#placePagePic{
+	height: 30%;
 }
 
 
 #description{
     margin-right: 338px;
-    margin-top: -256px;
+    margin-top: -265px;
     width: 200px;
     float: right;
 }
 
 .addresses{
     margin-right: 338px;
-    margin-top: -100px;
+    margin-top: -160px;
     width: 200px;
     float: right;
 }
 
 #address{
 	margin-right: 338px;
-    margin-top: -80px;
+    margin-top: -140px;
     width: 200px;
     float: right;
 }
 
 #distance{
     margin-right: 562px;
-    margin-top: -85px;
+    margin-top: -145px;
     float: right;
 }
 
@@ -639,12 +631,11 @@ input.addBtn {
     color: #ffffff;
     font-family: 'trashim_clmbold','Architects Daughter', cursive, Arial;
     font-weight: bold;
-    padding: 5px 9px;
+    padding: 5px 3px;
     text-decoration: none;
     text-shadow: 0px 0px 0px #2b665e;
     float: right;
-    margin-right: 0px;
-    margin-top: 120px;
+    margin-top: -63px;
 }
 
 .fileUpload input.upload {
@@ -686,11 +677,7 @@ input.addBtn {
 	top:1px;
 }
 
-.tagsLocation{
-	float:right;
-	margin-right:200px;	
-	width:700px;
-}
+
 
 #tags span{
 	padding-right: 13px;
@@ -861,7 +848,7 @@ label[for="star5"]{
      float: right;
     display: block;
     padding: 5px;
-    margin-top: 40px;
+    margin-top: 100px;
     font-weight: bold;
     font-family: 'trashim_clmbold','Architects Daughter', cursive, Arial;
     font-size: 20px;
@@ -1507,5 +1494,255 @@ h2{
 	 
 	/* Place Page */	
 
- 
+#placeLeft{
+	float:left;
 }
+
+#placeTarget{
+	width: 100%;
+}
+
+#placePageName{
+	width: 20%;
+	margin-right:5%;
+}
+
+#placePageType{
+	width: 20%;
+	margin-right: 0%;
+}
+
+#placePic {
+	width: 100%;
+	height: auto;
+}
+
+.linkPlace{
+	margin-right: 5%;
+	width: 50%;
+}
+
+.waze2{
+	margin-right: 10%;;
+}
+
+#description{
+	width: 50%;
+	margin-right: 10%;
+	margin-top: 5%;
+}
+
+.addresses {
+    width: 100%;
+    margin-right: 10%;
+    margin-top: 4%;
+   }
+
+#address{
+    width: 50%;
+    margin-right: 10%;
+    margin-top: 1%;
+}
+
+#distance{
+   margin-right: 0%;
+    margin-top: 0%;
+}
+
+#fileDisplayArea2 img {
+	margin-right: 7%;
+	margin-top: -4%;
+}
+
+.myLabel {
+	margin-right: 7%;
+}
+
+#add-image{
+	width: 100%;
+}
+
+.fileUpload {
+    width: 50%;
+    margin-right: 3%;
+    margin-top: -4%;
+}
+
+#chooseTag {
+    width: 50%;
+    margin-top: 10%;
+    margin-right: 10%;
+ }
+
+#tags{
+	width 100%;
+	margin-top: 65%;
+	margin-right: 6%;
+	width: 80%;
+}
+
+#commentArea{
+	color: #FFFFFF;
+	float:right;
+	width:100%;
+	display:block;
+	margin-top:200px;
+}
+
+#commentInput{
+	top:300px;
+}
+
+.checkInBTN {
+	float: left;
+    margin: 45px 0 0 68px;
+	font-family: 'trashim_clmbold','Architects Daughter', cursive, Arial;
+	font-weight:800;
+	background-color: #DB9A02;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	border-radius:6px;
+	border:1px solid #DB9A02;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 10px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+
+
+.checkInBTN:hover {
+	background:linear-gradient(to bottom, #C48A01 5%, #C48A01 100%);
+	background-color:#C48A01;
+
+}
+
+.checkInBTN:active {
+	position:relative;
+	top:1px;
+}
+.checkInBTN.pressed{
+	background-color: #7FC44A;
+    border: none;
+}
+
+/* Stars Rank */
+#rating {
+    float:left;
+    border:none;
+    margin: 10px 0 0 40px;
+}
+
+#rating legend{
+	color:#DB9A02;
+    font-size: 20px;
+    font-family: 'trashim_clmbold','Architects Daughter', cursive, Arial;
+    margin-right: 10px;
+}
+
+#rating:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+    clip:rect(0,0,0,0);
+}
+
+#rating:not(:checked) > label {
+    float:right;
+    width:1em;
+    padding-top:4px;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:200%;
+    line-height:1.2;
+    color:#ddd;
+    text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+#rating:not(:checked) > label:before {
+    content: '★ ';
+}
+
+#rating > input:checked ~ label {
+    color: #f70;
+    text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+#rating:not(:checked) > label:hover,
+#rating:not(:checked) > label:hover ~ label {
+    color: gold;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+#rating > input:checked + label:hover,
+#rating > input:checked + label:hover ~ label,
+#rating > input:checked ~ label:hover,
+#rating > input:checked ~ label:hover ~ label,
+#rating > label:hover ~ input:checked ~ label {
+    color: #ea0;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+#rating > label:active {
+    position:relative;
+    top:2px;
+    left:2px;
+}
+
+#currentRating {
+    float: right;
+    margin-right:60px;
+    font-weight: bold;
+    color: #DB9A02;
+    font-size: 19px;
+    font-family: 'trashim_clmbold', 'Architects Daughter', cursive, Arial;
+    width: 78px;
+    white-space: nowrap;
+    margin-top: 40px;
+}
+
+#allrating {
+    float: right;
+    width: 70px;
+    margin: 36px;
+    font-weight: bold;
+    color: #FFFFFF;
+    font-size: 19px;
+    font-family: 'Architects Daughter', cursive, Arial;
+}
+
+label[for="star5"]{
+	margin-right:20px;
+	
+}
+.fb-like{
+	float:left;
+	margin: 70px 0 0 68px;
+}
+
+.faceStyle{
+	float:right;
+	width: 600px;
+	margin-right:200px;
+    margin-top: 50px;
+}
+
+.clear{
+ 	clear:both;
+}
+
+.fil{
+    float: right;
+    size: 30px;
+    padding: 5px;
+    margin: 10px;
+    font-family: 'trashim_clmbold', 'Architects Daughter', cursive, Arial;
+}
+
+
+
+}
+
+ 
