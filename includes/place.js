@@ -172,7 +172,7 @@ function slideit()
     	step = 0;
     }
     
-    $("#pic").attr("src", placePictures[step]);
+    $("#placePic").attr("src", placePictures[step]);
     step++;
     setTimeout("slideit()", 2500);
 }
@@ -245,6 +245,7 @@ function checkIn(){
     	alert("missing user id place id");
     	return;
     }
+    
     newCheckIn.save(data, {
             //if successful
             success: function(parseObj) {

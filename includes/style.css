@@ -277,8 +277,7 @@ h3{
 
 .crop{
  	height:135px;
- 	width: 119px;
-}
+ }
  
  #wantedPic{
  	width: 100%;
@@ -367,7 +366,7 @@ text-align: center;
 #asideDescription {
     float: right;
     margin-right: 10px;
-    margin-top: 40px;
+    margin-top: 5px;
     color: #FAFBF6;
     margin-bottom: 25px;
 }
@@ -560,9 +559,17 @@ input.addBtn {
 	display: inline-block;
 }
 
-#placePagePic {
+#placePic {
     margin-right: 30px;
     margin-top: 30px;
+    height: auto;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+}
+
+#placePagePicAside {
+    margin-right: 25px;
     height: auto;
     width: 200px;
     overflow: hidden;
@@ -578,6 +585,7 @@ input.addBtn {
 
 .linkPlace{
 	width: 190px;
+	width: auto;
 }
 
 #pic{
@@ -616,7 +624,7 @@ input.addBtn {
 #add-image{
 	float:right;
 	margin-right:30px;
-	margin-top:-40px;
+	margin-top:70px;
 	font-family:'trashim_clmbold','Architects Daughter', cursive, Arial;
 }
 
@@ -642,7 +650,7 @@ input.addBtn {
     text-shadow: 0px 0px 0px #2b665e;
     float: right;
     margin-right: 0px;
-    margin-top: 65px;
+    margin-top: 95px;
 }
 
 .fileUpload input.upload {
@@ -1201,7 +1209,7 @@ h2{
 }
 
 
-.crop img.waze{
+.waze{
 	width:40px;
 	display:none;
 }

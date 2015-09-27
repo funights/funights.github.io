@@ -418,7 +418,17 @@ function getHighestRating(rating){
 function setImages(place) {
    	var imageDiv = $("#placePagePic");
    	var url = place.get("placePic").url();
-   	var image = $("<a class='linkPlace' href='placePage.html?id=" + place.id + "'><img id='wantedPic' src="+ url + "></a><a href= 'waze://?ll="+place.get("address_geo").latitude +","+ place.get("address_geo").longitude+"'><img class= 'waze' src='images/waze.png'></a>");
+   	var image = $("<a class='linkPlace' href='placePage.html?id=" + place.id + "'><img id='placePic' src="+ url + "></a><a href= 'waze://?ll="+place.get("address_geo").latitude +","+ place.get("address_geo").longitude+"'><img class= 'waze' src='images/waze.png'></a>");
+   	imageDiv.html(image);
+
+   	placePictures = [];
+   	placePictures.push(url);
+}
+
+function setImagesMainPage(place) {
+   	var imageDiv = $("#placePagePicAside");
+   	var url = place.get("placePic").url();
+   	var image = $("<a class='linkPlaceAside' href='placePage.html?id=" + place.id + "'><img id='wantedPic' src="+ url + "></a><a  class= 'waze' href= 'waze://?ll="+place.get("address_geo").latitude +","+ place.get("address_geo").longitude+"'><img src='images/waze.png'></a>");
    	imageDiv.html(image);
 
    	placePictures = [];

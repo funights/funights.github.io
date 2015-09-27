@@ -87,7 +87,7 @@ function fillHighRankedPlaceContent(place, rating){
     $("#placeName").html(place.get("name"));
     $("#asideDescription"  ).html(place.get("description"));
     setType(place.get("type"));
-    setImages(place);
+    setImagesMainPage(place);
     rating = Math.round( rating );
     $("#star" + rating).prop("checked", true);
 }
