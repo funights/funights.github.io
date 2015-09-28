@@ -49,7 +49,8 @@
 	            // create more variables
 	        %>
 			<div class="place">
-				<h3><%= item.get("name") %> <%=item.get("i") %></h3>
+				<h3><%= item.get("name") %> <%=item.get("i") %></h3> 
+<a class= 'waze2' href= 'waze://?ll="+place.get("address_geo").latitude +","+ place.get("address_geo").longitude+"'><img src='images/waze.png'></a>";
                 <a href='placePage.html?id=<%= item.id%>'><img src="<%= item.imageUrl %>"/></a>
 			</div>
 	        <% }); %>
@@ -83,13 +84,13 @@
 				
 				<h1 class="pageName">קרובים קרובים</h1>
 				<aside id="indexAside">
-					<h3>המבוקש </h3>
+					<h3>המקום המבוקש </h3>
 					<h3 id="placeName"></h3>
-					<h4 id="placePageType"></h4>
+					<h4 id="placePageTypeAside"></h4>
 					<div id="placePagePicAside" class="crop" ></div>
 					<p id="asideDescription"></p>
 					<div class= "asideRating">
-	                    <fieldset id="rating" >
+	                    <fieldset id="wantedRating" >
 						    <legend>דרג:</legend>
 						    <input type="radio" id="star5" name="rating" value="5" onclick="rate()"/><label for="star5" title="Rocks!">5 stars</label>
 						    <input type="radio" id="star4" name="rating" value="4" onclick="rate()"/><label for="star4" title="Pretty good">4 stars</label>

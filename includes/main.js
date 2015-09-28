@@ -428,9 +428,8 @@ function setImages(place) {
 function setImagesMainPage(place) {
    	var imageDiv = $("#placePagePicAside");
    	var url = place.get("placePic").url();
-   	var image = $("<a class='linkPlaceAside' href='placePage.html?id=" + place.id + "'><img id='wantedPic' src="+ url + "></a><a  class= 'waze' href= 'waze://?ll="+place.get("address_geo").latitude +","+ place.get("address_geo").longitude+"'><img src='images/waze.png'></a>");
+   	var image = $("<a  class= 'waze' href= 'waze://?ll="+place.get("address_geo").latitude +","+ place.get("address_geo").longitude+"'><img src='images/waze.png'></a><a class='linkPlaceAside' href='placePage.html?id=" + place.id + "'><img id='wantedPic' src="+ url + "></a>");
    	imageDiv.html(image);
-
    	placePictures = [];
    	placePictures.push(url);
 }
@@ -449,6 +448,19 @@ function setType(typeId){
 	});
 }
 
+function setTypeAside(typeId){
+	var PlaceType = Parse.Object.extend("PlaceType");
+	var query = new Parse.Query(PlaceType);
+	query.get(typeId,{
+		success: function(type){
+		console.log('ptype', type);
+		 $('#placePageType').html(type.get('name'));
+		},
+	  error: function(object, error) {
+	    console.debug('error',error);
+	  }
+	});
+}
 function addLandscapeImageClass() {
 	$( "img" ).each(function() {
 		if( this.offsetWidth > this.offsetHeight )

@@ -87,7 +87,7 @@ function onChangeFilter(){ // when changing MusicGenere or PlaceType filter run 
 function fillHighRankedPlaceContent(place, rating){
     $("#placeName").html(place.get("name"));
     $("#asideDescription"  ).html(place.get("description"));
-    setType(place.get("type"));
+    setTypeAside(place.get("type"));
     setImagesMainPage(place);
     rating = Math.round( rating );
     $("#star" + rating).prop("checked", true);
