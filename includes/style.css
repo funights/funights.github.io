@@ -1227,6 +1227,7 @@ h2{
 
 .waze3 {
 	width:40px;
+	height: auto;
 	display:none;
 }
 
@@ -1308,7 +1309,6 @@ h2{
 	}
 	
 	.waze{
-		width:40px;
 		display: block;
 	}
 	
