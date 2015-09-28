@@ -1230,12 +1230,12 @@ h2{
 
 .waze3 {
 	width:40px;
-	/*display:none;*/
+	display:none;
 }
 
 .waze4 {
 	width:40px;
-	/*display:none;*/
+	display:none;
 }
 
 /* end of desktop*/
@@ -1299,9 +1299,22 @@ h2{
 		color: white;
 	}
 	
+	
+	.place img{
+		width: 100%;
+	}
+
+	.crop {
+		width:100%;
+	}
+	
 	.waze{
 		width:40px;
 		display: block;
+	}
+	
+	#place h3{
+		text-align:center;
 	}
 	
 	#asideDescription{
@@ -1553,6 +1566,7 @@ h2{
 	.waze4{
 		display:block;
 	}
+	
 	.waze2{
 		margin-right: 10%;
 		display: block;

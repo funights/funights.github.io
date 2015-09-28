@@ -50,8 +50,8 @@
 	        %>
 			<div class="place">
 				<h3><%= item.get("name") %> <%=item.get("i") %></h3> 
-<a class= 'waze2' href= 'waze://?ll="+place.get("address_geo").latitude +","+ place.get("address_geo").longitude+"'><img src='images/waze.png'></a>";
                 <a href='placePage.html?id=<%= item.id%>'><img src="<%= item.imageUrl %>"/></a>
+                <a class= 'waze3' href= 'waze://?ll="+place.get("address_geo").latitude +","+ place.get("address_geo").longitude+"'><img src='images/waze.png'></a>
 			</div>
 	        <% }); %>
           </script>
