@@ -86,10 +86,10 @@ function fillMyCheckins(checkins) {
         }
         var dis = calcDistance(place.get("address_geo").latitude, place.get("address_geo").longitude);
         if (dis >= 1) {
-            dis = dis.toFixed(2) + " km"+ "<a  class= 'waze3' href= 'waze://?ll="+place.get("address_geo").latitude +","+ place.get("address_geo").longitude+"'><img src='images/waze.png'></a>";
+            dis = dis.toFixed(2) + " km"+ "<a  class= 'waze4' href= 'waze://?ll="+place.get("address_geo").latitude +","+ place.get("address_geo").longitude+"'><img src='images/waze.png'></a>";
    		
         } else {
-            dis = dis.toFixed(3) * 1000 + " m" + "<a  class= 'waze3' href= 'waze://?ll="+place.get("address_geo").latitude +","+ place.get("address_geo").longitude+"'><img src='images/waze.png'></a>";
+            dis = dis.toFixed(3) * 1000 + " m" + "<a  class= 'waze4' href= 'waze://?ll="+place.get("address_geo").latitude +","+ place.get("address_geo").longitude+"'><img src='images/waze.png'></a>";
         }
         
 
@@ -140,9 +140,9 @@ function fillMyPlaces(places) {
         var when    = place.createdAt.format("dd/m/yy");
         var dis = calcDistance(place.get("address_geo").latitude, place.get("address_geo").longitude);
         if (dis >= 1) {
-            dis = dis.toFixed(2) + " km" + "<a  class= 'waze3' href= 'waze://?ll="+place.get("address_geo").latitude +","+ place.get("address_geo").longitude+"'><img src='images/waze.png'></a>";
+            dis = dis.toFixed(2) + " km" + "<a  class= 'waze4' href= 'waze://?ll="+place.get("address_geo").latitude +","+ place.get("address_geo").longitude+"'><img src='images/waze.png'></a>";
         } else {
-            dis = dis.toFixed(3) * 1000 + " m" + "<a  class= 'waze3' href= 'waze://?ll="+place.get("address_geo").latitude +","+ place.get("address_geo").longitude+"'><img src='images/waze.png'></a>";
+            dis = dis.toFixed(3) * 1000 + " m" + "<a  class= 'waze4' href= 'waze://?ll="+place.get("address_geo").latitude +","+ place.get("address_geo").longitude+"'><img src='images/waze.png'></a>";
         }
 
         var tags = place.get("tags");
