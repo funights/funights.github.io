@@ -373,7 +373,7 @@ function getComments(){
 }
 
 function fillComments(res){
-	for (var i=0; i < res.length; i++) {
+	for (var i=0; i < res.length; i++) {	
 	  var commentObj = res[i];
 	  var when = commentObj.createdAt.format("dd/m/yy HH:MM");
 	  $("#comments").append("<div>" + commentObj.get("user").get("displayName")  +"<span> - "+ when + "</span>"+ "</div>" + "<div>"+ commentObj.get("comment")+ "</div>");
