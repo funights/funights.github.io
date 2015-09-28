@@ -537,28 +537,28 @@ height: 108px;
 
 #description{
     margin-right: 338px;
-    margin-top: -265px;
+    margin-top: -220px;
     width: 200px;
     float: right;
 }
 
 .addresses{
     margin-right: 338px;
-    margin-top: -160px;
+    margin-top: -100px;
     width: 200px;
     float: right;
 }
 
 #address{
 	margin-right: 338px;
-    margin-top: -140px;
+    margin-top: -70px;
     width: 200px;
     float: right;
 }
 
 #distance{
     margin-right: 562px;
-    margin-top: -145px;
+    margin-top: -76px;
     float: right;
 }
 
@@ -1544,11 +1544,11 @@ h2{
 		height: auto;
 	}
 	
-	.linkPlace{
-		margin-right: 5%;
-		width: 50%;
+	.linkPlace {
+	    margin-right: 5%;
+	    width: 75%;
 	}
-	
+		
 	.waze4 {
 	    display: block;
 	    float: left;
@@ -1568,7 +1568,7 @@ h2{
 	#description{
 		width: 50%;
 		margin-right: 10%;
-		margin-top: 5%;
+		margin-top: 30%;
 	}
 	
 	.addresses {
@@ -1638,10 +1638,12 @@ h2{
 	    float: right;
 	}
 	
+
 	.checkInBTN {
 	    width: 25%;
 	    margin-left: 5%;
-	    margin-top: -180%;
+	    margin-top: -185%;
+	    margin-left: 66%;
 	}
 	/* Stars Rank */
 	
@@ -1675,7 +1677,7 @@ h2{
 	    float: left;
 	    width: -3%;
 	    margin-left: 5%;
-	    margin-top: -167%;
+	    margin-top: -174%;
 	}
 	
 	.faceStyle{
