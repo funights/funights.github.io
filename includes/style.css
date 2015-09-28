@@ -1618,85 +1618,85 @@ h2{
 		margin-top: 65%;
 		margin-right: 6%;
 		width: 80%;
-}
-/*
-#commentArea{
-	color: #FFFFFF;
-	float:right;
-	width:100%;
-	display:block;
-	margin-top:200px;
-}
-
-#commentInput{
-	top:300px;
-}
-*/
-
-.leftSideContainer {
-    width: 100%;
-    float: right;
-}
-
-.checkInBTN {
-    width: 25%;
-    margin-left: 5%;
-    margin-top: -180%;
-}
-/* Stars Rank */
-
-#rating {
-    float: left;
-    margin-left: -10%;
-    margin-top: -90%;
-    width: 100%;
-}
-
-label[for="star5"]{
-	float: left;
-	margin-left: 3%;
-}
-
-#currentRating {
-    width: 100%;
-    float: left;
-    margin-left: -13%;
-    margin-top: -65%;
-}
-
-#allrating {
-    float: left;
-    width: 38%;
-    margin-left: -13%;
-    margin-top: -67%;
-   }
-
-.fb-like {
-    float: left;
-    width: -3%;
-    margin-left: 5%;
-    margin-top: -167%;
-}
-
-.faceStyle{
-	float:right;
-	width: 600px;
-	margin-right:200px;
-    margin-top: 50px;
-}
-
-.clear{
- 	clear:both;
-}
-
-.fil{
-    float: right;
-    size: 30px;
-    padding: 5px;
-    margin: 10px;
-    font-family: 'trashim_clmbold', 'Architects Daughter', cursive, Arial;
-}
-
+	}
+	/*
+	#commentArea{
+		color: #FFFFFF;
+		float:right;
+		width:100%;
+		display:block;
+		margin-top:200px;
+	}
+	
+	#commentInput{
+		top:300px;
+	}
+	*/
+	
+	.leftSideContainer {
+	    width: 100%;
+	    float: right;
+	}
+	
+	.checkInBTN {
+	    width: 25%;
+	    margin-left: 5%;
+	    margin-top: -180%;
+	}
+	/* Stars Rank */
+	
+	#rating {
+	    float: left;
+	    margin-left: -10%;
+	    margin-top: -90%;
+	    width: 100%;
+	}
+	
+	label[for="star5"]{
+		float: left;
+		margin-left: 3%;
+	}
+	
+	#currentRating {
+	    width: 100%;
+	    float: left;
+	    margin-left: -13%;
+	    margin-top: -65%;
+	}
+	
+	#allrating {
+	    float: left;
+	    width: 38%;
+	    margin-left: -13%;
+	    margin-top: -67%;
+	   }
+	
+	.fb-like {
+	    float: left;
+	    width: -3%;
+	    margin-left: 5%;
+	    margin-top: -167%;
+	}
+	
+	.faceStyle{
+		float:right;
+		width: 600px;
+		margin-right:200px;
+	    margin-top: 50px;
+	}
+	
+	.clear{
+	 	clear:both;
+	}
+	
+	.fil{
+	    float: right;
+	    size: 30px;
+	    padding: 5px;
+	    margin: 10px;
+	    font-family: 'trashim_clmbold', 'Architects Daughter', cursive, Arial;
+	}
+	
 
 
 }
