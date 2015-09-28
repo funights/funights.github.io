@@ -371,10 +371,6 @@ text-align: center;
     margin-bottom: 25px;
 }
 
-#placePagePicAside{
-	width:80%;
-}
-
 /*add Place*/
 .placeForm{
 	width:1000px;
@@ -956,6 +952,7 @@ label[for="star5"]{
   	width:65%;
   }
   
+ 
   #checkins > div > div:nth-child(2) > div:nth-child(1){
   	width:47%;
   	float: right;
@@ -1255,7 +1252,7 @@ h2{
 	
 	main{
 		width: 100%;
-		height: 2130px;
+		height: 2400px;
 	}
 	
 	header{
@@ -1289,6 +1286,17 @@ h2{
 		border-style: none;
 	    width: 100%;
 		margin-right: 17.5%;
+		margin-top: 5%;
+	}
+	
+	#indexAside h2{
+		margin-right:5%;
+		width: 100%;
+	}
+	
+	#indexAside h3{
+		margin-right:5%;
+		width: 100%;
 	}
 	
 	.place img{
@@ -1325,18 +1333,6 @@ h2{
 		width: 90%;
 		
 	}
-
-	#indexAside{
-		width: 90%;
-	}
-	
-	#rating {
-	    float: right;
-	    margin-right: 10%;
-	    width: 100%;
-	}
-	
-	
 	
 	/*addPlace Mobile*/
 	
@@ -1527,11 +1523,11 @@ h2{
 	}
 	
 	#placeTarget{
-		width: 70%;
+		width: 100%;
 	}
 	
 	#placePageName{
-		width: 50%;
+		width: 100%;
 		margin-right:5%;
 	}
 	
@@ -1572,7 +1568,7 @@ h2{
 	.addresses {
 	    width: 100%;
 	    margin-right: 10%;
-	    margin-top: 4%;
+	    margin-top:5%;
 	   }
 	
 	#address{
@@ -1606,11 +1602,11 @@ h2{
 	}
 	
 	#chooseTag {
-	    width: 92%;
+	    width: 80%;
 	    margin-top: 40%;
 	    margin-right: 10%;
-	 }
-	
+	}
+		
 	#tags{
 		width 100%;
 		margin-top: 65%;
@@ -1631,28 +1627,28 @@ h2{
 }
 */
 
-.leftSideContainer{
-	width: 30%;
-	float: left;
+.leftSideContainer {
+    width: 100%;
+    float: right;
 }
 
 .checkInBTN {
-    width: 68%;
-    margin-left: 12%;
+    width: 25%;
+    margin-left: 5%;
+    margin-top: -180%;
 }
-
 /* Stars Rank */
+
 #rating {
     float: left;
-    margin-left: 8%;
-    margin-top: 30%;
-    width: 38%;
+    margin-left: -10%;
+    margin-top: -86%;
+    width: 100%;
 }
 
 label[for="star5"]{
 	float: left;
 	margin-left: 3%;
-	
 }
 
 #currentRating {
@@ -1670,9 +1666,9 @@ label[for="star5"]{
 
 .fb-like {
     float: left;
-    width: 20%;
-    margin-left: 200%;
-    margin-top: 105%;
+    width: -3%;
+    margin-left: 5%;
+    margin-top: -167%;
 }
 
 .faceStyle{
