@@ -1349,6 +1349,9 @@ h2{
 		width: 100%;
 	}
 	
+	#placeName {
+		width: 17.5%;
+	}
 	.placeForm > form > div > div {
 		margin-top:30px;
 	}
