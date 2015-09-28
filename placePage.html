@@ -18,7 +18,15 @@
 		<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 	</head>
 	<body>	 
-        </script>
+
+		<script type="text/html" id='myProfile'>
+			<div class="placeprivate">
+               	<h1 class="myName"><%= item.get("displayName") %> </h1>
+				<img src='http://graph.facebook.com/<%= item.get("facebookId")%>/picture?type=normal'/>   
+			</div>
+		<script type='text/html' id='placePageId'> </script>
+
+		        </script>
 		<div id="fb-root"></div>
 		<script>(function(d, s, id) {
 		  var js, fjs = d.getElementsByTagName(s)[0];
@@ -28,12 +36,6 @@
 		  fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));
 		</script>
-		<script type="text/html" id='myProfile'>
-			<div class="placeprivate">
-               	<h1 class="myName"><%= item.get("displayName") %> </h1>
-				<img src='http://graph.facebook.com/<%= item.get("facebookId")%>/picture?type=normal'/>   
-			</div>
-		<script type='text/html' id='placePageId'> </script>
 
 		<div id="wrapper">
 			<header> 
@@ -89,7 +91,9 @@
 					<div id="allrating"></div>
 				</div>
 			
-
+				<div class="faceStyle">
+					<div class="fb-comments" data-colorscheme="dark" data-width="100%" data-numposts="10" data-mobile="1"></div>
+				</div>	
 
 			 </main>
 		 	<script src="includes/main.js"></script>
