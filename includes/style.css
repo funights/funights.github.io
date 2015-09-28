@@ -1609,7 +1609,7 @@ h2{
 	
 	#chooseTag {
 	    width: 80%;
-	    margin-top: 40%;
+	    margin-top: 50%;
 	    margin-right: 10%;
 	}
 		
@@ -1648,7 +1648,7 @@ h2{
 #rating {
     float: left;
     margin-left: -10%;
-    margin-top: -86%;
+    margin-top: -90%;
     width: 100%;
 }
 
@@ -1660,14 +1660,15 @@ label[for="star5"]{
 #currentRating {
     width: 100%;
     float: left;
-    margin-left: 6%;
+    margin-left: -13%;
+    margin-top: -65%;
 }
 
 #allrating {
     float: left;
     width: 38%;
-    margin-top: 0%;
-    margin-left: 19%;
+    margin-left: -13%;
+    margin-top: -67%;
    }
 
 .fb-like {
