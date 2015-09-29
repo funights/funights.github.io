@@ -40,7 +40,6 @@ function setImageForm() {
         //create new Parse object
         var PlaceImage    = Parse.Object.extend('PlaceImage');
         var newPlaceImage = new PlaceImage();
-        
     	var fileUploadControl = $("#upload")[0];
 		var file              = fileUploadControl.files[0];
 		var unixTime          = (new Date().getTime());
