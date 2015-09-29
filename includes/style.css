@@ -1253,7 +1253,7 @@ h2{
 	
 	main{
 		width: 100%;
-		height: 3000px;
+		float: right;
 	}
 	
 	header{
@@ -1702,39 +1702,57 @@ h2{
 	}
 
 	#helloUser {
-    margin-top: -15px;
+   	 margin-top: -15px;
 	}
 	
 	.menuHamburger {
 	    display: block;
 	    height: 40px;
-	    background-color: #000;
+		outline: none;
+	    position: relative;
+	    appearance: none;
+	    -moz-appearance: none;
+	    -webkit-appearance: none;
+	    width: 100%;
+	    position: relative;
+	    z-index: 2;
 	}
 	
-	.menuHamburger:before {
-	    content: "";
+	.menuHamburger + span {
+	    content: " ";
+	    display: block;
 	    float: right;
 	    display: block;
-	    width: 25px;
+	    width: 8%;
 	    height: 20px;
 	    box-shadow: inset 0 3px white, inset 0 -3px white, inset 0 9px black, inset 0 12px white;
 	    margin-top: 10px;
 	    margin-right: 10px;
+	    overflow: hidden;
+	    margin-left: 92%;
+	    position: relative;
+	    right: 0;
+	    top: -40px;
+	    z-index: 1;
+	    background-color: #000;
 	}
 	
+
 	#cssmenu {
 		transition: all 0.5s linear;
-		height: 0;
+		height: 0px;
 		overflow: hidden;
+
 	}
-	
-	.menuHamburger:hover + #cssmenu {
+
+	.menuHamburger:checked + span + #cssmenu {
 		height: 400px;
-		margin-top: -40px;
-		padding-top: 40px;
+		position: relative;
+		width: 100%;
 	}
-	
-	
+
+
+
 }
 
  
