@@ -1723,13 +1723,15 @@ h2{
 	}
 	
 	#cssmenu {
-		transition: all 0.25s linear;
+		transition: all 0.5s linear;
 		height: 0;
 		overflow: hidden;
 	}
 	
 	.menuHamburger:hover + #cssmenu {
 		height: 400px;
+		margin-top: -40px;
+		padding-top: 40px;
 	}
 	
 	
