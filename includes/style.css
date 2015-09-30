@@ -1590,9 +1590,10 @@ h2{
 		display:block;
 	}
 	
-	.waze2{
-		margin-right: 10%;
-		display: block;
+	.waze2 {
+	    margin-top: 3%;
+	    margin-right: 14%;
+	    display: block;
 	}
 	
 	#description{
