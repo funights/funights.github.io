@@ -50,7 +50,7 @@
 	        %>
 			<div class="place">
 				<h3><%= item.get("name") %> <%=item.get("i") %></h3> 
-                <a href='placePage.html?id=<%= item.id%>'><img src="<%= item.imageUrl %>"/></a>
+                <a href='profile.html?id=<%= item.id%>'><img src="<%= item.imageUrl %>"/></a>
                 <a class= 'waze3' href= 'waze://?ll=<%= item.get("address_geo").latitude%>,<%= item.get("address_geo").longitude%>'><img src='images/waze.png'></a>
 			</div>
 	        <% }); %>
@@ -84,7 +84,7 @@
                     </div>
 				</div>
 				
-				<h1 class="pageName">קרובים קרובים</h1>
+				<h1 class="pageNameMain">קרובים קרובים</h1>
 				<aside id="indexAside">
 					<h2>המקום המבוקש </h2>
 					<h2 id="placeName"></h2>

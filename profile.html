@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	 	<title>FuNights</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+		<script src="//www.parsecdn.com/js/parse-1.5.0.js"></script>
+		<script src="http://underscorejs.org/underscore.js"></script>
+
+        <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="includes/style.css">
+		<link rel="stylesheet" href="includes/navBar.css">
+		<link rel="stylesheet" href="includes/funights.css">
+		<link rel="stylesheet" href="includes/tagsStyle.css">
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+	</head>
+	<body>	 
+		<script type="text/html" id='myProfile'>
+			<div class="placeprivate">
+               	<h1 class="myName"><%= item.get("displayName") %> </h1>
+				<img src='http://graph.facebook.com/<%= item.get("facebookId")%>/picture?type=normal'/>   
+			</div>
+        </script>
+		<script type="text/html" id='myPageId'>
+				
+	
+			<div class="placeprivate">
+                
+                 
+				<h1 class="myName"><%= item.get("displayName") %> </h1>
+				<img src='http://graph.facebook.com/<%= item.get("facebookId")%>/picture?type=normal'/>
+                
+                
+			</div>
+		 
+          </script>
+
+		<div id="wrapper"> 
+			<header> 
+				<a id="logo" href="main.html"> </a>
+	 		</header>
+	 		<div id="helloUser"></div>
+			<input type="checkbox" class="menuHamburger"><span></span>
+	 		<nav id="cssmenu">
+				<button class="logout2" onclick="logout();"></button>
+				<ul>
+				   <li><a href='main.html'><span>קרובים קרובים</span></a></li>
+				   <li><a href='add.html'><span>הוסף מקום</span></a></li>
+				   <li><a href='scoreBoard.html'><span>לוח ניקוד</span></a></li>
+				   <li class='active'><a href='myPage.html'><span>העמוד שלי</span></a></li>
+				   <li class='last'><span></span><a href='aboutus.html'><span>קצת עלינו</span></a></li>
+				</ul>
+		 		<span></span>
+	 		</nav>
+	 		<main>
+
+			 	<div class= "profile" >
+				 	<div id="myPageTarget"></div>
+	                <h2 class="myScoreH">ניקוד :</h2>
+	                <h3 id="myscore"></h3>
+					<h2 class="myScoreH">סטטוס :</h2>
+	                <h3 id="myStatus"></h3>
+                </div>
+                
+
+				<div id= "myPage">
+					<h2>מקומות אחרונים שבוקרו:</h2>
+					<div id="checkins" style="color:white"></div>
+		
+					<h2 >מקומות שהוספו:</h2>
+	                <div id="lastPlaces"></div>
+				</div>
+					
+			 </main>
+		</div>
+		<script src="includes/main.js"></script>
+	 	<script src="includes/profile.js"></script>
+	 	<script src="includes/parse_main.js"></script>
+
+	</body>
+</html>
