@@ -529,9 +529,8 @@ height: 108px;
 #placePic {
     margin-right: 30px;
     margin-top: 30px;
-    height: auto;
     width: 250px;
-    height: 250px;
+    height: auto;
     overflow: hidden;
 }
 
@@ -548,7 +547,7 @@ height: 108px;
 
 
 #placePagePic{
-	height: 30%;
+	height: 255px;
 }
 
 
