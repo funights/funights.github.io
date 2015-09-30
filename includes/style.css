@@ -1639,7 +1639,7 @@ h2{
 	
 	#chooseTag {
 	    width: 80%;
-	    margin-top: 50%;
+	    margin-top: 10%;
 	    margin-right: 10%;
 	}
 		
@@ -1666,6 +1666,7 @@ h2{
 	.leftSideContainer {
 	    width: 100%;
 	    float: right;
+	    margin-top: 20%;
 	}
 	
 	.checkInBTN {
@@ -1678,9 +1679,9 @@ h2{
 	/* Stars Rank */
 	
 	#rating {
-	    float: left;
-	    margin-left: -10%;
-	    margin-top: -120%;
+	    float: right;
+	    margin-right: 10%;
+	    margin-top: 10%;
 	    width: 100%;
 	}
 	
@@ -1690,23 +1691,23 @@ h2{
 	
 	#currentRating {
 	    width: 100%;
-	    float: left;
-	    margin-left: -13%;
-	    margin-top: -95%;
+	    float: right;
+	    margin-right: 14%;
+	    margin-top: 10%;
 	}
 	
 	#allrating {
-	    float: left;
+	    float: right;
 	    width: 38%;
-	    margin-left: -13%;
-	    margin-top: -97%;
-	   }
+	    margin-right: 51%;
+	    margin-top: -8%;
+	}
 	
 	.fb-like {
 	    float: left;
-	    width: -3%;
-	    margin-left: 5%;
-	    margin-top: 0%;
+	    width: 80%
+	    margin-left: 10%;
+	    margin-top: 5%;
 	}
 	
 	.faceStyle{
@@ -1778,7 +1779,6 @@ h2{
 		transition: all 0.5s linear;
 		height: 0px;
 		overflow: hidden;
-
 	}
 
 	.menuHamburger:checked + span + #cssmenu {
@@ -1788,8 +1788,6 @@ h2{
 		width: 100%;
 		background-image: url(../images/bg2.jpg);
 	}
-
-
 
 }
 
