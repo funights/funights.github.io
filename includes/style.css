@@ -82,9 +82,9 @@ h2{
 }
 
 header{
- width:1000px;
- height:100px;
-  background-image: url(../images/bg2.jpg);
+	 width:1000px;
+	 height:100px;
+	 background-image: url(../images/bg2.jpg);
 }
 
 main{
@@ -1251,6 +1251,11 @@ h2{
 	 height: 100%;
 	}
 	
+	body{
+		background-image: url(../images/bg2.jpg);
+   		float: right;
+	}
+	
 	main{
 		width: 100%;
 		float: right;
@@ -1267,7 +1272,7 @@ h2{
 	
 	.pageName{
 		padding-right: 10%;
-		padding-top:20%;
+		padding-top:0%;
 	}
 	
 	#target > div {
@@ -1398,10 +1403,11 @@ h2{
 	}
 	
 	.myScoreH {
-		width: 25%;
-		font-size:15px;
-	}
-	  
+	    width: 15%;
+	    font-size: 15px;
+	    margin-right: 4%;
+   }
+   
     #myscore {
 	 	width:10%;
 	 }
@@ -1702,18 +1708,23 @@ h2{
 	}
 
 	#helloUser {
-   	 margin-top: -15px;
+	    margin-top: 25px;
+	    width: 40%;
+	    height: auto;
+	    direction: ltr;
+	    margin-left: 4%;
 	}
 	
 	.menuHamburger {
 	    display: block;
 	    height: 40px;
-		outline: none;
+	    outline: none;
 	    position: relative;
 	    appearance: none;
+	    margin-top: 25px;
 	    -moz-appearance: none;
 	    -webkit-appearance: none;
-	    width: 100%;
+	    width: 40%;
 	    position: relative;
 	    z-index: 2;
 	}
@@ -1748,7 +1759,9 @@ h2{
 	.menuHamburger:checked + span + #cssmenu {
 		height: 400px;
 		position: relative;
+		margin-top: -40px;
 		width: 100%;
+		background-image: url(../images/bg2.jpg);
 	}
 
 
