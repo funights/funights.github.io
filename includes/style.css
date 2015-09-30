@@ -1596,21 +1596,22 @@ h2{
 	    display: block;
 	}
 	
-	#description{
-		width: 50%;
-		margin-right: 10%;
-		margin-top:22%;
+
+	#description {
+	    width: 70%;
+	    margin-right: 15%;
+	    margin-top: 15%;
 	}
 	
 	.addresses {
-	    width: 100%;
-	    margin-right: 10%;
+	    width: 70%;
+	    margin-right: 15%;
 	    margin-top:5%;
 	   }
 	
 	#address{
-	    width: 50%;
-	    margin-right: 10%;
+	    width: 55%;
+	    margin-right: 15%;
 	    margin-top: 1%;
 	}
 	
