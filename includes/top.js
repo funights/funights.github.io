@@ -1,3 +1,4 @@
+savedPosition = false;
 
 function showError(error) {
     switch(error.code) {
@@ -27,7 +28,7 @@ function getLocation(){
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(savePosition, getLocation);
     } else {
-        // TODO:
+        setTimeout( "getLocation()", 0 );
     }
 }
 

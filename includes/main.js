@@ -115,8 +115,6 @@ function getAllPlaces(onSuccess, onFail){
 	});
 }
 
-savedPosition = false;
-
 Number.prototype.toRad = function() { return this * (Math.PI / 180); };
 function calcDistance(lat2, lon2){
     if (savedPosition === false ){
