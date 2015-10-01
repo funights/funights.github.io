@@ -31,6 +31,7 @@ function savePosition(position){
 		savedPosition.coords.latitude  = getCooke( "lat" );
 		savedPosition.coords.longitude = getCooke( "lon" );
 	}
+	alert( savedPosition.coords.latitude ) ;
 }
 
 function getLocation(){
