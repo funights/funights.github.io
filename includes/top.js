@@ -23,9 +23,13 @@ function showError(error) {
 function savePosition(position){
 	if( savedPosition === false )
 		savedPosition = position;
-	if( savedPosition.coords.latitude == 0 && window.location.hash != "#reloaded") {
-		window.location.hash = "#reloaded";
-		location.reload();
+		
+	if( savedPosition.coords.latitude > 0 ) {
+		setCookie( "lat", savedPosition.coords.latitude );
+		setCookie( "lon", savedPosition.coords.longitude );
+	} else if( getCooke( "lat" ) ) {
+		savedPosition.coords.latitude  = getCooke( "lat" );
+		savedPosition.coords.longitude = getCooke( "lon" );
 	}
 }
 
