@@ -23,7 +23,8 @@ function showError(error) {
 function savePosition(position){
 	if( savedPosition === false )
 		savedPosition = position;
-
+	if( savedPosition.coords.latitude == 0 )
+		location.reload();
 }
 
 function getLocation(){
