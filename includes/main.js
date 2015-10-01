@@ -114,12 +114,13 @@ function getAllPlaces(onSuccess, onFail){
 	  }
 	});
 }
-var savedPosition;
+
+savedPosition = false;
 
 Number.prototype.toRad = function() { return this * (Math.PI / 180); };
 function calcDistance(lat2, lon2){
-    if (!savedPosition){
-        return 0;
+    if (savedPosition === false ){
+        getLocation();
     }
     var lat1 = savedPosition.coords.latitude;
     var lon1 = savedPosition.coords.longitude;
