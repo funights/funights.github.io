@@ -1,6 +1,6 @@
 // setCookie('userid', "mA22yn2H4x" );
 $(function() {
-  
+  getLocation();
   if( !getCookie("userid") && window.location.href.split( "index").length == 1 ){
   	window.location = "index.html";
   }
