@@ -28,6 +28,5 @@ function getLocation(){
     }
 }
 
-getLocation();
 
-//window.addEventListener( "load" , getLocation );
+window.addEventListener( "load" , getLocation );
