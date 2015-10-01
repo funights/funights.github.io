@@ -1,6 +1,6 @@
 // setCookie('userid', "mA22yn2H4x" );
 $(function() {
-  getLocation();
+  
   if( !getCookie("userid") && window.location.href.split( "index").length == 1 ){
   	window.location = "index.html";
   }
@@ -114,12 +114,12 @@ function getAllPlaces(onSuccess, onFail){
 	  }
 	});
 }
+var savedPosition;
 
 Number.prototype.toRad = function() { return this * (Math.PI / 180); };
 function calcDistance(lat2, lon2){
-    if (savedPosition === false ){
-    	return;
-        getLocation();
+    if (!savedPosition){
+        return 0;
     }
     var lat1 = savedPosition.coords.latitude;
     var lon1 = savedPosition.coords.longitude;
@@ -134,6 +134,39 @@ function calcDistance(lat2, lon2){
     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
     var d = R * c;
     return d;
+}
+
+
+function savePosition(position){
+	savedPosition = position;
+}
+
+function showError(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+        	if( !getCookie( 'approvedLocation' )) {
+            	alert("בבקשה אפשר גישה לשירותי מיקום");
+            	setCookie( 'approvedLocation', 'true' );
+           }
+            break;
+        case error.POSITION_UNAVAILABLE:
+           // alert("Location information is unavailable.");
+            break;
+        case error.TIMEOUT:
+           // alert("The request to get user location timed out.");
+            break;
+        case error.UNKNOWN_ERROR:
+          //  alert("An unknown error occurred.");
+            break;
+    }
+}
+
+function getLocation(){
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(savePosition, showError);
+    } else {
+        // TODO:
+    }
 }
 
 
@@ -321,7 +354,7 @@ Date.prototype.format = function (mask, utc) {
     return dateFormat(this, mask, utc);
 };
 
-
+getLocation();
 function logout(){
     Parse.User.logOut();
     removeCookie();
