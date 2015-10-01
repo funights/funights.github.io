@@ -19,6 +19,7 @@ function savePosition(position){
 //	alert( savedPosition.coords.latitude ) ;
 }
 
+
 function getLocation(){
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(savePosition, showError);
