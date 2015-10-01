@@ -23,8 +23,10 @@ function showError(error) {
 function savePosition(position){
 	if( savedPosition === false )
 		savedPosition = position;
-	if( savedPosition.coords.latitude == 0 )
+	if( savedPosition.coords.latitude == 0 && window.location.hash != "#reloaded") {
+		window.location.hash = "#reloaded";
 		location.reload();
+	}
 }
 
 function getLocation(){
