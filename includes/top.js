@@ -1,7 +1,13 @@
 function getLocation(){
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(savePosition, showError);
-        var savedPosition = savePosition;
+       return savePosition;
+    } else {
+        // TODO:
+   }
+}
+
+       var savedPosition = getLocation();
 		Number.prototype.toRad = function() { return this * (Math.PI / 180); };
 		function calcDistance(lat2, lon2){
 		    if (!savedPosition){
@@ -20,8 +26,4 @@ function getLocation(){
 		    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
 		    var d = R * c;
 		    return d;
-		}        
-    } else {
-        // TODO:
-   }
-}
+		}  
