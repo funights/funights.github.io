@@ -145,6 +145,7 @@ function showError(error) {
 function getLocation(){
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(savePosition, showError);
+    
         return savePosition;
         
     } else {
@@ -153,8 +154,8 @@ function getLocation(){
 
 }
 
-  var  savedPosition = getLocation();
 
+  var  savedPosition = getLocation();
 	Number.prototype.toRad = function() { return this * (Math.PI / 180); };
 	function calcDistance(lat2, lon2){
 	    if (!savedPosition){
