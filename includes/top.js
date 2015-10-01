@@ -21,8 +21,9 @@ function showError(error) {
 }
 
 function savePosition(position){
-	savedPosition = position;
-	alert( savedPosition );
+	if( savedPosition === false )
+		savedPosition = position;
+
 }
 
 function getLocation(){
