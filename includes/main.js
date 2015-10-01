@@ -145,13 +145,11 @@ function showError(error) {
 function getLocation(){
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(savePosition, showError);
-    
         return savePosition;
         
     } else {
         // TODO:
-    }
-
+   }
 }
 
 
