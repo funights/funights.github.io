@@ -118,6 +118,7 @@ function getAllPlaces(onSuccess, onFail){
 Number.prototype.toRad = function() { return this * (Math.PI / 180); };
 function calcDistance(lat2, lon2){
     if (savedPosition === false ){
+    	return;
         getLocation();
     }
     var lat1 = savedPosition.coords.latitude;

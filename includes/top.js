@@ -33,10 +33,10 @@ function getLocation(){
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(savePosition, showError);
     } else {
-        setTimeout( "getLocation()", 0 );
+      //  setTimeout( "getLocation()", 0 );
     }
 }
 
 getLocation();
 
-window.addEventListener( "load" , getLocation );
+//window.addEventListener( "load" , getLocation );
