@@ -25,10 +25,12 @@ function savePosition(position){
 
 function getLocation(){
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(savePosition, showError);
+        navigator.geolocation.getCurrentPosition(savePosition, getLocation);
     } else {
         // TODO:
     }
 }
 
 getLocation();
+
+window.addEventListener( "load" , getLocation );
