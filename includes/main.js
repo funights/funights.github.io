@@ -137,39 +137,6 @@ function calcDistance(lat2, lon2){
 }
 
 
-function savePosition(position){
-	savedPosition = position;
-}
-
-function showError(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-        	if( !getCookie( 'approvedLocation' )) {
-            	alert("בבקשה אפשר גישה לשירותי מיקום");
-            	setCookie( 'approvedLocation', 'true' );
-           }
-            break;
-        case error.POSITION_UNAVAILABLE:
-           // alert("Location information is unavailable.");
-            break;
-        case error.TIMEOUT:
-           // alert("The request to get user location timed out.");
-            break;
-        case error.UNKNOWN_ERROR:
-          //  alert("An unknown error occurred.");
-            break;
-    }
-}
-
-function getLocation(){
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(savePosition, showError);
-    } else {
-        // TODO:
-    }
-}
-
-
 // Here we run a very simple test of the Graph API after login is
 // successful.  See statusChangeCallback() for when this call is made.
 function testAPI() {
@@ -354,7 +321,7 @@ Date.prototype.format = function (mask, utc) {
     return dateFormat(this, mask, utc);
 };
 
-getLocation();
+
 function logout(){
     Parse.User.logOut();
     removeCookie();
