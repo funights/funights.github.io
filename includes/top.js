@@ -22,6 +22,7 @@ function showError(error) {
 
 function savePosition(position){
 	savedPosition = position;
+	alert( savedPosition );
 }
 
 function getLocation(){
