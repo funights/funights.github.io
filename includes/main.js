@@ -30,7 +30,7 @@ $(function() {
          $(document).trigger('fbload');
   };
 
-   (function(d, s, id){
+      (function(d, s, id){
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) {return;}
     js = d.createElement(s); js.id = id;
@@ -114,8 +114,27 @@ function getAllPlaces(onSuccess, onFail){
 	  }
 	});
 }
+var savedPosition;
 
+Number.prototype.toRad = function() { return this * (Math.PI / 180); };
+function calcDistance(lat2, lon2){
+    if (!savedPosition){
+        return 0;
+    }
+    var lat1 = savedPosition.coords.latitude;
+    var lon1 = savedPosition.coords.longitude;
+    var R = 6371; // km
+    var dLat = (lat2-lat1).toRad();
+    var dLon = (lon2-lon1).toRad();
+    var lat1 = lat1.toRad();
+    var lat2 = lat2.toRad();
 
+    var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+            Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2);
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+    var d = R * c;
+    return d;
+}
 
 
 function savePosition(position){
@@ -145,36 +164,10 @@ function showError(error) {
 function getLocation(){
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(savePosition, showError);
-      	return savePosition;
-
     } else {
         // TODO:
-   }
+    }
 }
-
-    var  savedPosition = getLocation();
-	Number.prototype.toRad = function() { return this * (Math.PI / 180); };
-	function calcDistance(lat2, lon2){
-	    if (!savedPosition){
-	        return 0;
-	    }
-	    var lat1 = savedPosition.coords.latitude;
-	    var lon1 = savedPosition.coords.longitude;
-	    var R = 6371; // km
-	    var dLat = (lat2-lat1).toRad();
-	    var dLon = (lon2-lon1).toRad();
-	    var lat1 = lat1.toRad();
-	    var lat2 = lat2.toRad();
-	
-	    var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-	            Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2);
-	    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-	    var d = R * c;
-	    return d;
-	}
-        
-
-
 
 
 // Here we run a very simple test of the Graph API after login is

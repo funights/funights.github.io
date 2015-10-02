@@ -1,4 +1,3 @@
-
 var user;
 function getPlacesSuccess(res){
 	// Calculate the distance for all places from the user
