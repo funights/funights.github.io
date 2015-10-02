@@ -383,9 +383,10 @@ text-align: center;
 #asideDescription {
     float: right;
     margin-right: 10px;
+    margin-left: 10px;
     margin-top: 5px;
     color: #FAFBF6;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
 }
 
 /*add Place*/
