@@ -119,7 +119,7 @@ var savedPosition;
 Number.prototype.toRad = function() { return this * (Math.PI / 180); };
 function calcDistance(lat2, lon2){
 	getLocation();
-	
+	alert(savedPosition.coords.latitude);
     if (!savedPosition){
         return 0;
     }
