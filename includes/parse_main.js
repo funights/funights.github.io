@@ -1,3 +1,4 @@
+
 var user;
 function getPlacesSuccess(res){
 	// Calculate the distance for all places from the user
@@ -82,52 +83,6 @@ function onChangeFilter(){ // when changing MusicGenere or PlaceType filter run 
 	getAllPlaces(getPlacesSuccess, function(error){
 		alert(error);
 	});
-}
-
-function getAllPlaces(onSuccess, onFail){
-	var Place = Parse.Object.extend("Place");
-	var query = new Parse.Query(Place);
-	var placeType = $("#filterTarget option:selected").val();
-	var musicGenere = $("#filterMusicTarget option:selected").val();
-	if (musicGenere && musicGenere != "0"){
-		query.equalTo("musicGenere", musicGenere);
-	}
-	if (placeType && placeType != "0"){
-		query.equalTo("type", placeType);
-	}
-	query.find({
-	  success: function(results) {
-	  	onSuccess(results);
-	  	addLandscapeImageClass();
-	  },
-	  error: function(error) {
-	  	onFail(error);
-	    // alert("Error: " + error.code + " " + error.message);
-	  }
-	});
-}
-var savedPosition;
-
-Number.prototype.toRad = function() { return this * (Math.PI / 180); };
-function calcDistance(lat2, lon2){
-	getLocation();
-	alert(savedPosition.coords.latitude);
-    if (!savedPosition){
-        return 0;
-    }
-    var lat1 = savedPosition.coords.latitude;
-    var lon1 = savedPosition.coords.longitude;
-    var R = 6371; // km
-    var dLat = (lat2-lat1).toRad();
-    var dLon = (lon2-lon1).toRad();
-    var lat1 = lat1.toRad();
-    var lat2 = lat2.toRad();
-
-    var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-            Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2);
-    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-    var d = R * c;
-    return d;
 }
 
 function fillHighRankedPlaceContent(place, rating){
