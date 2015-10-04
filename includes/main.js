@@ -115,7 +115,21 @@ function getAllPlaces(onSuccess, onFail){
 	});
 }
 
+function getLocation(){
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(savePosition, showError);
+    } else {
+        // TODO:
+    }
+}
+
 var savedPosition;
+
+function savePosition(position){
+	savedPosition = position;
+	 alert("myLocation savedPosition.coords.latitude");
+}
+
 Number.prototype.toRad = function() { return this * (Math.PI / 180); };
 function calcDistance(lat2, lon2){
     if (!savedPosition){
@@ -134,11 +148,6 @@ function calcDistance(lat2, lon2){
     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
     var d = R * c;
     return d;
-}
-
-
-function savePosition(position){
-	savedPosition = position;
 }
 
 function showError(error) {
@@ -161,13 +170,6 @@ function showError(error) {
     }
 }
 
-function getLocation(){
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(savePosition, showError);
-    } else {
-        // TODO:
-    }
-}
 
 
 // Here we run a very simple test of the Graph API after login is
