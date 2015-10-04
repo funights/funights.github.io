@@ -126,20 +126,13 @@ function getLocation(){
 var savedPosition;
 
 function savePosition(position){
-	function getLocation(){
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(savePosition, showError);
-    } else {
-        // TODO:
-    }
-}
-
 	savedPosition = position;
-	 alert("myLocation "+savedPosition.coords.latitude);
-}
+ }
 
 Number.prototype.toRad = function() { return this * (Math.PI / 180); };
 function calcDistance(lat2, lon2){
+	getLocation();
+   	
     if (!savedPosition){
         return 0;
     }
