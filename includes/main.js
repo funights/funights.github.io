@@ -126,6 +126,14 @@ function getLocation(){
 var savedPosition;
 
 function savePosition(position){
+	function getLocation(){
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(savePosition, showError);
+    } else {
+        // TODO:
+    }
+}
+
 	savedPosition = position;
 	 alert("myLocation "+savedPosition.coords.latitude);
 }

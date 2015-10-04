@@ -64,8 +64,7 @@ function onPageLoad(){
 
 }
 
-function showHelloUser() {
-	    
+function showHelloUser() {	    
     var query = new Parse.Query(Parse.User);
 	var userId = getCookie("userid");
 	if (userId){
