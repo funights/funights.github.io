@@ -196,6 +196,7 @@ function getPlaceImages(){
 }
 
 function getDistance(place){
+	setTimeout(function(){
 		   	var dis = calcDistance(place.get("address_geo").latitude, place.get("address_geo").longitude);
 	        if (dis >= 1) {
 	            dis = dis.toFixed(2) + " km";
@@ -203,6 +204,7 @@ function getDistance(place){
 	            dis = dis.toFixed(3) * 1000 + " m";
 	        }
 	        $('#distance').html(dis);
+	        alert("Hello"); }, 5000);
 }
 
 function getTags(place){
