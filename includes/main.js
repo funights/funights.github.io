@@ -130,6 +130,7 @@ function savePosition(position){
  }
 
 Number.prototype.toRad = function() { return this * (Math.PI / 180); };
+
 function calcDistance(lat2, lon2){
    	
     if (!savedPosition){
@@ -153,6 +154,7 @@ function calcDistance(lat2, lon2){
 	    return d;
 	   }
 }
+
 
 function showError(error) {
     switch(error.code) {
