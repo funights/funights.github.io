@@ -76,23 +76,24 @@ function getTags(checkins, places){
 	});
 }
 
-function fillMyCheckins(checkins) {
-    for (var i = 0; i < checkins.length; i++) {
-        var checkIn = checkins[i];
-        var when    = checkIn.get("when").format("dd/m/yy");
-        var place   = checkIn.get("place");
-        if (!place){
-            continue;
-        }
-        var dis = calcDistance(place.get("address_geo").latitude, place.get("address_geo").longitude);
-        if (dis >= 1) {
-            dis = dis.toFixed(2) + " km"+ "<a  class= 'waze4' href= 'waze://?ll="+place.get("address_geo").latitude +","+ place.get("address_geo").longitude+"'><img src='images/waze.png'></a>";
-   		
-        } else {
-            dis = dis.toFixed(3) * 1000 + " m" + "<a  class= 'waze4' href= 'waze://?ll="+place.get("address_geo").latitude +","+ place.get("address_geo").longitude+"'><img src='images/waze.png'></a>";
-        }
-        
-
+function fillMyCheckins(checkins){
+	geolocate();
+	setTimeout(function(){
+		    for (var i = 0; i < checkins.length; i++) {
+	        var checkIn = checkins[i];
+	        var when    = checkIn.get("when").format("dd/m/yy");
+	        var place   = checkIn.get("place");
+	        if (!place){
+	            continue;
+	        }
+	        var dis = calcDistance(place.get("address_geo").latitude, place.get("address_geo").longitude);
+	        if (dis >= 1) {
+	            dis = dis.toFixed(2) + " km"+ "<a  class= 'waze4' href= 'waze://?ll="+place.get("address_geo").latitude +","+ place.get("address_geo").longitude+"'><img src='images/waze.png'></a>";
+	   		}
+	   		else {
+	            dis = dis.toFixed(3) * 1000 + " m" + "<a  class= 'waze4' href= 'waze://?ll="+place.get("address_geo").latitude +","+ place.get("address_geo").longitude+"'><img src='images/waze.png'></a>";
+	        }
+    	
         var tags = place.get("tags");
         var tagsDiv = "";
         if (tags) {
@@ -110,9 +111,9 @@ function fillMyCheckins(checkins) {
                     span.html(name);
                     tagsDiv.append(span);
                 }
-            };
+            }
         }
-        
+     
         
         $('#checkins').append("<div></div>");
         var row =  $("#checkins > div:last-child");
@@ -129,7 +130,9 @@ function fillMyCheckins(checkins) {
         $( tagsCell ).append( tagsDiv );
         $(row).append( tagsCell ); 
     };
-}
+
+  alert('hello'); }, 5000);
+  }
 
 function fillMyPlaces(places) {
     for (var i = 0; i < places.length; i++) {

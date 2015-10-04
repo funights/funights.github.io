@@ -29,7 +29,7 @@ function changeUserPosition(){
             latitude : placeObj.geometry.location.lat(),
             longitude: placeObj.geometry.location.lng()
         }
-    }
+    };
 	console.log(placeObj);
     getAllPlaces(getPlacesSuccess, function(error){
         alert(error.message);

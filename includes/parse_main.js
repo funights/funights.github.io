@@ -23,7 +23,7 @@ function getPlacesSuccess(res){
 	var compiled = _.template(template);
 	
 	$("#target").html(compiled({items:closePlaces}) );
-	 alert("Hello"); }, 5000);
+	}, 5000);
 }
 
 $(document).on(

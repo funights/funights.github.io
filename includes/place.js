@@ -173,7 +173,7 @@ function slideit()
     
     $("#placePic").attr("src", placePictures[step]);
     step++;
-    setTimeout("slideit()", 2500);
+    setTimeout("slideit()", 2000);
 }
 
 function getPlaceImages(){
@@ -204,9 +204,9 @@ function getDistance(place){
 	            dis = dis.toFixed(3) * 1000 + " m";
 	        }
 	        $('#distance').html(dis);
-	        alert("Hello"); }, 5000);
-}
-
+	       }, 5000);
+	}
+	
 function getTags(place){
 	$( "#tags" ).html("");
 	$( "#chooseTag" ).html( "<option value=''>הוסף תגית לתיאור מקום  </option>");
