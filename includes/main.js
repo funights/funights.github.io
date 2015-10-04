@@ -132,12 +132,11 @@ function savePosition(position){
 Number.prototype.toRad = function() { return this * (Math.PI / 180); };
 function calcDistance(lat2, lon2){
    	
-    if (!savedPosition){
+    while (!savedPosition){
     	getLocation();
-        return 0;
     }
     
-    else{
+
 	    var lat1 = savedPosition.coords.latitude;
 	    var lon1 = savedPosition.coords.longitude;
 	    var R = 6371; // km
@@ -151,7 +150,7 @@ function calcDistance(lat2, lon2){
 	    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
 	    var d = R * c;
 	    return d;
-	   }
+
 }
 
 function showError(error) {
