@@ -23,6 +23,7 @@ function getPlacesSuccess(res){
 	
 	$("#target").html(compiled({items:closePlaces}) );
 }
+
 $(document).on(
 	'parseload',  //  <---- HERE'S OUR CUSTOM EVENT BEING LISTENED FOR
 
