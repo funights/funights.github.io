@@ -1,6 +1,7 @@
 
 var user;
 function getPlacesSuccess(res){
+	setTimeout(function(){
 	// Calculate the distance for all places from the user
 	for (i = 0; i < res.length; i++) { 
 		var place = res[i];
@@ -22,6 +23,7 @@ function getPlacesSuccess(res){
 	var compiled = _.template(template);
 	
 	$("#target").html(compiled({items:closePlaces}) );
+	 alert("Hello"); }, 3000);
 }
 
 $(document).on(
