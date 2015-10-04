@@ -127,7 +127,7 @@ var savedPosition;
 
 function savePosition(position){
 	savedPosition = position;
-	 alert("myLocation savedPosition.coords.latitude");
+	 alert("myLocation "+savedPosition.coords.latitude);
 }
 
 Number.prototype.toRad = function() { return this * (Math.PI / 180); };
