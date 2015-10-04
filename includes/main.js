@@ -131,11 +131,12 @@ function savePosition(position){
 
 Number.prototype.toRad = function() { return this * (Math.PI / 180); };
 function calcDistance(lat2, lon2){
-	getLocation();
    	
     if (!savedPosition){
+    	getLocation();
         return 0;
     }
+    
     else{
 	    var lat1 = savedPosition.coords.latitude;
 	    var lon1 = savedPosition.coords.longitude;
