@@ -4,7 +4,7 @@ $(document).ready(function(){
 //    setTimeout( function() { initAutocomplete(); }, 1000 );
     $('#changePosition').click(function(e){
         e.preventDefault();
-        $("#changePositionField").show();
+        $(".changeAddress").css("visibility", "visible");
     });
 });
 
