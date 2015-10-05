@@ -9,13 +9,6 @@
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'DJB Jenna';
-    url('Jenna/DJB Jenna.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
 *{
  padding:0px;
  margin:0px;
@@ -329,19 +322,21 @@ h3{
     overflow: hidden;
 }
 
-.place img.landscapeImage {
+.place img{
+height: Calc(100%);
+width: 100%;
+}
+
+.landscapeImage {
 height: Calc(100%);
 width: 100%;
 }
 
 .place a {
-    width: 100%;
     display: block;
+    width: 100%;
     height: Calc(100%);
     text-align: center;
-}
-.crop img{
-	width:100%;
 }
 
 .crop img:hover {
@@ -1232,8 +1227,6 @@ div.ui-dialog-buttonset {
 .landscapeImage {
     width: 100%;
     float: left;
-    margin-left: 20%;
-
 }
 
 h2{
@@ -1815,5 +1808,3 @@ h2{
 	}
 
 }
-
- 
