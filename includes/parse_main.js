@@ -29,7 +29,9 @@ function getPlacesSuccess(res){
 	}
 	
 	else{
-			// Calculate the distance for all places from the user
+		
+		setTimeout(function(){
+				// Calculate the distance for all places from the user
 		for (i = 0; i < res.length; i++) { 
 			var place = res[i];
 			var dis = calcDistance(place.get("address_geo").latitude, place.get("address_geo").longitude);
@@ -50,7 +52,9 @@ function getPlacesSuccess(res){
 			var compiled = _.template(template);
 			
 			$("#target").html(compiled({items:closePlaces}) );
-		}
+		
+			}, 2000);
+	}
 }
 
 $(document).on(
