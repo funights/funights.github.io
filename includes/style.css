@@ -1327,6 +1327,11 @@ h2{
 		height: auto;
 	}
 	
+	#target .waze3{
+		display:block;
+		width: 15%;
+	}
+	
 	#indexAside {
 		float:right;
 		border-style: none;
@@ -1353,6 +1358,12 @@ h2{
 	
 	.waze{
 		display: block;
+	}
+	
+	.waze3{
+		display:block;
+		width: 10%;
+		height: auto;
 	}
 	
 	#asideDescription{
@@ -1602,10 +1613,6 @@ h2{
 	    margin-top: -2%;
 	    margin-left: 2%;
    }
-	
-	.waze3{
-		display:block;
-	}
 	
 	.waze2 {
 	    margin-top: 3%;
