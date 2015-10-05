@@ -1210,15 +1210,30 @@ div.ui-dialog-buttonset {
     margin-left: 164px;
 }
 
-.connectIndex{
-	margin: auto;
-    width: 22%;
-    margin-top: 335px;
+.connectIndex {
+    margin-top: 15%;
+	width: 60%;
+	float: left;
 }
+
 .connectIndexImage{
-	float:right;
-	margin-bottom: 20px;
-	margin-right: 115px;
+	float:left;
+	width: 100%;
+	height: auto;
+ 	margin-bottom: 20%;
+}
+
+.connectIndex h2 {
+    font-size: 60px;
+    margin-left: 85%;
+    float: left;
+}
+
+.landscapeImage {
+    width: 100%;
+    float: left;
+    margin-left: 20%;
+
 }
 
 h2{
@@ -1303,7 +1318,6 @@ h2{
 	}
 	
 	.pageNameMain{
-		padding-right: 10%;
 		padding-top:20%;
 	}
 	

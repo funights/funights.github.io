@@ -192,6 +192,7 @@ function fillMyCheckins(checkins) {
 }
 
 function fillMyPlaces(places) {
+	if( screen.width <= 600){
 	setTimeout(function(){
     for (var i = 0; i < places.length; i++) {
         var place = places[i];
@@ -240,8 +241,61 @@ function fillMyPlaces(places) {
         $(tagsCell ).append( tagsDiv );
         $(row      ).append( tagsCell ); 
         $("#lastPlaces").append(row);
-    };
-       },3000);
+    }
+   },3000);
+  }
+   
+   else{
+   	    for (var i = 0; i < places.length; i++) {
+        var place = places[i];
+        if (!place){
+            continue;
+        }
+        var when    = place.createdAt.format("dd/m/yy");
+        var dis = calcDistance(place.get("address_geo").latitude, place.get("address_geo").longitude);
+        if (dis >= 1) {
+            dis = dis.toFixed(2) + " km" + "<a  class= 'waze4' href= 'waze://?ll="+place.get("address_geo").latitude +","+ place.get("address_geo").longitude+"'><img src='images/waze.png'></a>";
+        } else {
+            dis = dis.toFixed(3) * 1000 + " m" + "<a  class= 'waze4' href= 'waze://?ll="+place.get("address_geo").latitude +","+ place.get("address_geo").longitude+"'><img src='images/waze.png'></a>";
+        }
+
+        var tags = place.get("tags");
+        var tagsDiv = "";
+        if (tags) {
+            tagsDiv = $("<div></div>");
+            var mytags = [];
+            for (var j = 0; j < tags.length; j++) {
+                var tag  = tags[j];
+                if (mytags.indexOf(tag) > -1){
+                    continue;
+                }
+                mytags.push(tag);
+                if (allTagsDict[tag]){
+                    var name = allTagsDict[tag].get("name");
+                    var span = $('<span id='+allTagsDict[tag].id+'></span>');
+                    span.html(name);
+                    tagsDiv.append(span);
+                }
+            };
+        }
+        
+        var row = $("<div></div>");
+
+        row.append("<div><a href='" + "placePage.html?id="+ place.id + "'><img src='" + place.get("placePic").url() + "'></a></div>");
+        var place = $("<div>" + place.get("name") + "</div>");
+        var when  = $("<div>" + when + "</div>");
+        
+        var tagsCell = $("<div></div>");
+        
+        $(tagsCell ).append( place);
+        $(tagsCell ).append( when );
+        $(tagsCell ).append( "<div>" + dis + "</div>");
+        $(tagsCell ).append( tagsDiv );
+        $(row      ).append( tagsCell ); 
+        $("#lastPlaces").append(row);
+    
+   }
+  }
 }
 
 function fillMyPageContent(checkins, places){
