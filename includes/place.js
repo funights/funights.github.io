@@ -205,7 +205,7 @@ function getDistance(place){
 		            dis = dis.toFixed(3) * 1000 + " m";
 		        }
 		        $('#distance').html(dis);
-		       }, 3000);
+		       }, 5000);
 		}
 	else{
 			var dis = calcDistance(place.get("address_geo").latitude, place.get("address_geo").longitude);

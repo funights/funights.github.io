@@ -132,7 +132,7 @@ function fillMyCheckins(checkins) {
 		        $(row).append( tagsCell ); 
 		    };
 		
-	   },3000);
+	   },5000);
    	}	
 	   
 	   else{
@@ -242,7 +242,7 @@ function fillMyPlaces(places) {
         $(row      ).append( tagsCell ); 
         $("#lastPlaces").append(row);
     }
-   },3000);
+   },5000);
   }
    
    else{
