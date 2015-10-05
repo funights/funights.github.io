@@ -185,7 +185,7 @@ function testAPI() {
 	  Parse.User.current().save({
 	    displayName: response.name,
 	    facebookId: response.id,
-	    score: 0
+	    //score: 0
 	  },
 	  {
 	    success: function(gameTurnAgain) {
