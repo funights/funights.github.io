@@ -1760,6 +1760,10 @@ h2{
 	    margin-left: 4%;
 	}
 	
+		#helloUser Img{
+		width: 70%;
+	}
+	
 	.menuHamburger {
 	    display: block;
 	    height: 40px;
