@@ -509,6 +509,7 @@ function jqAlert( msg, url, buttonText ) {
     });
 }
 
+
 function loadAfter( objName, func ) {
 	eval( "obj = "+objName+";")
 	if( typeof( obj ) == "undefined" ) {

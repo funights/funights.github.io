@@ -77,6 +77,7 @@ function getTags(checkins, places){
 }
 
 function fillMyCheckins(checkins) {
+	if( screen.width <= 600){
 		setTimeout(function(){
 		    for (var i = 0; i < checkins.length; i++) {
 		        var checkIn = checkins[i];
@@ -132,7 +133,63 @@ function fillMyCheckins(checkins) {
 		    };
 		
 	   },3000);
-		}
+   	}	
+	   
+	   else{
+		    for (var i = 0; i < checkins.length; i++) {
+		        var checkIn = checkins[i];
+		        var when    = checkIn.get("when").format("dd/m/yy");
+		        var place   = checkIn.get("place");
+		        if (!place){
+		            continue;
+		        }
+		        var dis = calcDistance(place.get("address_geo").latitude, place.get("address_geo").longitude);
+		        if (dis >= 1) {
+		            dis = dis.toFixed(2) + " km"+ "<a  class= 'waze4' href= 'waze://?ll="+place.get("address_geo").latitude +","+ place.get("address_geo").longitude+"'><img src='images/waze.png'></a>";
+		   		
+		        } else {
+		            dis = dis.toFixed(3) * 1000 + " m" + "<a  class= 'waze4' href= 'waze://?ll="+place.get("address_geo").latitude +","+ place.get("address_geo").longitude+"'><img src='images/waze.png'></a>";
+		        }
+		        
+		
+		        var tags = place.get("tags");
+		        var tagsDiv = "";
+		        if (tags) {
+		            tagsDiv = $("<div></div>");
+		            var mytags = [];
+		            for (var j = 0; j < tags.length; j++) {
+		                var tag  = tags[j];
+		                if (mytags.indexOf(tag) > -1){
+		                    continue;
+		                }
+		                mytags.push(tag);
+		                if (allTagsDict[tag]){
+		                    var name = allTagsDict[tag].get("name");
+		                    var span = $('<span id='+allTagsDict[tag].id+'></span>');
+		                    span.html(name);
+		                    tagsDiv.append(span);
+		                }
+		            };
+		        }
+		        
+		        
+		        $('#checkins').append("<div></div>");
+		        var row =  $("#checkins > div:last-child");
+		
+		        $(row).append("<div><a href='" + "placePage.html?id="+ checkIn.get("place").id + "'><img src='" + (checkIn.get("place").get("placePic").url()) + "'></a></div>");
+		        var place = $("<div>" + checkIn.get("place").get("name") + "</div>");
+		        var when  = $("<div>" + when + "</div>");
+		        
+		        var tagsCell = $("<div></div>");
+		        
+		        $( tagsCell ).append( place);
+		        $( tagsCell ).append( when );
+		        $(tagsCell).append("<div>" + dis + "</div>");
+		        $( tagsCell ).append( tagsDiv );
+		        $(row).append( tagsCell ); 
+		    }	
+	   }
+}
 
 function fillMyPlaces(places) {
 	setTimeout(function(){

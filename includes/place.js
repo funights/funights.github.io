@@ -196,16 +196,28 @@ function getPlaceImages(){
 }
 
 function getDistance(place){
-	setTimeout(function(){
-		   	var dis = calcDistance(place.get("address_geo").latitude, place.get("address_geo").longitude);
+	if( screen.width <= 600){
+		setTimeout(function(){
+			   	var dis = calcDistance(place.get("address_geo").latitude, place.get("address_geo").longitude);
+		        if (dis >= 1) {
+		            dis = dis.toFixed(2) + " km";
+		        } else {
+		            dis = dis.toFixed(3) * 1000 + " m";
+		        }
+		        $('#distance').html(dis);
+		       }, 3000);
+		}
+	else{
+			var dis = calcDistance(place.get("address_geo").latitude, place.get("address_geo").longitude);
 	        if (dis >= 1) {
 	            dis = dis.toFixed(2) + " km";
 	        } else {
 	            dis = dis.toFixed(3) * 1000 + " m";
 	        }
 	        $('#distance').html(dis);
-	       }, 5000);
-	}
+       }
+  }
+	      
 	
 function getTags(place){
 	$( "#tags" ).html("");

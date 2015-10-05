@@ -1,29 +1,56 @@
 
 var user;
 function getPlacesSuccess(res){
-	setTimeout(function(){
-	// Calculate the distance for all places from the user
-	for (i = 0; i < res.length; i++) { 
-		var place = res[i];
-		var dis = calcDistance(place.get("address_geo").latitude, place.get("address_geo").longitude);
-		place.dis = dis;
+	//in mobiles geolocation takes longer to load
+	if( screen.width <= 600){
+		setTimeout(function(){
+		// Calculate the distance for all places from the user
+		for (i = 0; i < res.length; i++) { 
+			var place = res[i];
+			var dis = calcDistance(place.get("address_geo").latitude, place.get("address_geo").longitude);
+			place.dis = dis;
+			
+	        if (place.get("placePic")){
+	            place.imageUrl = place.get("placePic").url();
+	        } else {
+	            place.imageUrl = "";
+	        }
+			console.log(place.get("name")  + " " + dis);
+		}
+		// sotring the places by distance
+		res.sort(function(a,b){return a.dis - b.dis;});
+		// take the first 5 places
+		var closePlaces = res.slice(0, 5);
+		var template = $("#placesList").html();
+		var compiled = _.template(template);
 		
-        if (place.get("placePic")){
-            place.imageUrl = place.get("placePic").url();
-        } else {
-            place.imageUrl = "";
-        }
-		console.log(place.get("name")  + " " + dis);
+		$("#target").html(compiled({items:closePlaces}) );
+		}, 4000);
 	}
-	// sotring the places by distance
-	res.sort(function(a,b){return a.dis - b.dis});
-	// take the first 5 places
-	var closePlaces = res.slice(0, 5);
-	var template = $("#placesList").html();
-	var compiled = _.template(template);
 	
-	$("#target").html(compiled({items:closePlaces}) );
-	}, 5000);
+	else{
+			// Calculate the distance for all places from the user
+		for (i = 0; i < res.length; i++) { 
+			var place = res[i];
+			var dis = calcDistance(place.get("address_geo").latitude, place.get("address_geo").longitude);
+			place.dis = dis;
+			
+	        if (place.get("placePic")){
+	            place.imageUrl = place.get("placePic").url();
+	        } else {
+	            place.imageUrl = "";
+	        }
+			console.log(place.get("name")  + " " + dis);
+			}
+			// sotring the places by distance
+			res.sort(function(a,b){return a.dis - b.dis;});
+			// take the first 5 places
+			var closePlaces = res.slice(0, 5);
+			var template = $("#placesList").html();
+			var compiled = _.template(template);
+			
+			$("#target").html(compiled({items:closePlaces}) );
+		}
 }
 
 $(document).on(
