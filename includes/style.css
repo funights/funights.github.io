@@ -1200,7 +1200,11 @@ div.ui-dialog-buttonset {
     color: #FFFFFF;
 }
 
-
+.kissImage{
+    margin-top: 29px;
+    float: left;
+    margin-left: 164px;
+}
 
 .connectIndex {
     margin-top: 15%;
@@ -1266,12 +1270,6 @@ h2{
 .waze4 {
 	width:40px;
 	display:none;
-}
-
-.kissWrap{
-    margin-top: 29px;
-    float: left;
-    margin-left: 164px;
 }
 
 /* end of desktop*/
@@ -1559,7 +1557,7 @@ h2{
 	  }
 	  
 	  /* about us */
-	 .kissWrap{
+	 .kissImage{
 	 	width: 50%;
 	 	margin-left: 25%;
 	 }
