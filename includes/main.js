@@ -203,8 +203,8 @@ function testAPI() {
 	    error: function(gameTurnAgain, error) {
 	        // update ui
 	        }
-	      });
- });
+	    });
+
 
 
 function setCookie(cname, cvalue, exdays) {
@@ -521,10 +521,12 @@ function loadAfter( objName, func ) {
 	eval( "obj = "+objName+";");
 	if( typeof( obj ) == "undefined" ) {
 		setTimeout( function() {
-			loadAfter( objName, func );
+			loadAfter( objName, func )
 		}, 300 );
 	} else {
-		eval( func+"();" );
+		eval( func+"();" )
 	}
 }
+
+
 
