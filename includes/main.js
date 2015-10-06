@@ -204,7 +204,7 @@ function testAPI() {
 	        // update ui
 	        }
 	      });
-  }
+ });
 
 
 function setCookie(cname, cvalue, exdays) {
