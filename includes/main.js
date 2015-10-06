@@ -129,12 +129,12 @@ function savePosition(position){
 	savedPosition = position;
  }
 var savedPosition;
-
+/*
 function savePosition(position){
 	setCookie( "lat", position.coords.latitude , 1 );
 	setCookie( "lon", position.coords.longitude, 1 );
 	location.reload();
-}
+}*/
 
 Number.prototype.toRad = function() { return this * (Math.PI / 180); };
 
@@ -527,3 +527,4 @@ function loadAfter( objName, func ) {
 		eval( func+"();" );
 	}
 }
+
