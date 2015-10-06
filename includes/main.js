@@ -114,7 +114,7 @@ function getAllPlaces(onSuccess, onFail){
 	  }
 	});
 }
-
+/*
 function getLocation(){
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(savePosition, showError);
@@ -127,7 +127,34 @@ var savedPosition;
 
 function savePosition(position){
 	savedPosition = position;
- }
+ }*/
+
+function getLocation(){
+	if (navigator.geolocation) {
+		if( !getCookie( "lat" ) || !getCookie( "lon" ) ) {
+			navigator.geolocation.getCurrentPosition(savePosition, showError);
+
+		} else {
+			savedPosition = {
+				coords: {
+					latitude:  getCookie( "lat" ),
+					longitude: getCookie( "lon" )
+				}
+			}
+		}
+		
+	} else {
+		// TODO:
+	}
+}
+
+var savedPosition;
+
+function savePosition(position){
+	setCookie( "lat", position.coords.latitude , 1 );
+	setCookie( "lon", position.coords.longitude, 1 );
+	location.reload();
+}
 
 Number.prototype.toRad = function() { return this * (Math.PI / 180); };
 
@@ -181,11 +208,19 @@ function showError(error) {
 // Here we run a very simple test of the Graph API after login is
 // successful.  See statusChangeCallback() for when this call is made.
 function testAPI() {
-	FB.api('/me', function(response) {
+	/*FB.api('/me', function(response) {
 	  Parse.User.current().save({
 	    displayName: response.name,
 	    facebookId: response.id,
 	    score: 0
+	  },*/
+	  	  var score = Parse.User.current().get( "score" );
+	  if( typeof( score ) == "undefined" )
+	  	score = 0;
+	  Parse.User.current().save({
+	    displayName: response.name,
+	    facebookId: response.id,
+	    score: score
 	  },
 	  {
 	    success: function(gameTurnAgain) {
@@ -197,8 +232,8 @@ function testAPI() {
 	        // update ui
 	        }
 	      });
-  });
-}
+  }
+
 
 function setCookie(cname, cvalue, exdays) {
      var d = new Date();
