@@ -188,19 +188,11 @@ function showError(error) {
 // Here we run a very simple test of the Graph API after login is
 // successful.  See statusChangeCallback() for when this call is made.
 function testAPI() {
-	/*FB.api('/me', function(response) {
+	FB.api('/me', function(response) {
 	  Parse.User.current().save({
 	    displayName: response.name,
 	    facebookId: response.id,
 	    score: 0
-	  },*/
-	  	  var score = Parse.User.current().get( "score" );
-	  if( typeof( score ) == "undefined" )
-	  	score = 0;
-	  Parse.User.current().save({
-	    displayName: response.name,
-	    facebookId: response.id,
-	    score: score
 	  },
 	  {
 	    success: function(gameTurnAgain) {
@@ -526,10 +518,10 @@ function jqAlert( msg, url, buttonText ) {
 
 
 function loadAfter( objName, func ) {
-	eval( "obj = "+objName+";")
+	eval( "obj = "+objName+";");
 	if( typeof( obj ) == "undefined" ) {
 		setTimeout( function() {
-			loadAfter( objName, func )
+			loadAfter( objName, func );
 		}, 300 );
 	} else {
 		eval( func+"();" );
