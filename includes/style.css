@@ -1359,6 +1359,11 @@ h2{
 		display: block;
 	}
 	
+	#target .waze3{
+		display:block;
+		width: 15%;
+	}
+	
 	#asideDescription{
 		text-align: center;
 		width: 70%;
