@@ -115,6 +115,9 @@ function getAllPlaces(onSuccess, onFail){
 	});
 }
 
+
+var savedPosition;
+
 function getLocation(){
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(savePosition, showError);
@@ -123,7 +126,6 @@ function getLocation(){
     }
 }
 
-var savedPosition;
 
 function savePosition(position){
 	savedPosition = position;
@@ -198,7 +200,7 @@ function testAPI() {
 	        }
 	    });
 	  })
-	  }
+  }
 
 
 
