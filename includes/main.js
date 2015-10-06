@@ -114,7 +114,7 @@ function getAllPlaces(onSuccess, onFail){
 	  }
 	});
 }
-/*
+
 function getLocation(){
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(savePosition, showError);
@@ -127,27 +127,7 @@ var savedPosition;
 
 function savePosition(position){
 	savedPosition = position;
- }*/
-
-function getLocation(){
-	if (navigator.geolocation) {
-		if( !getCookie( "lat" ) || !getCookie( "lon" ) ) {
-			navigator.geolocation.getCurrentPosition(savePosition, showError);
-
-		} else {
-			savedPosition = {
-				coords: {
-					latitude:  getCookie( "lat" ),
-					longitude: getCookie( "lon" )
-				}
-			}
-		}
-		
-	} else {
-		// TODO:
-	}
-}
-
+ }
 var savedPosition;
 
 function savePosition(position){
