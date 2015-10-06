@@ -1355,6 +1355,10 @@ h2{
 		display: block;
 	}
 	
+	.waze3{
+		display: block;
+	}
+	
 	#asideDescription{
 		text-align: center;
 		width: 70%;
@@ -1602,10 +1606,6 @@ h2{
 	    margin-top: -2%;
 	    margin-left: 2%;
    }
-	
-	.waze3{
-		display:block;
-	}
 	
 	.waze2 {
 	    margin-top: 3%;
